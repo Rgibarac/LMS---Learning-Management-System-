@@ -1,0 +1,33 @@
+package com.university.lms.service;
+
+import com.university.lms.entity.Evaluation;
+import com.university.lms.repository.EvaluationRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class EvaluationService {
+    private final EvaluationRepository evaluationRepository;
+
+    public EvaluationService(EvaluationRepository evaluationRepository) {
+        this.evaluationRepository = evaluationRepository;
+    }
+
+    public List<Evaluation> findByCourseId(Long courseId) {
+        return evaluationRepository.findByCourseId(courseId);
+    }
+
+    public boolean existsById(Long evaluationId) {
+        return evaluationRepository.existsById(evaluationId);
+    }
+
+    public Evaluation findById(Long evaluationId) {
+        return evaluationRepository.findById(evaluationId)
+                .orElseThrow(() -> new RuntimeException("Evaluation not found: " + evaluationId));
+    }
+
+    public List<Evaluation> findByCourseIds(List<Long> courseIds) {
+        return evaluationRepository.findByCourseIdIn(courseIds);
+    }
+}

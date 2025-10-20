@@ -1,0 +1,98 @@
+package com.university.lms.controller;
+
+import com.university.lms.entity.ExamApplication;
+import com.university.lms.entity.ExamGrade;
+import com.university.lms.service.ExamApplicationService;
+import com.university.lms.service.ExamGradeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/student-teacher")
+public class StudentTeacherController {
+    @Autowired
+    private ExamApplicationService examApplicationService;
+    @Autowired
+    private ExamGradeService examGradeService;
+
+    // Exam Application Endpoints
+    @PostMapping("/exam-applications")
+    public ResponseEntity<ExamApplication> createExamApplication(
+            @RequestParam Long userId,
+            @RequestParam Long courseId,
+            @RequestParam String term) {
+        try {
+            ExamApplication examApplication = examApplicationService.createExamApplication(userId, courseId, term);
+            return ResponseEntity.status(201).body(examApplication);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(null);
+        }
+    }
+
+    @GetMapping("/exam-applications/user/{userId}")
+    public ResponseEntity<List<ExamApplication>> getExamApplicationsByUserId(@PathVariable Long userId) {
+        try {
+            List<ExamApplication> applications = examApplicationService.getExamApplicationsByUserId(userId);
+            return ResponseEntity.ok(applications);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(null);
+        }
+    }
+
+    @GetMapping("/exam-applications")
+    public ResponseEntity<List<ExamApplication>> getAllExamApplications() {
+        return ResponseEntity.ok(examApplicationService.getAllExamApplications());
+    }
+
+    @DeleteMapping("/exam-applications/{id}")
+    public ResponseEntity<Void> deleteExamApplication(@PathVariable Long id) {
+        try {
+            examApplicationService.deleteExamApplication(id);
+            return ResponseEntity.noContent().build();
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    // Exam Grade Endpoints
+    @PostMapping("/exam-grades")
+    public ResponseEntity<ExamGrade> createExamGrade(
+            @RequestParam Long examApplicationId,
+            @RequestParam float grade,
+            @RequestParam int numberOfTakenExams) {
+        try {
+            ExamGrade examGrade = examGradeService.createExamGrade(examApplicationId, grade, numberOfTakenExams);
+            return ResponseEntity.status(201).body(examGrade);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(null);
+        }
+    }
+
+    @GetMapping("/exam-grades/application/{examApplicationId}")
+    public ResponseEntity<List<ExamGrade>> getExamGradesByExamApplicationId(@PathVariable Long examApplicationId) {
+        try {
+            List<ExamGrade> grades = examGradeService.getExamGradesByExamApplicationId(examApplicationId);
+            return ResponseEntity.ok(grades);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(null);
+        }
+    }
+
+    @GetMapping("/exam-grades")
+    public ResponseEntity<List<ExamGrade>> getAllExamGrades() {
+        return ResponseEntity.ok(examGradeService.getAllExamGrades());
+    }
+
+    @DeleteMapping("/exam-grades/{id}")
+    public ResponseEntity<Void> deleteExamGrade(@PathVariable Long id) {
+        try {
+            examGradeService.deleteExamGrade(id);
+            return ResponseEntity.noContent().build();
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+}

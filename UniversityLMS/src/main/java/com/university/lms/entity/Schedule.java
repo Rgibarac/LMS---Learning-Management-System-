@@ -1,0 +1,35 @@
+package com.university.lms.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
+public class Schedule {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private Long syllabusId;
+    private String courseName; 
+    private String academicYear; 
+    private String scheduleDetails;
+
+    public Schedule() {}
+
+    public Schedule(Long syllabusId, String scheduleDetails) {
+        this.syllabusId = syllabusId;
+        this.scheduleDetails = scheduleDetails;
+    }
+
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public Long getSyllabusId() { return syllabusId; }
+    public void setSyllabusId(Long syllabusId) { this.syllabusId = syllabusId; }
+    public String getCourseName() { return courseName; }
+    public void setCourseName(String courseName) { this.courseName = courseName; }
+    public String getAcademicYear() { return academicYear; }
+    public void setAcademicYear(String academicYear) { this.academicYear = academicYear; }
+    public String getScheduleDetails() { return scheduleDetails; }
+    public void setScheduleDetails(String scheduleDetails) { this.scheduleDetails = scheduleDetails; }
+}

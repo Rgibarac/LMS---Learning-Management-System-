@@ -1,0 +1,40 @@
+package com.university.lms.service;
+
+import com.university.lms.entity.ExamApplication;
+import com.university.lms.repository.ExamApplicationRepository;
+import com.university.lms.repository.CourseRepository;
+import com.university.lms.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class ExamApplicationService {
+    @Autowired
+    private ExamApplicationRepository examAplicationRepository;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private CourseRepository courseRepository;
+
+    public ExamApplication createExamAplication(Long userId, Long courseId, String term) {
+        if (!userRepository.existsById(userId) || !courseRepository.existsById(courseId)) {
+            throw new IllegalArgumentException("User or course not found");
+        }
+        ExamApplication examAplication = new ExamApplication(userRepository.getOne(userId), courseRepository.getOne(courseId), term);
+        return examAplicationRepository.save(examAplication);
+    }
+
+    public List<ExamApplication> getExamApplicationsByUserId(Long userId) {
+        return examAplicationRepository.findByUser(userRepository.getOne(userId));
+    }
+
+    public List<ExamApplication> getAllExamApplications() {
+        return examAplicationRepository.findAll();
+    }
+
+    public void deleteExamApplication(Long examAplicationId) {
+        examAplicationRepository.deleteById(examAplicationId);
+    }
+}

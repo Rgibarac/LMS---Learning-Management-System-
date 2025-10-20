@@ -1,0 +1,87 @@
+package com.university.lms.controller;
+
+import com.university.lms.entity.*;
+import com.university.lms.repository.*;
+import com.university.lms.service.EnrollmentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@RestController
+@RequestMapping("/api/staff")
+public class EnrollmentController {
+    @Autowired
+    private EnrollmentService enrollmentService;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private CourseRepository courseRepository;
+    @Autowired
+    private StudyProgramRepository studyProgramRepository;
+
+    @PostMapping("/enroll/course")
+    public ResponseEntity<User> enrollStudentInCourse(@RequestBody EnrollmentRequest request) {
+        if (!userRepository.existsById(request.getStudentId()) || !courseRepository.existsById(request.getCourseId())) {
+            return ResponseEntity.notFound().build();
+        }
+        User student = userRepository.findById(request.getStudentId()).orElse(null);
+        if (student == null || !"STUDENT".equals(student.getRole())) {
+            return ResponseEntity.badRequest().build();
+        }
+        enrollmentService.saveCourseEnrollment(request.getStudentId(), request.getCourseId());
+        List<Enrollment> enrollments = enrollmentService.findByStudentId(request.getStudentId());
+        student.setEnrolledCourses(enrollments.stream()
+            .filter(e -> e.getCourseId() != null)
+            .map(e -> courseRepository.findById(e.getCourseId()).orElse(null))
+            .filter(course -> course != null)
+            .collect(Collectors.toList()));
+        student.setStudyProgram(enrollments.stream()
+            .filter(e -> e.getStudyProgramId() != null)
+            .map(e -> studyProgramRepository.findById(e.getStudyProgramId()).orElse(null))
+            .filter(program -> program != null)
+            .findFirst()
+            .orElse(null));
+        return ResponseEntity.ok(student);
+    }
+
+    @PostMapping("/enroll/study-program")
+    public ResponseEntity<User> enrollStudentInStudyProgram(@RequestBody EnrollmentRequest request) {
+        if (!userRepository.existsById(request.getStudentId()) || !studyProgramRepository.existsById(request.getStudyProgramId())) {
+            return ResponseEntity.notFound().build();
+        }
+        User student = userRepository.findById(request.getStudentId()).orElse(null);
+        if (student == null || !"STUDENT".equals(student.getRole())) {
+            return ResponseEntity.badRequest().build();
+        }
+        enrollmentService.saveStudyProgramEnrollment(request.getStudentId(), request.getStudyProgramId());
+        List<Enrollment> enrollments = enrollmentService.findByStudentId(request.getStudentId());
+        student.setEnrolledCourses(enrollments.stream()
+            .filter(e -> e.getCourseId() != null)
+            .map(e -> courseRepository.findById(e.getCourseId()).orElse(null))
+            .filter(course -> course != null)
+            .collect(Collectors.toList()));
+        student.setStudyProgram(enrollments.stream()
+            .filter(e -> e.getStudyProgramId() != null)
+            .map(e -> studyProgramRepository.findById(e.getStudyProgramId()).orElse(null))
+            .filter(program -> program != null)
+            .findFirst()
+            .orElse(null));
+        return ResponseEntity.ok(student);
+    }
+}
+
+class EnrollmentRequest {
+    private Long studentId;
+    private Long courseId;
+    private Long studyProgramId;
+
+    public Long getStudentId() { return studentId; }
+    public void setStudentId(Long studentId) { this.studentId = studentId; }
+    public Long getCourseId() { return courseId; }
+    public void setCourseId(Long courseId) { this.courseId = courseId; }
+    public Long getStudyProgramId() { return studyProgramId; }
+    public void setStudyProgramId(Long studyProgramId) { this.studyProgramId = studyProgramId; }
+}

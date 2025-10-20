@@ -1,0 +1,82 @@
+package com.university.lms.controller;
+
+import com.university.lms.entity.ExamAplication;
+import com.university.lms.entity.ExamGrade;
+import com.university.lms.service.ExamAplicationService;
+import com.university.lms.service.ExamGradeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/student-teacher")
+public class StudentTeacherController {
+    @Autowired
+    private ExamAplicationService examAplicationService;
+    @Autowired
+    private ExamGradeService examGradeService;
+
+    // Exam Application Methods
+    @PostMapping("/exam-applications")
+    @PreAuthorize("hasRole('STUDENT')")
+    public ResponseEntity<ExamAplication> createExamApplication(@RequestParam Long courseId, @RequestParam String term) {
+        // Assume userId from authenticated user
+        Long userId = getCurrentUserId(); // Implement based on your auth
+        ExamAplication examAplication = examAplicationService.createExamApplication(userId, courseId, term);
+        return ResponseEntity.status(201).body(examAplication);
+    }
+
+    @GetMapping("/exam-applications/user/{userId}")
+    @PreAuthorize("hasRole('STUDENT')")
+    public ResponseEntity<List<ExamAplication>> getExamApplicationsByUserId(@PathVariable Long userId) {
+        return ResponseEntity.ok(examAplicationService.getExamApplicationsByUserId(userId));
+    }
+
+    @GetMapping("/exam-applications")
+    @PreAuthorize("hasRole('STUDENT')")
+    public ResponseEntity<List<ExamAplication>> getAllExamApplications() {
+        return ResponseEntity.ok(examAplicationService.getAllExamApplications());
+    }
+
+    @DeleteMapping("/exam-applications/{id}")
+    @PreAuthorize("hasRole('STUDENT')")
+    public ResponseEntity<Void> deleteExamApplication(@PathVariable Long id) {
+        examAplicationService.deleteExamApplication(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    // Exam Grade Methods
+    @PostMapping("/exam-grades")
+    @PreAuthorize("hasRole('STUDENT')")
+    public ResponseEntity<ExamGrade> createExamGrade(@RequestParam Long examApplicationId, @RequestParam float grade, @RequestParam int numberOfTakenExams) {
+        ExamGrade examGrade = examGradeService.createExamGrade(examApplicationId, grade, numberOfTakenExams);
+        return ResponseEntity.status(201).body(examGrade);
+    }
+
+    @GetMapping("/exam-grades/application/{examApplicationId}")
+    @PreAuthorize("hasRole('STUDENT')")
+    public ResponseEntity<List<ExamGrade>> getExamGradesByExamApplicationId(@PathVariable Long examApplicationId) {
+        return ResponseEntity.ok(examGradeService.getExamGradesByExamApplicationId(examApplicationId));
+    }
+
+    @GetMapping("/exam-grades")
+    @PreAuthorize("hasRole('STUDENT')")
+    public ResponseEntity<List<ExamGrade>> getAllExamGrades() {
+        return ResponseEntity.ok(examGradeService.getAllExamGrades());
+    }
+
+    @DeleteMapping("/exam-grades/{id}")
+    @PreAuthorize("hasRole('STUDENT')")
+    public ResponseEntity<Void> deleteExamGrade(@PathVariable Long id) {
+        examGradeService.deleteExamGrade(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    private Long getCurrentUserId() {
+        // Implement based on your authentication mechanism, e.g., SecurityContextHolder
+        return 3L; // Placeholder for student ID 3 (Jane Doe)
+    }
+}

@@ -1,0 +1,28 @@
+package com.university.lms.service;
+
+import com.university.lms.entity.Enrollment;
+import com.university.lms.repository.EnrollmentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class EnrollmentService {
+    @Autowired
+    private EnrollmentRepository enrollmentRepository;
+
+    public List<Enrollment> findByStudentId(Long studentId) {
+        return enrollmentRepository.findByStudentId(studentId);
+    }
+
+    public Enrollment saveCourseEnrollment(Long studentId, Long courseId) {
+        Enrollment enrollment = new Enrollment(studentId, courseId, null, null);
+        return enrollmentRepository.save(enrollment);
+    }
+
+    public Enrollment saveStudyProgramEnrollment(Long studentId, Long studyProgramId) {
+        Enrollment enrollment = new Enrollment(studentId, null, studyProgramId, null);
+        return enrollmentRepository.save(enrollment);
+    }
+}

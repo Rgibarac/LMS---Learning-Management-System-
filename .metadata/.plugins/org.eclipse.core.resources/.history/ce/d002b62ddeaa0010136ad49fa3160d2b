@@ -1,0 +1,21 @@
+package com.university.lms.controller;
+
+import com.university.lms.entity.Enrollment;
+import com.university.lms.service.EnrollmentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api")
+public class EnrollmentController {
+    @Autowired
+    private EnrollmentService enrollmentService;
+
+    @GetMapping("/enrollments/user/{userId}")
+    public ResponseEntity<List<Enrollment>> getEnrollmentsByUser(@PathVariable Long userId) {
+        return ResponseEntity.ok(enrollmentService.getEnrollmentsByUser(userId));
+    }
+}

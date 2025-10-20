@@ -1,0 +1,5 @@
+package com.university.lms.dto;
+
+public class ExamGradeRequestDTO {
+
+}

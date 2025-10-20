@@ -1,0 +1,11 @@
+package com.university.lms.repository;
+
+import com.university.lms.entity.Enrollment;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface EnrollmentRepository extends JpaRepository<Enrollment, Long> {
+    List<Enrollment> findByStudentId(Long studentId);
+    List<Enrollment> findByUserId(Long userId);
+}

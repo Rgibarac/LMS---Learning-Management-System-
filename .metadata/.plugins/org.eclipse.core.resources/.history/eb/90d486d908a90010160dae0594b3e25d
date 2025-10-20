@@ -1,0 +1,18 @@
+package com.university.lms.repository;
+
+import com.university.lms.entity.Evaluation;
+import com.university.lms.entity.Course;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Repository
+public interface EvaluationRepository extends JpaRepository<Evaluation, Long> {
+    List<Evaluation> findByCourse(Long courseId);
+
+    List<Evaluation> findByType(String type);
+
+    List<Evaluation> findByDueDateBefore(LocalDateTime dueDate);
+}

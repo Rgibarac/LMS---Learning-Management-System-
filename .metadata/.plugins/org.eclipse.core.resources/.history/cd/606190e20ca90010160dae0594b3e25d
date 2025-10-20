@@ -1,0 +1,65 @@
+package com.university.lms.service;
+
+import com.university.lms.entity.Course;
+import com.university.lms.entity.Enrollment;
+import com.university.lms.entity.Evaluation;
+import com.university.lms.entity.User;
+import com.university.lms.repository.EnrollmentRepository;
+import com.university.lms.repository.EvaluationRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+@Service
+public class StudentService {
+    private final EnrollmentRepository enrollmentRepository;
+    private final EvaluationRepository evaluationRepository;
+
+    public StudentService(EnrollmentRepository enrollmentRepository, EvaluationRepository evaluationRepository) {
+        this.enrollmentRepository = enrollmentRepository;
+        this.evaluationRepository = evaluationRepository;
+    }
+
+    public List<Course> getStudentCourses(Long userId) {
+        return enrollmentRepository.findByUserId(userId)
+                .stream()
+                .map(Enrollment::getCourse)
+                .collect(Collectors.toList());
+    }
+
+    public List<StudyHistoryDTO> getStudentHistory(Long userId) {
+
+        List<Enrollment> enrollments = enrollmentRepository.findByUserId(userId);
+        return enrollments.stream()
+                .map(enrollment -> {
+                    Long courseId = enrollment.getCourseId();
+                    Course course = enrollment.getCourse();
+                    // Get evaluations for this course
+                    List<Evaluation> evaluations = evaluationRepository.findByCourseId(courseId);
+                    // Count exams and find passing grade
+                    int examsTaken = evaluations.size();
+                    Double passingGrade = null;
+                    boolean passed = false;
+                    for (Evaluation eval : evaluations) {
+                        Double grade = eval.getStudentGrades().get(new User(userId));
+                        if (grade != null && grade >= 6.0) { // Assuming 6.0 is passing
+                            passingGrade = grade;
+                            passed = true;
+                            break;
+                        }
+                    }
+                    int ectsPoints = passed ? (course.getEctsPoints() > 0 ? course.getEctsPoints() : 6) : 0; // Default 6 if not set
+                    return new StudyHistoryDTO(
+                            courseId,
+                            course.getName(),
+                            examsTaken,
+                            passingGrade,
+                            ectsPoints,
+                            passed
+                    );
+                })
+                .collect(Collectors.toList());
+    }
+}

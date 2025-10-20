@@ -1,0 +1,22 @@
+package com.university.lms.service;
+
+import com.university.lms.entity.Enrollment;
+import com.university.lms.entity.User;
+import com.university.lms.repository.EnrollmentRepository;
+import com.university.lms.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class EnrollmentService {
+    @Autowired
+    private EnrollmentRepository enrollmentRepository;
+    @Autowired
+    private UserRepository userRepository;
+
+    public List<Enrollment> getEnrollmentsByUser(Long userId) {
+        return enrollmentRepository.findByStudentId(userId);
+    }
+}

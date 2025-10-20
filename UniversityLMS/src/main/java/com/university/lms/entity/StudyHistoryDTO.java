@@ -1,0 +1,32 @@
+package com.university.lms.entity;
+
+public class StudyHistoryDTO {
+    private Long courseId;
+    private String courseName;
+    private int examsTaken;
+    private Double grade;
+    private int ectsPoints;
+    private boolean passed;
+
+    public StudyHistoryDTO(Long courseId, String courseName, int examsTaken, Double grade, int ectsPoints, boolean passed) {
+        this.courseId = courseId;
+        this.courseName = courseName;
+        this.examsTaken = examsTaken;
+        this.grade = grade;
+        this.ectsPoints = ectsPoints;
+        this.passed = passed;
+    }
+
+    public Long getCourseId() { return courseId; }
+    public void setCourseId(Long courseId) { this.courseId = courseId; }
+    public String getCourseName() { return courseName; }
+    public void setCourseName(String courseName) { this.courseName = courseName; }
+    public int getExamsTaken() { return examsTaken; }
+    public void setExamsTaken(int examsTaken) { this.examsTaken = examsTaken; }
+    public Double getGrade() { return grade; }
+    public void setGrade(Double grade) { this.grade = grade; }
+    public int getEctsPoints() { return ectsPoints; }
+    public void setEctsPoints(int ectsPoints) { this.ectsPoints = ectsPoints; }
+    public boolean isPassed() { return passed; }
+    public void setPassed(boolean passed) { this.passed = passed; }
+}

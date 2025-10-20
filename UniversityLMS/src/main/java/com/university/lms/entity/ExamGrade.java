@@ -1,0 +1,38 @@
+package com.university.lms.entity;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "exam_grades")
+public class ExamGrade {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "exam_application_id", nullable = false)
+    private ExamApplication examApplication;
+
+    @Column(name = "grade", nullable = false)
+    private float grade;
+
+    @Column(name = "number_of_taken_exams", nullable = false)
+    private int numberOfTakenExams;
+
+    public ExamGrade() {}
+
+    public ExamGrade(ExamApplication examApplication, float grade, int numberOfTakenExams) {
+        this.examApplication = examApplication;
+        this.grade = grade;
+        this.numberOfTakenExams = numberOfTakenExams;
+    }
+
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public ExamApplication getExamApplication() { return examApplication; }
+    public void setExamApplication(ExamApplication examApplication) { this.examApplication = examApplication; }
+    public float getGrade() { return grade; }
+    public void setGrade(float grade) { this.grade = grade; }
+    public int getNumberOfTakenExams() { return numberOfTakenExams; }
+    public void setNumberOfTakenExams(int numberOfTakenExams) { this.numberOfTakenExams = numberOfTakenExams; }
+}

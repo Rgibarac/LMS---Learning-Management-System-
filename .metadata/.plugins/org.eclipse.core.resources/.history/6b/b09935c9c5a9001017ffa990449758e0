@@ -1,0 +1,14 @@
+package com.university.lms.repository;
+
+import com.university.lms.entity.Evaluation;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import java.util.List;
+
+public interface EvaluationRepository extends JpaRepository<Evaluation, Long> {
+    List<Evaluation> findByCourseId(Long courseId);
+
+    @Query("SELECT e FROM Evaluation e WHERE e.courseId IN :courseIds")
+    List<Evaluation> findByCourseIdIn(List<Long> courseIds);
+}

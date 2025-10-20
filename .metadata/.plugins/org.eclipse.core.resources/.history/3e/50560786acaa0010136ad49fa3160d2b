@@ -1,0 +1,44 @@
+package com.university.lms.service;
+
+import com.university.lms.entity.Course;
+import com.university.lms.entity.Notification;
+import com.university.lms.repository.CourseRepository;
+import com.university.lms.repository.NotificationRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Service
+public class NotificationService {
+    @Autowired
+    private NotificationRepository notificationRepository;
+
+    @Autowired
+    private CourseRepository courseRepository;
+
+    public List<Notification> getAllNotifications() {
+        return notificationRepository.findAll();
+    }
+
+    public Notification saveNotification(Notification notification) {
+        // Add validation logic (e.g., ensure title and content are not empty)
+        notification.setCreatedAt(LocalDateTime.now());
+        return notificationRepository.save(notification);
+    }
+
+    public List<Notification> findByCourse(Long courseId) {
+        Course course = courseRepository.findById(courseId)
+                .orElseThrow(() -> new RuntimeException("Course not found"));
+        return notificationRepository.findByCourse(course);
+    }
+
+    public List<Notification> findByRecipientRole(String recipientRole) {
+        return notificationRepository.findByRecipientRole(recipientRole);
+    }
+
+    public List<Notification> findRecentNotifications(LocalDateTime since) {
+        return notificationRepository.findByCreatedAtAfter(since);
+    }
+}

@@ -1,0 +1,104 @@
+package com.university.lms.service;
+
+import com.university.lms.entity.*;
+import com.university.lms.repository.*;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+public class StudentService {
+    private final EnrollmentRepository enrollmentRepository;
+    private final EvaluationService evaluationService;
+    private final CourseRepository courseRepository;
+    private final ExamRegistrationRepository examRegistrationRepository;
+    private final EvaluationGradesRepository evaluationGradesRepository;
+
+    public StudentService(EnrollmentRepository enrollmentRepository, EvaluationService evaluationService,
+                          CourseRepository courseRepository, ExamRegistrationRepository examRegistrationRepository,
+                          EvaluationGradesRepository evaluationGradesRepository) {
+        this.enrollmentRepository = enrollmentRepository;
+        this.evaluationService = evaluationService;
+        this.courseRepository = courseRepository;
+        this.examRegistrationRepository = examRegistrationRepository;
+        this.evaluationGradesRepository = evaluationGradesRepository;
+    }
+
+    public List<StudyHistoryDTO> getStudentHistory(Long userId) {
+        List<Enrollment> enrollments = enrollmentRepository.findByUserId(userId);
+        return enrollments.stream()
+                .map(enrollment -> {
+                    Long courseId = enrollment.getCourseId();
+                    Course course = courseRepository.findById(courseId)
+                            .orElseThrow(() -> new RuntimeException("Course not found: " + courseId));
+                    List<Evaluation> evaluations = evaluationService.findByCourseId(courseId);
+                    int examsTaken = evaluations.size();
+                    Double highestGrade = null;
+                    boolean passed = false;
+                    List<EvaluationGradeDTO> grades = evaluationGradesRepository.findByUserIdAndCourseId(userId, courseId);
+                    for (EvaluationGradeDTO grade : grades) {
+                        if (grade.getGrade() != null) {
+                            if (highestGrade == null || grade.getGrade() > highestGrade) {
+                                highestGrade = grade.getGrade();
+                            }
+                            if (grade.getGrade() >= 6.0) {
+                                passed = true;
+                            }
+                        }
+                    }
+                    int ectsPoints = passed ? course.getEctsPoints() : 0;
+                    return new StudyHistoryDTO(
+                            courseId,
+                            course.getName(),
+                            examsTaken,
+                            highestGrade,
+                            ectsPoints,
+                            passed
+                    );
+                })
+                .collect(Collectors.toList());
+    }
+
+    public List<Evaluation> getAvailableExams(Long userId) {
+        List<Long> courseIds = enrollmentRepository.findByUserId(userId)
+                .stream()
+                .map(Enrollment::getCourseId)
+                .collect(Collectors.toList());
+        List<Long> registeredExamIds = examRegistrationRepository.findByUserId(userId)
+                .stream()
+                .map(ExamRegistration::getEvaluationId)
+                .collect(Collectors.toList());
+        return evaluationService.findByCourseIds(courseIds)
+                .stream()
+                .filter(eval -> !registeredExamIds.contains(eval.getId()))
+                .filter(eval -> eval.getDueDate().isAfter(LocalDateTime.now()))
+                .collect(Collectors.toList());
+    }
+
+    public ExamRegistration registerForExam(Long userId, Long evaluationId) {
+        if (!evaluationService.existsById(evaluationId)) {
+            throw new RuntimeException("Evaluation not found");
+        }
+        if (examRegistrationRepository.existsByUserIdAndEvaluationId(userId, evaluationId)) {
+            throw new RuntimeException("Already registered for this exam");
+        }
+        List<Long> courseIds = enrollmentRepository.findByUserId(userId)
+                .stream()
+                .map(Enrollment::getCourseId)
+                .collect(Collectors.toList());
+        Evaluation evaluation = evaluationService.findById(evaluationId);
+        if (!courseIds.contains(evaluation.getCourseId())) {
+            throw new RuntimeException("Not enrolled in this course");
+        }
+        if (evaluation.getDueDate().isBefore(LocalDateTime.now())) {
+            throw new RuntimeException("Exam registration closed");
+        }
+        ExamRegistration registration = new ExamRegistration();
+        registration.setUserId(userId);
+        registration.setEvaluationId(evaluationId);
+        registration.setRegistrationDate(LocalDateTime.now());
+        return examRegistrationRepository.save(registration);
+    }
+}

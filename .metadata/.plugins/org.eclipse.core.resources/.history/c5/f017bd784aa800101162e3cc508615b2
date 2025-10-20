@@ -1,0 +1,54 @@
+package com.university.lms.security;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.web.filter.OncePerRequestFilter;
+
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+public class JwtAuthenticationFilter extends OncePerRequestFilter {
+
+    private static final Logger logger = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
+
+    private final UserDetailsService userDetailsService;
+
+    public JwtAuthenticationFilter(UserDetailsService userDetailsService) {
+        this.userDetailsService = userDetailsService;
+    }
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+            throws ServletException, IOException {
+        String authHeader = request.getHeader("Authorization");
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
+            String token = authHeader.substring(7);
+            logger.info("Processing token: {}", token);
+            if (token.startsWith("mock-jwt-token-")) {
+                String username = token.substring("mock-jwt-token-".length());
+                logger.info("Extracted username from token: {}", username);
+                try {
+                    UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+                    UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
+                            userDetails, null, userDetails.getAuthorities());
+                    SecurityContextHolder.getContext().setAuthentication(auth);
+                    logger.info("Authentication set for user: {}", username);
+                } catch (Exception e) {
+                    logger.error("Failed to authenticate user: {}", username, e);
+                }
+            } else {
+                logger.warn("Invalid token format: {}", token);
+            }
+        } else {
+            logger.debug("No Authorization header found for request: {}", request.getRequestURI());
+        }
+        filterChain.doFilter(request, response);
+    }
+}

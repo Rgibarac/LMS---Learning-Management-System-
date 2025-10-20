@@ -1,0 +1,106 @@
+package com.university.lms.controller;
+
+import com.university.lms.entity.*;
+import com.university.lms.repository.*;
+import com.university.lms.service.NotificationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/staff")
+public class StaffController {
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private CourseRepository courseRepository;
+    @Autowired
+    private StudyProgramRepository studyProgramRepository;
+    @Autowired
+    private SyllabusRepository syllabusRepository;
+    @Autowired
+    private NotificationService notificationService; // Updated to use service
+    @Autowired
+    private ScheduleRepository scheduleRepository;
+    @Autowired
+    private CustomContentRepository customContentRepository;
+
+    // Enroll Student in Course
+    @PostMapping("/enroll/course")
+    public ResponseEntity<Void> enrollStudentInCourse(@RequestBody EnrollmentRequest request) {
+        if (!userRepository.existsById(request.getStudentId()) || !courseRepository.existsById(request.getCourseId())) {
+            return ResponseEntity.notFound().build();
+        }
+        // Implement enrollment logic (e.g., save to a join table)
+        // Placeholder
+        return ResponseEntity.ok().build();
+    }
+
+    // Enroll Student in Study Program
+    @PostMapping("/enroll/study-program")
+    public ResponseEntity<Void> enrollStudentInStudyProgram(@RequestBody EnrollmentRequest request) {
+        if (!userRepository.existsById(request.getStudentId()) || !studyProgramRepository.existsById(request.getStudyProgramId())) {
+            return ResponseEntity.notFound().build();
+        }
+        // Implement enrollment logic (e.g., update user.studyProgramId)
+        // Placeholder
+        return ResponseEntity.ok().build();
+    }
+
+    // Create Notification
+    @PostMapping("/notifications")
+    public ResponseEntity<Notification> createNotification(@RequestBody Notification notification) {
+        Notification savedNotification = notificationService.createNotification(notification);
+        return ResponseEntity.status(201).body(savedNotification);
+    }
+
+    // Create Schedule
+    @PostMapping("/schedules")
+    public ResponseEntity<Schedule> createSchedule(@RequestBody Schedule schedule) {
+        if (!syllabusRepository.existsById(schedule.getSyllabusId())) {
+            return ResponseEntity.notFound().build();
+        }
+        Syllabus syllabus = syllabusRepository.findById(schedule.getSyllabusId()).orElseThrow();
+        Course course = courseRepository.findById(syllabus.getCourseId()).orElseThrow();
+        schedule.setCourseName(course.getName());
+        schedule.setAcademicYear(syllabus.getAcademicYear());
+        schedule.setId(null);
+        Schedule savedSchedule = scheduleRepository.save(schedule);
+        return ResponseEntity.status(201).body(savedSchedule);
+    }
+
+    // Get Schedules
+    @GetMapping("/schedules")
+    public ResponseEntity<List<Schedule>> getSchedules() {
+        return ResponseEntity.ok(scheduleRepository.findAll());
+    }
+
+    // Create Custom Content
+    @PostMapping("/custom-content")
+    public ResponseEntity<CustomContent> createCustomContent(@RequestBody CustomContent content) {
+        content.setId(null);
+        CustomContent savedContent = customContentRepository.save(content);
+        return ResponseEntity.status(201).body(savedContent);
+    }
+
+    // Get Custom Content
+    @GetMapping("/custom-content")
+    public ResponseEntity<List<CustomContent>> getCustomContent() {
+        return ResponseEntity.ok(customContentRepository.findAll());
+    }
+}
+
+class EnrollmentRequest {
+    private Long studentId;
+    private Long courseId;
+    private Long studyProgramId;
+
+    public Long getStudentId() { return studentId; }
+    public void setStudentId(Long studentId) { this.studentId = studentId; }
+    public Long getCourseId() { return courseId; }
+    public void setCourseId(Long courseId) { this.courseId = courseId; }
+    public Long getStudyProgramId() { return studyProgramId; }
+    public void setStudyProgramId(Long studyProgramId) { this.studyProgramId = studyProgramId; }
+}
