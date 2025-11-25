@@ -47,23 +47,20 @@ export class ProfileComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
-    this.user = this.apiService.getCurrentUser();
-    if (this.user) {
-      this.apiService.getProfile().subscribe({
-        next: (user) => {
-          this.user = user;
-          this.apiService['user'] = user;
-          localStorage.setItem('user', JSON.stringify(user));
-          console.log('Profile fetched:', user);
-        },
-        error: (error) => {
-          console.error('Error fetching profile:', error);
-          this.snackBar.open('Failed to load profile', 'Close', { duration: 3000 });
-        }
-      });
-    }
+  // profile.component.ts
+ngOnInit(): void {
+  const current = this.apiService.getCurrentUser();
+  if (current) {
+    // Work on a clean copy – never send id/role
+    this.user = {
+      username: current.username,
+      email: current.email || '',
+      firstName: current.firstName || '',
+      lastName: current.lastName || '',
+      indexNumber: current.indexNumber || ''
+    } as User;
   }
+}
 
   updateProfile(): void {
     if (this.user) {

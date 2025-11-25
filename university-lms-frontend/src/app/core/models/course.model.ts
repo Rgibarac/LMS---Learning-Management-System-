@@ -5,4 +5,7 @@ export interface Course {
   code: string;
   ectsPoints: number;
   studyProgramId: number;
+
+  studyYear?: number | null; 
+  teacherId?: number | null;  
 }

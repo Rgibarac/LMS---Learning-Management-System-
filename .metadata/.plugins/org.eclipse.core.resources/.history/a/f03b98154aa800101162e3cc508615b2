@@ -1,5 +1,0 @@
-package com.university.lms.security;
-
-public class UserDetailsServiceImpl {
-
-}

@@ -5,9 +5,11 @@ import com.university.lms.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import com.itextpdf.text.Document;
@@ -48,44 +50,52 @@ public class UserController {
             return ResponseEntity.status(500).body("Unexpected error: " + e.getMessage());
         }
     }
+    
+    
 
-    @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody Map<String, String> loginRequest) {
-        logger.info("Received login request for user: {}", loginRequest.get("username"));
-        try {
-            User user = userService.findByUsername(loginRequest.get("username"))
-                .orElseThrow(() -> new IllegalArgumentException("User not found"));
-            if (!passwordEncoder.matches(loginRequest.get("password"), user.getPassword())) {
-                logger.error("Invalid password for user: {}", user.getUsername());
-                return ResponseEntity.status(401).body("Invalid credentials");
-            }
-            Map<String, Object> response = new HashMap<>();
-            response.put("user", user);
-            logger.info("Login successful for user: {}", user.getUsername());
-            return ResponseEntity.ok(response);
-        } catch (Exception e) {
-            logger.error("Login failed: {}", e.getMessage());
-            return ResponseEntity.status(401).body("Login failed: " + e.getMessage());
-        }
-    }
+    
 
     @PutMapping("/users/update")
-    public ResponseEntity<?> updateUser(@RequestBody User user, Authentication authentication) {
-        logger.info("Updating user: {}", user.getUsername());
+    public ResponseEntity<?> updateUser(@RequestBody User userUpdates, Authentication authentication) {
+        if (authentication == null) {
+            return ResponseEntity.status(401).body("Unauthorized");
+        }
+
+        String currentUsername = authentication.getName();
+        User currentUser = userService.findByUsername(currentUsername)
+                .orElseThrow(() -> new UsernameNotFoundException("Current user not found"));
+
+        boolean isAdmin = "ADMIN".equals(currentUser.getRole()) || "STAFF".equals(currentUser.getRole());
+
+
+        if (!isAdmin && !currentUsername.equals(userUpdates.getUsername())) {
+            return ResponseEntity.status(403).body("You can only update your own profile");
+        }
+
+
+        String targetUsername = isAdmin ? userUpdates.getUsername() : currentUsername;
+
         try {
-            if (!authentication.getName().equals(user.getUsername())) {
-                logger.error("Unauthorized update attempt for user: {} by {}", user.getUsername(), authentication.getName());
-                return ResponseEntity.status(403).body("You can only update your own profile");
+            User targetUser = userService.findByUsername(targetUsername)
+                    .orElseThrow(() -> new UsernameNotFoundException("Target user not found"));
+
+
+            targetUser.setEmail(userUpdates.getEmail());
+            targetUser.setFirstName(userUpdates.getFirstName());
+            targetUser.setLastName(userUpdates.getLastName());
+            targetUser.setIndexNumber(userUpdates.getIndexNumber());
+
+
+            if (isAdmin && userUpdates.getRole() != null) {
+                targetUser.setRole(userUpdates.getRole());
             }
-            User updatedUser = userService.updateUser(null, user);
-            logger.info("User updated successfully: {}", user.getUsername());
-            return ResponseEntity.ok(updatedUser);
-        } catch (IllegalArgumentException e) {
-            logger.error("Update failed for user: {}, error: {}", user.getUsername(), e.getMessage());
-            return ResponseEntity.badRequest().body("Update failed: " + e.getMessage());
+
+            User saved = userService.updateUser(targetUser);
+            return ResponseEntity.ok(saved);
+
         } catch (Exception e) {
-            logger.error("Unexpected error during update: {}", e.getMessage());
-            return ResponseEntity.status(500).body("Unexpected error: " + e.getMessage());
+            logger.error("Update failed", e);
+            return ResponseEntity.status(500).body("Update failed: " + e.getMessage());
         }
     }
 

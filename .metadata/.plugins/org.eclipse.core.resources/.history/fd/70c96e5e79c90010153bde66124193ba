@@ -1,0 +1,54 @@
+package com.university.lms.entity;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity
+@Table(name = "applied_years", uniqueConstraints = {
+    @UniqueConstraint(columnNames = {"user_id", "year"})
+})
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
+public class AppliedYear {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private Integer year; 
+
+    @Column(name = "required_ects", nullable = false)
+    private Integer requiredEcts = 60;
+
+    @Column(name = "study_program_id", nullable = false)
+    private Long studyProgramId;
+
+    @Column(name = "user_id", nullable = false)  
+    private Long userId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "study_program_id", insertable = false, updatable = false)
+    @JsonIgnore
+    private StudyProgram studyProgram;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", insertable = false, updatable = false)
+    @JsonIgnore
+    private User user;
+
+    @PrePersist
+    @PreUpdate
+    private void validate() {
+        if (year == null || year < 1 || year > 4) {
+            throw new IllegalArgumentException("Year must be between 1 and 4");
+        }
+        if (requiredEcts == null || requiredEcts < 0) {
+            throw new IllegalArgumentException("Required ECTS must be positive");
+        }
+        if (userId == null || studyProgramId == null) {
+            throw new IllegalArgumentException("Student and Study Program are required");
+        }
+    }
+}

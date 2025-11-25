@@ -1,0 +1,163 @@
+package com.university.lms.controller;
+
+import com.university.lms.entity.*;
+import com.university.lms.service.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import com.university.lms.dto.UserDTO;
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/api/admin")
+public class AdminController {
+    private final UserService userService;
+    private final StudyProgramService studyProgramService;
+    private final CourseService courseService;
+    private final SyllabusService syllabusService;
+
+    public AdminController(UserService userService, StudyProgramService studyProgramService,
+                           CourseService courseService, SyllabusService syllabusService) {
+        this.userService = userService;
+        this.studyProgramService = studyProgramService;
+        this.courseService = courseService;
+        this.syllabusService = syllabusService;
+    }
+    
+    @GetMapping("/usersdto")
+    public ResponseEntity<List<UserDTO>> getAllUsersDTO(@RequestParam(required = false) String role) {
+        if (role != null && !role.isEmpty()) {
+            return ResponseEntity.ok(userService.getUsersByRole(role));
+        }
+        return ResponseEntity.ok(userService.getAllUsersDTO());
+    }
+
+    @GetMapping("/users")
+    public ResponseEntity<List<User>> getAllUsers() {
+        return ResponseEntity.ok(userService.getAllUsers());
+    }
+
+    @PostMapping("/users")
+    public ResponseEntity<User> createUser(@RequestBody User user) {
+        User savedUser = userService.createUser(user);
+        return ResponseEntity.status(201).body(savedUser);
+    }
+
+    @PutMapping("/users/{id}")
+    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user) {
+        if (!userService.existsById(id)) {
+            return ResponseEntity.notFound().build();
+        }
+        User updatedUser = userService.updateUser(user);
+        return ResponseEntity.ok(updatedUser);
+    }
+
+    @DeleteMapping("/users/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+        if (!userService.existsById(id)) {
+            return ResponseEntity.notFound().build();
+        }
+        userService.deleteUser(id);
+        return ResponseEntity.noContent().build();
+    }
+    
+    
+
+    @GetMapping("/study-programs")
+    public ResponseEntity<List<StudyProgram>> getAllStudyPrograms() {
+        return ResponseEntity.ok(studyProgramService.findAll());
+    }
+
+    @PostMapping("/study-programs")
+    public ResponseEntity<StudyProgram> createStudyProgram(@RequestBody StudyProgram studyProgram) {
+        StudyProgram savedProgram = studyProgramService.createStudyProgram(studyProgram);
+        return ResponseEntity.status(201).body(savedProgram);
+    }
+
+    @PutMapping("/study-programs/{id}")
+    public ResponseEntity<StudyProgram> updateStudyProgram(@PathVariable Long id, @RequestBody StudyProgram studyProgram) {
+        if (!studyProgramService.existsById(id)) {
+            return ResponseEntity.notFound().build();
+        }
+        StudyProgram updatedProgram = studyProgramService.updateStudyProgram(id, studyProgram);
+        return ResponseEntity.ok(updatedProgram);
+    }
+
+    @DeleteMapping("/study-programs/{id}")
+    public ResponseEntity<Void> deleteStudyProgram(@PathVariable Long id) {
+        if (!studyProgramService.existsById(id)) {
+            return ResponseEntity.notFound().build();
+        }
+        studyProgramService.deleteStudyProgram(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/courses")
+    public ResponseEntity<List<Course>> getAllCourses() {
+        return ResponseEntity.ok(courseService.findAll());
+    }
+
+    @GetMapping("/study-programs/{studyProgramId}/courses")
+    public ResponseEntity<List<Course>> getCoursesByStudyProgram(@PathVariable Long studyProgramId) {
+        return ResponseEntity.ok(courseService.getCoursesByStudyProgram(studyProgramId));
+    }
+
+    @PostMapping("/courses")
+    public ResponseEntity<Course> createCourse(@RequestBody Course course) {
+        Course savedCourse = courseService.createCourse(course);
+        return ResponseEntity.status(201).body(savedCourse);
+    }
+
+    @PutMapping("/courses/{id}")
+    public ResponseEntity<Course> updateCourse(@PathVariable Long id, @RequestBody Course course) {
+        if (!courseService.existsById(id)) {
+            return ResponseEntity.notFound().build();
+        }
+        Course updatedCourse = courseService.updateCourse(id, course);
+        return ResponseEntity.ok(updatedCourse);
+    }
+
+    @DeleteMapping("/courses/{id}")
+    public ResponseEntity<Void> deleteCourse(@PathVariable Long id) {
+        if (!courseService.existsById(id)) {
+            return ResponseEntity.notFound().build();
+        }
+        courseService.deleteCourse(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/syllabuses")
+    public ResponseEntity<List<Syllabus>> getAllSyllabuses() {
+        return ResponseEntity.ok(syllabusService.getAllSyllabuses());
+    }
+
+    @GetMapping("/courses/{courseId}/syllabuses")
+    public ResponseEntity<Optional<Syllabus>> getSyllabusesByCourse(@PathVariable Long courseId) {
+        return ResponseEntity.ok(syllabusService.getSyllabusesByCourse(courseId));
+    }
+
+    @PostMapping("/syllabuses")
+    public ResponseEntity<Syllabus> createSyllabus(@RequestBody Syllabus syllabus) {
+        Syllabus savedSyllabus = syllabusService.createSyllabus(syllabus);
+        return ResponseEntity.status(201).body(savedSyllabus);
+    }
+
+    @PutMapping("/syllabuses/{id}")
+    public ResponseEntity<Syllabus> updateSyllabus(@PathVariable Long id, @RequestBody Syllabus syllabus) {
+        if (!syllabusService.existsById(id)) {
+            return ResponseEntity.notFound().build();
+        }
+        Syllabus updatedSyllabus = syllabusService.updateSyllabus(id, syllabus);
+        return ResponseEntity.ok(updatedSyllabus);
+    }
+
+    @DeleteMapping("/syllabuses/{id}")
+    public ResponseEntity<Void> deleteSyllabus(@PathVariable Long id) {
+        if (!syllabusService.existsById(id)) {
+            return ResponseEntity.notFound().build();
+        }
+        syllabusService.deleteSyllabus(id);
+        return ResponseEntity.noContent().build();
+    }
+}

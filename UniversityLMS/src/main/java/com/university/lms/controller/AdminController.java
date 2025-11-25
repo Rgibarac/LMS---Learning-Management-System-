@@ -49,7 +49,7 @@ public class AdminController {
         if (!userService.existsById(id)) {
             return ResponseEntity.notFound().build();
         }
-        User updatedUser = userService.updateUser(id, user);
+        User updatedUser = userService.updateUser( user);
         return ResponseEntity.ok(updatedUser);
     }
 
@@ -101,21 +101,6 @@ public class AdminController {
     @GetMapping("/study-programs/{studyProgramId}/courses")
     public ResponseEntity<List<Course>> getCoursesByStudyProgram(@PathVariable Long studyProgramId) {
         return ResponseEntity.ok(courseService.getCoursesByStudyProgram(studyProgramId));
-    }
-
-    @PostMapping("/courses")
-    public ResponseEntity<Course> createCourse(@RequestBody Course course) {
-        Course savedCourse = courseService.createCourse(course);
-        return ResponseEntity.status(201).body(savedCourse);
-    }
-
-    @PutMapping("/courses/{id}")
-    public ResponseEntity<Course> updateCourse(@PathVariable Long id, @RequestBody Course course) {
-        if (!courseService.existsById(id)) {
-            return ResponseEntity.notFound().build();
-        }
-        Course updatedCourse = courseService.updateCourse(id, course);
-        return ResponseEntity.ok(updatedCourse);
     }
 
     @DeleteMapping("/courses/{id}")

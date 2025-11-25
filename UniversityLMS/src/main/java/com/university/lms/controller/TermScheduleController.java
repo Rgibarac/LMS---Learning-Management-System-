@@ -1,0 +1,52 @@
+package com.university.lms.controller;
+
+import com.university.lms.entity.TermSchedule;
+import com.university.lms.service.TermScheduleService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/term-schedules")
+@RequiredArgsConstructor
+@CrossOrigin(origins = "*")
+public class TermScheduleController {
+
+    private final TermScheduleService service;
+
+    @PostMapping
+    @PreAuthorize("hasRole('ADMIN') or hasRole('STAFF')")
+    public ResponseEntity<TermSchedule> create(@RequestBody TermSchedule schedule) {
+        return ResponseEntity.ok(service.create(schedule));
+    }
+
+    @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('STAFF')")
+    public ResponseEntity<TermSchedule> update(@PathVariable Long id, @RequestBody TermSchedule schedule) {
+        return ResponseEntity.ok(service.update(id, schedule));
+    }
+
+    @GetMapping("/term/{termId}")
+    public ResponseEntity<List<TermSchedule>> getByTerm(@PathVariable Long termId) {
+        return ResponseEntity.ok(service.getByTerm(termId));
+    }
+
+    @GetMapping("/term/{termId}/week")
+    public ResponseEntity<List<TermSchedule>> getWeekly(
+            @PathVariable Long termId,
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startOfWeek) {
+        return ResponseEntity.ok(service.getWeekly(termId, startOfWeek));
+    }
+
+    @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        service.delete(id);
+        return ResponseEntity.ok().build();
+    }
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.university.lms.service.TermShceduleService.java&apos; to &apos;TermScheduleService.java&apos;&#x0D;&#x0A;- Original project: &apos;UniversityLMS&apos;&#x0D;&#x0A;- Original element: &apos;com.university.lms.service.TermShceduleService.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.university.lms.service.TermScheduleService.java&apos;" description="Rename compilation unit &apos;TermShceduleService.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.university.lms.service{TermShceduleService.java" name="TermScheduleService.java" references="false" stamp="1763987036283" version="1.0"/>
+</session>

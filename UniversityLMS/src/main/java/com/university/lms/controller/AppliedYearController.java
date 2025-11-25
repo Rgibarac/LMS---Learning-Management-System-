@@ -1,0 +1,48 @@
+package com.university.lms.controller;
+
+import com.university.lms.entity.AppliedYear;
+import com.university.lms.service.AppliedYearService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/applied-years")
+@RequiredArgsConstructor
+@CrossOrigin(origins = "*")
+public class AppliedYearController {
+
+    private final AppliedYearService service;
+
+    @PostMapping
+    @PreAuthorize("hasRole('ADMIN') or hasRole('TEACHER')or hasRole('STAFF')")
+    public ResponseEntity<AppliedYear> create(@RequestBody AppliedYear appliedYear) {
+        return ResponseEntity.ok(service.save(appliedYear));
+    }
+
+    @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<AppliedYear> update(@PathVariable Long id, @RequestBody AppliedYear appliedYear) {
+        return ResponseEntity.ok(service.update(id, appliedYear));
+    }
+
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<List<AppliedYear>> getByUser(@PathVariable Long userId) {
+        return ResponseEntity.ok(service.getByUser(userId));
+    }
+
+    @GetMapping("/user/{userId}/current")
+    public ResponseEntity<AppliedYear> getCurrentYear(@PathVariable Long userId) {
+        return ResponseEntity.ok(service.getCurrentYear(userId));
+    }
+
+    @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        service.delete(id);
+        return ResponseEntity.ok().build();
+    }
+}

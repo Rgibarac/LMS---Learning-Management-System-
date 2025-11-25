@@ -5332,3 +5332,1034 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: end tag nam
 2025-10-20 17:07:33,638 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@4bed27a4{STOPPING}[12.0.21,sto=0]
 2025-10-20 17:07:33,644 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@9f46145{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
 2025-10-20 17:07:56,737 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-10-22 22:14:57,878 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-10-22 22:15:01,472 [Worker-0: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.university:lms:0.0.1-SNAPSHOT @ C:\Users\Rax10\OneDrive\Desktop\prg\3- Klijentske Web Aplikacije\Projektni Zadatak ISA+KWA\Projektni zadatak\UniversityLMS\pom.xml.
+2025-10-23 14:15:29,847 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-10-23 14:16:40,833 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-12.0.21; built: 2025-05-09T00:32:00.688Z; git: 1c4719601e31b05b7d68910d2edd980259f1f53c; jvm 21.0.7+6-LTS
+2025-10-23 14:16:40,904 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started oeje8n.ContextHandler$CoreContextHandler@261026a3{/help,/help,b=null,a=AVAILABLE,h=oeje8n.ContextHandler$CoreContextHandler$CoreToNestedHandler@548c5bbc{STARTED}}
+2025-10-23 14:16:40,905 [Start Help Server] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2025-10-23 14:16:40,938 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@1d4611b4{HTTP/1.1, (http/1.1)}{127.0.0.1:51595}
+2025-10-23 14:16:40,942 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@729d8e84{STARTING}[12.0.21,sto=0] @98030ms
+2025-10-23 14:57:14,468 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@729d8e84{STOPPING}[12.0.21,sto=0]
+2025-10-23 14:57:14,480 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@1d4611b4{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
+2025-10-25 13:37:42,042 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-10-25 13:41:09,404 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-25 13:41:09,436 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-25 13:41:09,445 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-25 13:44:36,849 [Worker-35: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-25 13:44:36,860 [Worker-35: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-10-25 13:44:36,865 [Worker-35: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-25 13:45:54,889 [Worker-43: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-25 13:45:54,904 [Worker-43: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-10-25 13:45:54,911 [Worker-43: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-25 13:46:32,942 [Worker-41: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-25 13:46:32,965 [Worker-41: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-10-25 13:46:32,969 [Worker-41: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-25 13:47:30,007 [Worker-13: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.university:lms:0.0.1-SNAPSHOT @ C:\Users\Rax10\OneDrive\Desktop\prg\3- Klijentske Web Aplikacije\Projektni Zadatak ISA+KWA\Projektni zadatak\UniversityLMS\pom.xml.
+2025-10-25 13:47:31,275 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-10-25 13:47:31,276 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-10-25 13:47:31,283 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-25 13:47:31,559 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013 [299])
+2025-10-25 13:47:31,564 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013
+2025-10-25 13:47:31,565 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\aopalliance-1.0.jar
+2025-10-25 13:47:31,565 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\guice-5.1.0.jar
+2025-10-25 13:47:31,566 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\httpclient-4.5.14.jar
+2025-10-25 13:47:31,567 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\httpcore-4.4.16.jar
+2025-10-25 13:47:31,567 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\jansi-2.4.1.jar
+2025-10-25 13:47:31,568 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\jcl-over-slf4j-1.7.36.jar
+2025-10-25 13:47:31,568 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-artifact-3.9.9.jar
+2025-10-25 13:47:31,569 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-builder-support-3.9.9.jar
+2025-10-25 13:47:31,569 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-compat-3.9.9.jar
+2025-10-25 13:47:31,570 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-core-3.9.9.jar
+2025-10-25 13:47:31,570 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-embedder-3.9.9.jar
+2025-10-25 13:47:31,571 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-model-3.9.9.jar
+2025-10-25 13:47:31,571 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-model-builder-3.9.9.jar
+2025-10-25 13:47:31,572 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-plugin-api-3.9.9.jar
+2025-10-25 13:47:31,573 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-repository-metadata-3.9.9.jar
+2025-10-25 13:47:31,573 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-api-1.9.22.jar
+2025-10-25 13:47:31,574 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-connector-basic-1.9.22.jar
+2025-10-25 13:47:31,575 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-impl-1.9.22.jar
+2025-10-25 13:47:31,576 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-named-locks-1.9.22.jar
+2025-10-25 13:47:31,576 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-provider-3.9.9.jar
+2025-10-25 13:47:31,577 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-spi-1.9.22.jar
+2025-10-25 13:47:31,578 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-transport-file-1.9.22.jar
+2025-10-25 13:47:31,578 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-transport-http-1.9.22.jar
+2025-10-25 13:47:31,579 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-transport-wagon-1.9.22.jar
+2025-10-25 13:47:31,579 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-util-1.9.22.jar
+2025-10-25 13:47:31,580 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-settings-3.9.9.jar
+2025-10-25 13:47:31,581 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-settings-builder-3.9.9.jar
+2025-10-25 13:47:31,582 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-shared-utils-3.4.2.jar
+2025-10-25 13:47:31,584 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\org.eclipse.sisu.inject-0.9.0.M3.jar
+2025-10-25 13:47:31,584 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\org.eclipse.sisu.plexus-0.9.0.M3.jar
+2025-10-25 13:47:31,584 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-build-api-0.0.7.jar
+2025-10-25 13:47:31,585 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-build-api-1.2.0.jar
+2025-10-25 13:47:31,586 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-cipher-2.0.jar
+2025-10-25 13:47:31,586 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-classworlds-2.8.0.jar
+2025-10-25 13:47:31,587 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-component-annotations-2.1.0.jar
+2025-10-25 13:47:31,589 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-interpolation-1.27.jar
+2025-10-25 13:47:31,590 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-sec-dispatcher-2.0.jar
+2025-10-25 13:47:31,591 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-utils-3.5.1.jar
+2025-10-25 13:47:31,592 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-xml-3.0.1.jar
+2025-10-25 13:47:31,593 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-file-3.5.3.jar
+2025-10-25 13:47:31,593 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-http-3.5.3.jar
+2025-10-25 13:47:31,594 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-http-shared-3.5.3.jar
+2025-10-25 13:47:31,595 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-provider-api-3.5.3.jar
+2025-10-25 13:47:31,601 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava_33.4.8.jre [13])
+2025-10-25 13:47:31,603 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\com.google.guava_33.4.8.jre.jar
+2025-10-25 13:47:31,604 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=slf4j.api_2.0.17 [522])
+2025-10-25 13:47:31,605 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\slf4j.api_2.0.17.jar
+2025-10-25 13:47:31,605 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=jakarta.inject.jakarta.inject-api_1.0.5 [24])
+2025-10-25 13:47:31,606 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\jakarta.inject.jakarta.inject-api_1.0.5.jar
+2025-10-25 13:47:31,606 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=javax.annotation_1.3.5.v20200909-1856 [27])
+2025-10-25 13:47:31,607 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\javax.annotation_1.3.5.v20200909-1856.jar
+2025-10-25 13:47:31,607 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.cli_1.9.0 [49])
+2025-10-25 13:47:31,608 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.apache.commons.cli_1.9.0.jar
+2025-10-25 13:47:31,608 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.commons-codec_1.16.0 [50])
+2025-10-25 13:47:31,609 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.apache.commons.commons-codec_1.16.0.jar
+2025-10-25 13:47:31,609 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava.failureaccess_1.0.3 [14])
+2025-10-25 13:47:31,610 [Worker-19: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\com.google.guava.failureaccess_1.0.3.jar
+2025-10-25 13:47:31,622 [Worker-19: Launching UniversityLMS (13)] INFO  o.e.m.i.launch.MavenLaunchDelegate - Run build in "C:\Users\Rax10\OneDrive\Desktop\prg\3- Klijentske Web Aplikacije\Projektni Zadatak ISA+KWA\Projektni zadatak\UniversityLMS":
+2025-10-25 13:47:31,623 [Worker-19: Launching UniversityLMS (13)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -Dstyle.color=always clean install -X
+2025-10-25 13:47:34,251 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-25 13:47:34,287 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-25 13:47:34,305 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-25 13:47:45,162 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013 [299])
+2025-10-25 13:47:45,163 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013
+2025-10-25 13:47:45,164 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\aopalliance-1.0.jar
+2025-10-25 13:47:45,164 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\guice-5.1.0.jar
+2025-10-25 13:47:45,165 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\httpclient-4.5.14.jar
+2025-10-25 13:47:45,165 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\httpcore-4.4.16.jar
+2025-10-25 13:47:45,165 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\jansi-2.4.1.jar
+2025-10-25 13:47:45,166 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\jcl-over-slf4j-1.7.36.jar
+2025-10-25 13:47:45,166 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-artifact-3.9.9.jar
+2025-10-25 13:47:45,167 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-builder-support-3.9.9.jar
+2025-10-25 13:47:45,167 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-compat-3.9.9.jar
+2025-10-25 13:47:45,168 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-core-3.9.9.jar
+2025-10-25 13:47:45,168 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-embedder-3.9.9.jar
+2025-10-25 13:47:45,168 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-model-3.9.9.jar
+2025-10-25 13:47:45,169 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-model-builder-3.9.9.jar
+2025-10-25 13:47:45,169 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-plugin-api-3.9.9.jar
+2025-10-25 13:47:45,170 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-repository-metadata-3.9.9.jar
+2025-10-25 13:47:45,170 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-api-1.9.22.jar
+2025-10-25 13:47:45,170 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-connector-basic-1.9.22.jar
+2025-10-25 13:47:45,171 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-impl-1.9.22.jar
+2025-10-25 13:47:45,171 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-named-locks-1.9.22.jar
+2025-10-25 13:47:45,171 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-provider-3.9.9.jar
+2025-10-25 13:47:45,171 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-spi-1.9.22.jar
+2025-10-25 13:47:45,172 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-transport-file-1.9.22.jar
+2025-10-25 13:47:45,172 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-transport-http-1.9.22.jar
+2025-10-25 13:47:45,172 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-transport-wagon-1.9.22.jar
+2025-10-25 13:47:45,172 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-util-1.9.22.jar
+2025-10-25 13:47:45,172 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-settings-3.9.9.jar
+2025-10-25 13:47:45,172 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-settings-builder-3.9.9.jar
+2025-10-25 13:47:45,173 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-shared-utils-3.4.2.jar
+2025-10-25 13:47:45,173 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\org.eclipse.sisu.inject-0.9.0.M3.jar
+2025-10-25 13:47:45,173 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\org.eclipse.sisu.plexus-0.9.0.M3.jar
+2025-10-25 13:47:45,173 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-build-api-0.0.7.jar
+2025-10-25 13:47:45,173 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-build-api-1.2.0.jar
+2025-10-25 13:47:45,173 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-cipher-2.0.jar
+2025-10-25 13:47:45,174 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-classworlds-2.8.0.jar
+2025-10-25 13:47:45,174 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-component-annotations-2.1.0.jar
+2025-10-25 13:47:45,174 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-interpolation-1.27.jar
+2025-10-25 13:47:45,174 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-sec-dispatcher-2.0.jar
+2025-10-25 13:47:45,174 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-utils-3.5.1.jar
+2025-10-25 13:47:45,174 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-xml-3.0.1.jar
+2025-10-25 13:47:45,175 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-file-3.5.3.jar
+2025-10-25 13:47:45,175 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-http-3.5.3.jar
+2025-10-25 13:47:45,175 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-http-shared-3.5.3.jar
+2025-10-25 13:47:45,175 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-provider-api-3.5.3.jar
+2025-10-25 13:47:45,176 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava_33.4.8.jre [13])
+2025-10-25 13:47:45,176 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\com.google.guava_33.4.8.jre.jar
+2025-10-25 13:47:45,177 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=slf4j.api_2.0.17 [522])
+2025-10-25 13:47:45,177 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\slf4j.api_2.0.17.jar
+2025-10-25 13:47:45,177 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=jakarta.inject.jakarta.inject-api_1.0.5 [24])
+2025-10-25 13:47:45,178 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\jakarta.inject.jakarta.inject-api_1.0.5.jar
+2025-10-25 13:47:45,178 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=javax.annotation_1.3.5.v20200909-1856 [27])
+2025-10-25 13:47:45,178 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\javax.annotation_1.3.5.v20200909-1856.jar
+2025-10-25 13:47:45,178 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.cli_1.9.0 [49])
+2025-10-25 13:47:45,179 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.apache.commons.cli_1.9.0.jar
+2025-10-25 13:47:45,179 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.commons-codec_1.16.0 [50])
+2025-10-25 13:47:45,180 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.apache.commons.commons-codec_1.16.0.jar
+2025-10-25 13:47:45,180 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava.failureaccess_1.0.3 [14])
+2025-10-25 13:47:45,180 [Worker-44: Launching UniversityLMS (13)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\com.google.guava.failureaccess_1.0.3.jar
+2025-10-25 13:47:45,182 [Worker-44: Launching UniversityLMS (13)] INFO  o.e.m.i.launch.MavenLaunchDelegate - Run build in "C:\Users\Rax10\OneDrive\Desktop\prg\3- Klijentske Web Aplikacije\Projektni Zadatak ISA+KWA\Projektni zadatak\UniversityLMS":
+2025-10-25 13:47:45,183 [Worker-44: Launching UniversityLMS (13)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -Dstyle.color=always clean install -X
+2025-10-25 13:48:35,061 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2025-10-25 13:48:42,274 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013 [299])
+2025-10-25 13:48:42,275 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013
+2025-10-25 13:48:42,275 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\aopalliance-1.0.jar
+2025-10-25 13:48:42,275 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\guice-5.1.0.jar
+2025-10-25 13:48:42,275 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\httpclient-4.5.14.jar
+2025-10-25 13:48:42,276 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\httpcore-4.4.16.jar
+2025-10-25 13:48:42,276 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\jansi-2.4.1.jar
+2025-10-25 13:48:42,276 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\jcl-over-slf4j-1.7.36.jar
+2025-10-25 13:48:42,276 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-artifact-3.9.9.jar
+2025-10-25 13:48:42,276 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-builder-support-3.9.9.jar
+2025-10-25 13:48:42,276 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-compat-3.9.9.jar
+2025-10-25 13:48:42,277 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-core-3.9.9.jar
+2025-10-25 13:48:42,277 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-embedder-3.9.9.jar
+2025-10-25 13:48:42,277 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-model-3.9.9.jar
+2025-10-25 13:48:42,277 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-model-builder-3.9.9.jar
+2025-10-25 13:48:42,277 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-plugin-api-3.9.9.jar
+2025-10-25 13:48:42,277 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-repository-metadata-3.9.9.jar
+2025-10-25 13:48:42,278 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-api-1.9.22.jar
+2025-10-25 13:48:42,278 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-connector-basic-1.9.22.jar
+2025-10-25 13:48:42,278 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-impl-1.9.22.jar
+2025-10-25 13:48:42,278 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-named-locks-1.9.22.jar
+2025-10-25 13:48:42,279 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-provider-3.9.9.jar
+2025-10-25 13:48:42,279 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-spi-1.9.22.jar
+2025-10-25 13:48:42,279 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-transport-file-1.9.22.jar
+2025-10-25 13:48:42,279 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-transport-http-1.9.22.jar
+2025-10-25 13:48:42,279 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-transport-wagon-1.9.22.jar
+2025-10-25 13:48:42,279 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-util-1.9.22.jar
+2025-10-25 13:48:42,280 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-settings-3.9.9.jar
+2025-10-25 13:48:42,280 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-settings-builder-3.9.9.jar
+2025-10-25 13:48:42,280 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-shared-utils-3.4.2.jar
+2025-10-25 13:48:42,280 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\org.eclipse.sisu.inject-0.9.0.M3.jar
+2025-10-25 13:48:42,280 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\org.eclipse.sisu.plexus-0.9.0.M3.jar
+2025-10-25 13:48:42,281 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-build-api-0.0.7.jar
+2025-10-25 13:48:42,281 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-build-api-1.2.0.jar
+2025-10-25 13:48:42,282 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-cipher-2.0.jar
+2025-10-25 13:48:42,282 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-classworlds-2.8.0.jar
+2025-10-25 13:48:42,282 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-component-annotations-2.1.0.jar
+2025-10-25 13:48:42,282 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-interpolation-1.27.jar
+2025-10-25 13:48:42,282 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-sec-dispatcher-2.0.jar
+2025-10-25 13:48:42,282 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-utils-3.5.1.jar
+2025-10-25 13:48:42,282 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-xml-3.0.1.jar
+2025-10-25 13:48:42,283 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-file-3.5.3.jar
+2025-10-25 13:48:42,283 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-http-3.5.3.jar
+2025-10-25 13:48:42,283 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-http-shared-3.5.3.jar
+2025-10-25 13:48:42,283 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-provider-api-3.5.3.jar
+2025-10-25 13:48:42,283 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava_33.4.8.jre [13])
+2025-10-25 13:48:42,284 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\com.google.guava_33.4.8.jre.jar
+2025-10-25 13:48:42,284 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=slf4j.api_2.0.17 [522])
+2025-10-25 13:48:42,284 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\slf4j.api_2.0.17.jar
+2025-10-25 13:48:42,284 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=jakarta.inject.jakarta.inject-api_1.0.5 [24])
+2025-10-25 13:48:42,284 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\jakarta.inject.jakarta.inject-api_1.0.5.jar
+2025-10-25 13:48:42,284 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=javax.annotation_1.3.5.v20200909-1856 [27])
+2025-10-25 13:48:42,285 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\javax.annotation_1.3.5.v20200909-1856.jar
+2025-10-25 13:48:42,285 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.cli_1.9.0 [49])
+2025-10-25 13:48:42,285 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.apache.commons.cli_1.9.0.jar
+2025-10-25 13:48:42,285 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.commons-codec_1.16.0 [50])
+2025-10-25 13:48:42,286 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.apache.commons.commons-codec_1.16.0.jar
+2025-10-25 13:48:42,286 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava.failureaccess_1.0.3 [14])
+2025-10-25 13:48:42,286 [Worker-45: Launching UniversityLMS (14)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\com.google.guava.failureaccess_1.0.3.jar
+2025-10-25 13:48:42,287 [Worker-45: Launching UniversityLMS (14)] INFO  o.e.m.i.launch.MavenLaunchDelegate - Run build in "C:\Users\Rax10\OneDrive\Desktop\prg\3- Klijentske Web Aplikacije\Projektni Zadatak ISA+KWA\Projektni zadatak\UniversityLMS":
+2025-10-25 13:48:42,288 [Worker-45: Launching UniversityLMS (14)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -Dstyle.color=always clean install
+2025-10-27 10:38:07,454 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-10-27 10:46:22,662 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 10:46:22,722 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 10:46:22,731 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 10:46:28,560 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 10:46:28,569 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 10:46:28,577 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 10:46:49,026 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 10:46:49,039 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 10:46:49,044 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 10:46:58,459 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 10:46:58,477 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 10:46:58,488 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 10:47:18,620 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-12.0.21; built: 2025-05-09T00:32:00.688Z; git: 1c4719601e31b05b7d68910d2edd980259f1f53c; jvm 21.0.7+6-LTS
+2025-10-27 10:47:18,757 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started oeje8n.ContextHandler$CoreContextHandler@4aa02a20{/help,/help,b=null,a=AVAILABLE,h=oeje8n.ContextHandler$CoreContextHandler$CoreToNestedHandler@2eaa5ddb{STARTED}}
+2025-10-27 10:47:18,758 [Start Help Server] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2025-10-27 10:47:18,803 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@1cef6ac8{HTTP/1.1, (http/1.1)}{127.0.0.1:53008}
+2025-10-27 10:47:18,812 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@4218b4d2{STARTING}[12.0.21,sto=0] @574337ms
+2025-10-27 10:47:41,725 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 10:47:41,735 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 10:47:41,741 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 10:47:52,374 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 10:47:52,381 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 10:47:52,387 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 10:48:47,643 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 10:48:47,651 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 10:48:47,656 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 10:48:48,781 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 10:48:48,788 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 10:48:48,794 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 10:48:52,365 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 10:48:52,370 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 10:48:52,374 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 10:55:38,633 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 10:55:38,640 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 10:55:38,645 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 10:55:50,060 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 10:55:50,068 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 10:55:50,073 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 10:58:55,392 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 10:58:55,398 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 10:58:55,403 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 10:59:23,235 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 10:59:23,241 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 10:59:23,247 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 11:28:01,215 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 11:28:01,228 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 11:28:01,255 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 11:28:40,330 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 11:28:40,336 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 11:28:40,341 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 11:29:03,295 [Worker-49: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.university:lms:0.0.1-SNAPSHOT @ C:\Users\Rax10\OneDrive\Desktop\prg\3- Klijentske Web Aplikacije\Projektni Zadatak ISA+KWA\Projektni zadatak\UniversityLMS\pom.xml.
+2025-10-27 11:29:05,024 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-10-27 11:29:05,025 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-10-27 11:29:05,035 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 11:29:07,022 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 11:29:07,052 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 11:29:07,063 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 11:34:25,485 [Worker-2: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.university:lms:0.0.1-SNAPSHOT @ C:\Users\Rax10\OneDrive\Desktop\prg\3- Klijentske Web Aplikacije\Projektni Zadatak ISA+KWA\Projektni zadatak\UniversityLMS\pom.xml.
+2025-10-27 11:34:26,795 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-10-27 11:34:26,796 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-10-27 11:34:26,805 [Worker-2: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 11:34:28,627 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 11:34:28,651 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 11:34:28,662 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 11:39:18,229 [Worker-56: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 11:39:18,239 [Worker-56: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 11:39:18,247 [Worker-56: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 11:39:27,272 [Worker-57: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 11:39:27,279 [Worker-57: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 11:39:27,284 [Worker-57: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 11:40:12,413 [Worker-56: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 11:40:12,426 [Worker-56: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-10-27 11:40:12,431 [Worker-56: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 11:40:54,114 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 11:40:54,122 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 11:40:54,127 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 11:53:04,329 [Worker-67: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 11:53:04,351 [Worker-67: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 11:53:04,355 [Worker-67: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 11:53:32,602 [Worker-57: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 11:53:32,615 [Worker-57: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 11:53:32,620 [Worker-57: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 13:05:08,068 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 13:05:08,081 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 13:05:08,085 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 13:05:34,508 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 13:05:34,516 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 13:05:34,522 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 13:06:27,636 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 13:06:27,658 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-10-27 13:06:27,662 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 13:29:38,846 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 13:29:38,883 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 13:29:38,887 [Worker-73: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 13:41:43,297 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 13:41:43,313 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 13:41:43,323 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 13:41:46,482 [Worker-57: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 13:41:46,494 [Worker-57: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 13:41:46,498 [Worker-57: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 13:41:52,604 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 13:41:52,610 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 13:41:52,614 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 13:42:14,115 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 13:42:14,120 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 13:42:14,124 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 13:42:18,191 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 13:42:18,195 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 13:42:18,200 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 13:42:21,972 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 13:42:21,978 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 13:42:21,983 [Worker-68: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 13:42:26,087 [Worker-68: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 13:42:26,093 [Worker-68: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 13:42:26,099 [Worker-68: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 13:42:50,060 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 13:42:50,083 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-10-27 13:42:50,088 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 13:43:33,809 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 13:43:33,815 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 13:43:33,820 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 13:45:05,691 [Worker-74: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 13:45:05,698 [Worker-74: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 13:45:05,702 [Worker-74: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 13:48:25,227 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 13:48:25,238 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 13:48:25,243 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 13:49:22,670 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 13:49:22,678 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 13:49:22,683 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-27 13:50:14,305 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-10-27 13:50:14,322 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-10-27 13:50:14,328 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-10-28 01:10:09,879 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@4218b4d2{STOPPING}[12.0.21,sto=0]
+2025-10-28 01:10:09,891 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@1cef6ac8{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
+2025-11-03 14:09:28,010 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-11-03 14:15:27,584 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-12.0.21; built: 2025-05-09T00:32:00.688Z; git: 1c4719601e31b05b7d68910d2edd980259f1f53c; jvm 21.0.7+6-LTS
+2025-11-03 14:15:27,691 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started oeje8n.ContextHandler$CoreContextHandler@69ca27d2{/help,/help,b=null,a=AVAILABLE,h=oeje8n.ContextHandler$CoreContextHandler$CoreToNestedHandler@5509604e{STARTED}}
+2025-11-03 14:15:27,693 [Start Help Server] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2025-11-03 14:15:27,735 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@288ae1bc{HTTP/1.1, (http/1.1)}{127.0.0.1:49248}
+2025-11-03 14:15:27,742 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@682b2cc1{STARTING}[12.0.21,sto=0] @413791ms
+2025-11-03 14:43:21,077 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-03 14:43:21,098 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-03 14:43:21,110 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-03 16:51:06,659 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-03 16:51:06,701 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-03 16:51:06,712 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 03:02:33,795 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 03:02:33,883 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 03:02:33,894 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 03:02:37,090 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@682b2cc1{STOPPING}[12.0.21,sto=0]
+2025-11-04 03:02:37,099 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@288ae1bc{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
+2025-11-04 13:58:10,987 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-11-04 14:05:47,572 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 14:05:47,607 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 14:05:47,623 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 14:06:24,556 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 14:06:24,563 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 14:06:24,570 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 14:06:36,405 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-12.0.21; built: 2025-05-09T00:32:00.688Z; git: 1c4719601e31b05b7d68910d2edd980259f1f53c; jvm 21.0.7+6-LTS
+2025-11-04 14:06:36,511 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started oeje8n.ContextHandler$CoreContextHandler@67f51c89{/help,/help,b=null,a=AVAILABLE,h=oeje8n.ContextHandler$CoreContextHandler$CoreToNestedHandler@747bc211{STARTED}}
+2025-11-04 14:06:36,511 [Start Help Server] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2025-11-04 14:06:36,550 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@1d17f715{HTTP/1.1, (http/1.1)}{127.0.0.1:64042}
+2025-11-04 14:06:36,554 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@5ca930c7{STARTING}[12.0.21,sto=0] @581290ms
+2025-11-04 14:06:43,154 [Worker-30: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 14:06:43,165 [Worker-30: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 14:06:43,173 [Worker-30: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 14:24:41,131 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 14:24:41,146 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 14:24:41,152 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 14:24:49,584 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 14:24:49,603 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 14:24:49,613 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 14:47:10,777 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 14:47:10,802 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 14:47:10,813 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 14:48:08,115 [Worker-9: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.university:lms:0.0.1-SNAPSHOT @ C:\Users\Rax10\OneDrive\Desktop\prg\3- Klijentske Web Aplikacije\Projektni Zadatak ISA+KWA\Projektni zadatak\UniversityLMS\pom.xml.
+2025-11-04 14:48:09,516 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-11-04 14:48:09,518 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-11-04 14:48:09,525 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 14:48:12,054 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 14:48:12,085 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 14:48:12,099 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 14:48:50,173 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 14:48:50,192 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 14:48:50,206 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 14:49:42,215 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 14:49:42,223 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 14:49:42,233 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 14:49:52,700 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 14:49:52,710 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 14:49:52,719 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 14:50:14,636 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 14:50:14,644 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 14:50:14,650 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 14:50:24,737 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 14:50:24,745 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 14:50:24,750 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 14:52:14,448 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 14:52:14,456 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 14:52:14,463 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 15:02:55,489 [Worker-42: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.university:lms:0.0.1-SNAPSHOT @ C:\Users\Rax10\OneDrive\Desktop\prg\3- Klijentske Web Aplikacije\Projektni Zadatak ISA+KWA\Projektni zadatak\UniversityLMS\pom.xml.
+2025-11-04 15:02:57,301 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-11-04 15:02:57,302 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-11-04 15:02:57,312 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 15:04:09,730 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 15:04:09,745 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 15:04:09,750 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 15:04:26,038 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 15:04:26,044 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 15:04:26,051 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 15:04:37,739 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 15:04:37,745 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 15:04:37,750 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 15:05:31,138 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 15:05:31,143 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 15:05:31,149 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 15:10:00,877 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 15:10:00,883 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 15:10:00,888 [Worker-9: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 15:10:12,336 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 15:10:12,342 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 15:10:12,347 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 15:10:30,715 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 15:10:30,723 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 15:10:30,728 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 15:10:48,101 [Worker-30: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 15:10:48,109 [Worker-30: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 15:10:48,115 [Worker-30: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 15:13:58,282 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 15:13:58,290 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 15:13:58,294 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 15:20:10,446 [Worker-9: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2025-11-04 15:20:11,277 [Worker-9: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.university:lms:0.0.1-SNAPSHOT @ C:\Users\Rax10\OneDrive\Desktop\prg\3- Klijentske Web Aplikacije\Projektni Zadatak ISA+KWA\Projektni zadatak\UniversityLMS\pom.xml.
+2025-11-04 15:20:12,601 [Worker-9: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /UniversityLMS/src/main/java
+2025-11-04 15:20:12,610 [Worker-9: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /UniversityLMS/src/main/resources
+2025-11-04 15:20:12,611 [Worker-9: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /UniversityLMS/src/main/resources
+2025-11-04 15:20:12,613 [Worker-9: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /UniversityLMS/src/test/java
+2025-11-04 15:20:12,615 [Worker-9: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /UniversityLMS/src/test/resources
+2025-11-04 15:20:13,179 [Worker-9: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 1.00 sec, update config takes 0.00 sec 
+2025-11-04 15:20:14,017 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 15:20:14,071 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 15:20:14,083 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 15:20:25,240 [Worker-48: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 15:20:25,267 [Worker-48: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 15:20:25,279 [Worker-48: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 15:31:14,846 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 15:31:14,861 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 15:31:14,867 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 15:33:58,654 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 15:33:58,664 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 2 resources from src\main\resources to target\classes
+2025-11-04 15:33:58,671 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 15:34:53,011 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-11-04 15:34:53,014 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-11-04 15:34:53,019 [Worker-48: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 15:36:08,656 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 15:36:08,665 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 15:36:08,671 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 16:11:03,929 [Worker-45: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.university:lms:0.0.1-SNAPSHOT @ C:\Users\Rax10\OneDrive\Desktop\prg\3- Klijentske Web Aplikacije\Projektni Zadatak ISA+KWA\Projektni zadatak\UniversityLMS\pom.xml.
+2025-11-04 16:11:05,917 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-11-04 16:11:05,919 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-11-04 16:11:05,928 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 16:11:08,270 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 16:11:08,306 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 16:11:08,330 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 16:11:27,511 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 16:11:27,535 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 16:11:27,539 [Worker-55: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 16:14:50,510 [Worker-55: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2025-11-04 16:14:50,868 [Worker-55: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.university:lms:0.0.1-SNAPSHOT @ C:\Users\Rax10\OneDrive\Desktop\prg\3- Klijentske Web Aplikacije\Projektni Zadatak ISA+KWA\Projektni zadatak\UniversityLMS\pom.xml.
+2025-11-04 16:14:51,851 [Worker-55: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /UniversityLMS/src/main/java
+2025-11-04 16:14:51,852 [Worker-55: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /UniversityLMS/src/main/resources
+2025-11-04 16:14:51,853 [Worker-55: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /UniversityLMS/src/main/resources
+2025-11-04 16:14:51,854 [Worker-55: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /UniversityLMS/src/test/java
+2025-11-04 16:14:51,854 [Worker-55: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /UniversityLMS/src/test/resources
+2025-11-04 16:14:52,338 [Worker-55: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 1.00 sec, update config takes 0.00 sec 
+2025-11-04 16:14:52,891 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 16:14:52,917 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 16:14:52,925 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 18:51:02,278 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 18:51:02,443 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-04 18:51:02,451 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-04 18:51:46,406 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@5ca930c7{STOPPING}[12.0.21,sto=0]
+2025-11-04 18:51:46,420 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@1d17f715{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
+2025-11-17 12:41:16,693 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-11-18 10:07:39,781 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-11-19 10:54:34,826 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-11-19 13:57:37,939 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-12.0.21; built: 2025-05-09T00:32:00.688Z; git: 1c4719601e31b05b7d68910d2edd980259f1f53c; jvm 21.0.7+6-LTS
+2025-11-19 13:57:38,061 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started oeje8n.ContextHandler$CoreContextHandler@57a0e0a9{/help,/help,b=null,a=AVAILABLE,h=oeje8n.ContextHandler$CoreContextHandler$CoreToNestedHandler@27b1b97b{STARTED}}
+2025-11-19 13:57:38,063 [Start Help Server] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2025-11-19 13:57:38,104 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@633c3a70{HTTP/1.1, (http/1.1)}{127.0.0.1:63673}
+2025-11-19 13:57:38,116 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@5b8cbb01{STARTING}[12.0.21,sto=0] @11051600ms
+2025-11-19 14:02:09,842 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:02:09,860 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:02:09,872 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:03:50,583 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:03:50,592 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:03:50,598 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:04:10,538 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:04:10,553 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:04:10,569 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:04:24,210 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:04:24,228 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:04:24,242 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:05:21,131 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:05:21,139 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:05:21,147 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:05:25,338 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:05:25,345 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:05:25,353 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:05:39,575 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:05:39,586 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:05:39,595 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:15:36,771 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:15:36,788 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:15:36,794 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:15:57,248 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:15:57,255 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:15:57,259 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:34:50,298 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:34:50,325 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:34:50,330 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:44:00,951 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:44:00,963 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:44:00,968 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:45:31,241 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2025-11-19 14:45:57,360 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013 [299])
+2025-11-19 14:45:57,364 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013
+2025-11-19 14:45:57,365 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\aopalliance-1.0.jar
+2025-11-19 14:45:57,366 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\guice-5.1.0.jar
+2025-11-19 14:45:57,366 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\httpclient-4.5.14.jar
+2025-11-19 14:45:57,366 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\httpcore-4.4.16.jar
+2025-11-19 14:45:57,367 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\jansi-2.4.1.jar
+2025-11-19 14:45:57,368 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\jcl-over-slf4j-1.7.36.jar
+2025-11-19 14:45:57,369 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-artifact-3.9.9.jar
+2025-11-19 14:45:57,369 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-builder-support-3.9.9.jar
+2025-11-19 14:45:57,370 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-compat-3.9.9.jar
+2025-11-19 14:45:57,370 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-core-3.9.9.jar
+2025-11-19 14:45:57,370 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-embedder-3.9.9.jar
+2025-11-19 14:45:57,371 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-model-3.9.9.jar
+2025-11-19 14:45:57,371 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-model-builder-3.9.9.jar
+2025-11-19 14:45:57,371 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-plugin-api-3.9.9.jar
+2025-11-19 14:45:57,372 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-repository-metadata-3.9.9.jar
+2025-11-19 14:45:57,372 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-api-1.9.22.jar
+2025-11-19 14:45:57,372 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-connector-basic-1.9.22.jar
+2025-11-19 14:45:57,373 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-impl-1.9.22.jar
+2025-11-19 14:45:57,373 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-named-locks-1.9.22.jar
+2025-11-19 14:45:57,373 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-provider-3.9.9.jar
+2025-11-19 14:45:57,374 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-spi-1.9.22.jar
+2025-11-19 14:45:57,374 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-transport-file-1.9.22.jar
+2025-11-19 14:45:57,374 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-transport-http-1.9.22.jar
+2025-11-19 14:45:57,375 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-transport-wagon-1.9.22.jar
+2025-11-19 14:45:57,375 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-util-1.9.22.jar
+2025-11-19 14:45:57,375 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-settings-3.9.9.jar
+2025-11-19 14:45:57,376 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-settings-builder-3.9.9.jar
+2025-11-19 14:45:57,376 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-shared-utils-3.4.2.jar
+2025-11-19 14:45:57,376 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\org.eclipse.sisu.inject-0.9.0.M3.jar
+2025-11-19 14:45:57,377 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\org.eclipse.sisu.plexus-0.9.0.M3.jar
+2025-11-19 14:45:57,377 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-build-api-0.0.7.jar
+2025-11-19 14:45:57,377 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-build-api-1.2.0.jar
+2025-11-19 14:45:57,377 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-cipher-2.0.jar
+2025-11-19 14:45:57,378 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-classworlds-2.8.0.jar
+2025-11-19 14:45:57,378 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-component-annotations-2.1.0.jar
+2025-11-19 14:45:57,378 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-interpolation-1.27.jar
+2025-11-19 14:45:57,378 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-sec-dispatcher-2.0.jar
+2025-11-19 14:45:57,378 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-utils-3.5.1.jar
+2025-11-19 14:45:57,379 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-xml-3.0.1.jar
+2025-11-19 14:45:57,379 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-file-3.5.3.jar
+2025-11-19 14:45:57,379 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-http-3.5.3.jar
+2025-11-19 14:45:57,379 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-http-shared-3.5.3.jar
+2025-11-19 14:45:57,379 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-provider-api-3.5.3.jar
+2025-11-19 14:45:57,381 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava_33.4.8.jre [13])
+2025-11-19 14:45:57,381 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\com.google.guava_33.4.8.jre.jar
+2025-11-19 14:45:57,382 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=slf4j.api_2.0.17 [522])
+2025-11-19 14:45:57,383 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\slf4j.api_2.0.17.jar
+2025-11-19 14:45:57,383 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=jakarta.inject.jakarta.inject-api_1.0.5 [24])
+2025-11-19 14:45:57,384 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\jakarta.inject.jakarta.inject-api_1.0.5.jar
+2025-11-19 14:45:57,384 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=javax.annotation_1.3.5.v20200909-1856 [27])
+2025-11-19 14:45:57,385 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\javax.annotation_1.3.5.v20200909-1856.jar
+2025-11-19 14:45:57,385 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.cli_1.9.0 [49])
+2025-11-19 14:45:57,387 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.apache.commons.cli_1.9.0.jar
+2025-11-19 14:45:57,387 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.commons-codec_1.16.0 [50])
+2025-11-19 14:45:57,387 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.apache.commons.commons-codec_1.16.0.jar
+2025-11-19 14:45:57,387 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava.failureaccess_1.0.3 [14])
+2025-11-19 14:45:57,388 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\com.google.guava.failureaccess_1.0.3.jar
+2025-11-19 14:45:57,392 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.e.m.i.launch.MavenLaunchDelegate - Run build in "C:\Users\Rax10\OneDrive\Desktop\prg\3- Klijentske Web Aplikacije\Projektni Zadatak ISA+KWA\Projektni zadatak\UniversityLMS":
+2025-11-19 14:45:57,392 [Worker-45: Launching Executing clean in C__Users_Rax10_OneDrive_Desktop_prg_3- Klijentske Web Aplikacije_Projektni Zadatak ISA+KWA_Projektni zadatak_UniversityLMS] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -Dstyle.color=always clean
+2025-11-19 14:46:07,565 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:46:07,578 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:46:07,584 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:47:07,318 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2025-11-19 14:47:12,717 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013 [299])
+2025-11-19 14:47:12,718 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013
+2025-11-19 14:47:12,718 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\aopalliance-1.0.jar
+2025-11-19 14:47:12,719 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\guice-5.1.0.jar
+2025-11-19 14:47:12,719 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\httpclient-4.5.14.jar
+2025-11-19 14:47:12,719 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\httpcore-4.4.16.jar
+2025-11-19 14:47:12,719 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\jansi-2.4.1.jar
+2025-11-19 14:47:12,719 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\jcl-over-slf4j-1.7.36.jar
+2025-11-19 14:47:12,719 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-artifact-3.9.9.jar
+2025-11-19 14:47:12,720 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-builder-support-3.9.9.jar
+2025-11-19 14:47:12,720 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-compat-3.9.9.jar
+2025-11-19 14:47:12,720 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-core-3.9.9.jar
+2025-11-19 14:47:12,720 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-embedder-3.9.9.jar
+2025-11-19 14:47:12,720 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-model-3.9.9.jar
+2025-11-19 14:47:12,720 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-model-builder-3.9.9.jar
+2025-11-19 14:47:12,720 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-plugin-api-3.9.9.jar
+2025-11-19 14:47:12,721 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-repository-metadata-3.9.9.jar
+2025-11-19 14:47:12,721 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-api-1.9.22.jar
+2025-11-19 14:47:12,721 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-connector-basic-1.9.22.jar
+2025-11-19 14:47:12,721 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-impl-1.9.22.jar
+2025-11-19 14:47:12,721 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-named-locks-1.9.22.jar
+2025-11-19 14:47:12,721 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-provider-3.9.9.jar
+2025-11-19 14:47:12,722 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-spi-1.9.22.jar
+2025-11-19 14:47:12,723 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-transport-file-1.9.22.jar
+2025-11-19 14:47:12,723 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-transport-http-1.9.22.jar
+2025-11-19 14:47:12,724 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-transport-wagon-1.9.22.jar
+2025-11-19 14:47:12,724 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-util-1.9.22.jar
+2025-11-19 14:47:12,725 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-settings-3.9.9.jar
+2025-11-19 14:47:12,725 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-settings-builder-3.9.9.jar
+2025-11-19 14:47:12,725 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-shared-utils-3.4.2.jar
+2025-11-19 14:47:12,725 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\org.eclipse.sisu.inject-0.9.0.M3.jar
+2025-11-19 14:47:12,726 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\org.eclipse.sisu.plexus-0.9.0.M3.jar
+2025-11-19 14:47:12,726 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-build-api-0.0.7.jar
+2025-11-19 14:47:12,726 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-build-api-1.2.0.jar
+2025-11-19 14:47:12,726 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-cipher-2.0.jar
+2025-11-19 14:47:12,726 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-classworlds-2.8.0.jar
+2025-11-19 14:47:12,726 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-component-annotations-2.1.0.jar
+2025-11-19 14:47:12,726 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-interpolation-1.27.jar
+2025-11-19 14:47:12,727 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-sec-dispatcher-2.0.jar
+2025-11-19 14:47:12,727 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-utils-3.5.1.jar
+2025-11-19 14:47:12,727 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-xml-3.0.1.jar
+2025-11-19 14:47:12,727 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-file-3.5.3.jar
+2025-11-19 14:47:12,727 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-http-3.5.3.jar
+2025-11-19 14:47:12,727 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-http-shared-3.5.3.jar
+2025-11-19 14:47:12,727 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-provider-api-3.5.3.jar
+2025-11-19 14:47:12,728 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava_33.4.8.jre [13])
+2025-11-19 14:47:12,728 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\com.google.guava_33.4.8.jre.jar
+2025-11-19 14:47:12,728 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=slf4j.api_2.0.17 [522])
+2025-11-19 14:47:12,729 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\slf4j.api_2.0.17.jar
+2025-11-19 14:47:12,729 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=jakarta.inject.jakarta.inject-api_1.0.5 [24])
+2025-11-19 14:47:12,729 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\jakarta.inject.jakarta.inject-api_1.0.5.jar
+2025-11-19 14:47:12,729 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=javax.annotation_1.3.5.v20200909-1856 [27])
+2025-11-19 14:47:12,729 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\javax.annotation_1.3.5.v20200909-1856.jar
+2025-11-19 14:47:12,730 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.cli_1.9.0 [49])
+2025-11-19 14:47:12,730 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.apache.commons.cli_1.9.0.jar
+2025-11-19 14:47:12,730 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.commons-codec_1.16.0 [50])
+2025-11-19 14:47:12,731 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.apache.commons.commons-codec_1.16.0.jar
+2025-11-19 14:47:12,731 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava.failureaccess_1.0.3 [14])
+2025-11-19 14:47:12,732 [Worker-46: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\com.google.guava.failureaccess_1.0.3.jar
+2025-11-19 14:47:12,733 [Worker-46: Launching UniversityLMS (16)] INFO  o.e.m.i.launch.MavenLaunchDelegate - Run build in "C:\Users\Rax10\OneDrive\Desktop\prg\3- Klijentske Web Aplikacije\Projektni Zadatak ISA+KWA\Projektni zadatak\UniversityLMS":
+2025-11-19 14:47:12,733 [Worker-46: Launching UniversityLMS (16)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -Dstyle.color=always clean install
+2025-11-19 14:48:02,374 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:48:02,390 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:48:02,395 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:48:18,177 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:48:18,185 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:48:18,195 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:48:21,912 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:48:21,918 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:48:21,922 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:48:28,873 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:48:28,894 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:48:28,901 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:48:56,210 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:48:56,215 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:48:56,219 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:49:03,811 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:49:03,817 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:49:03,823 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:49:06,641 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:49:06,647 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:49:06,652 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:49:11,721 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013 [299])
+2025-11-19 14:49:11,722 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013
+2025-11-19 14:49:11,723 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\aopalliance-1.0.jar
+2025-11-19 14:49:11,723 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\guice-5.1.0.jar
+2025-11-19 14:49:11,723 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\httpclient-4.5.14.jar
+2025-11-19 14:49:11,723 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\httpcore-4.4.16.jar
+2025-11-19 14:49:11,723 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\jansi-2.4.1.jar
+2025-11-19 14:49:11,723 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\jcl-over-slf4j-1.7.36.jar
+2025-11-19 14:49:11,723 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-artifact-3.9.9.jar
+2025-11-19 14:49:11,723 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-builder-support-3.9.9.jar
+2025-11-19 14:49:11,724 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-compat-3.9.9.jar
+2025-11-19 14:49:11,724 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-core-3.9.9.jar
+2025-11-19 14:49:11,724 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-embedder-3.9.9.jar
+2025-11-19 14:49:11,724 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-model-3.9.9.jar
+2025-11-19 14:49:11,724 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-model-builder-3.9.9.jar
+2025-11-19 14:49:11,724 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-plugin-api-3.9.9.jar
+2025-11-19 14:49:11,724 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-repository-metadata-3.9.9.jar
+2025-11-19 14:49:11,725 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-api-1.9.22.jar
+2025-11-19 14:49:11,725 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-connector-basic-1.9.22.jar
+2025-11-19 14:49:11,725 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-impl-1.9.22.jar
+2025-11-19 14:49:11,725 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-named-locks-1.9.22.jar
+2025-11-19 14:49:11,725 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-provider-3.9.9.jar
+2025-11-19 14:49:11,726 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-spi-1.9.22.jar
+2025-11-19 14:49:11,726 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-transport-file-1.9.22.jar
+2025-11-19 14:49:11,726 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-transport-http-1.9.22.jar
+2025-11-19 14:49:11,726 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-transport-wagon-1.9.22.jar
+2025-11-19 14:49:11,727 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-resolver-util-1.9.22.jar
+2025-11-19 14:49:11,727 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-settings-3.9.9.jar
+2025-11-19 14:49:11,727 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-settings-builder-3.9.9.jar
+2025-11-19 14:49:11,727 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\maven-shared-utils-3.4.2.jar
+2025-11-19 14:49:11,728 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\org.eclipse.sisu.inject-0.9.0.M3.jar
+2025-11-19 14:49:11,728 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\org.eclipse.sisu.plexus-0.9.0.M3.jar
+2025-11-19 14:49:11,729 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-build-api-0.0.7.jar
+2025-11-19 14:49:11,729 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-build-api-1.2.0.jar
+2025-11-19 14:49:11,729 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-cipher-2.0.jar
+2025-11-19 14:49:11,729 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-classworlds-2.8.0.jar
+2025-11-19 14:49:11,729 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-component-annotations-2.1.0.jar
+2025-11-19 14:49:11,729 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-interpolation-1.27.jar
+2025-11-19 14:49:11,729 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-sec-dispatcher-2.0.jar
+2025-11-19 14:49:11,730 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-utils-3.5.1.jar
+2025-11-19 14:49:11,730 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\plexus-xml-3.0.1.jar
+2025-11-19 14:49:11,730 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-file-3.5.3.jar
+2025-11-19 14:49:11,730 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-http-3.5.3.jar
+2025-11-19 14:49:11,730 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-http-shared-3.5.3.jar
+2025-11-19 14:49:11,730 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.eclipse.m2e.maven.runtime_3.9.900.20250220-2013\jars\wagon-provider-api-3.5.3.jar
+2025-11-19 14:49:11,731 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava_33.4.8.jre [13])
+2025-11-19 14:49:11,731 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\com.google.guava_33.4.8.jre.jar
+2025-11-19 14:49:11,731 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=slf4j.api_2.0.17 [522])
+2025-11-19 14:49:11,731 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\slf4j.api_2.0.17.jar
+2025-11-19 14:49:11,732 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=jakarta.inject.jakarta.inject-api_1.0.5 [24])
+2025-11-19 14:49:11,732 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\jakarta.inject.jakarta.inject-api_1.0.5.jar
+2025-11-19 14:49:11,732 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=javax.annotation_1.3.5.v20200909-1856 [27])
+2025-11-19 14:49:11,732 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\javax.annotation_1.3.5.v20200909-1856.jar
+2025-11-19 14:49:11,732 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.cli_1.9.0 [49])
+2025-11-19 14:49:11,733 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.apache.commons.cli_1.9.0.jar
+2025-11-19 14:49:11,733 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=org.apache.commons.commons-codec_1.16.0 [50])
+2025-11-19 14:49:11,733 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\org.apache.commons.commons-codec_1.16.0.jar
+2025-11-19 14:49:11,733 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - getClasspathEntries(Bundle=com.google.guava.failureaccess_1.0.3 [14])
+2025-11-19 14:49:11,733 [Worker-14: Launching UniversityLMS (16)] INFO  o.eclipse.m2e.core.internal.Bundles - 	Entry: C:\Users\Rax10\.p2\pool\plugins\com.google.guava.failureaccess_1.0.3.jar
+2025-11-19 14:49:11,735 [Worker-14: Launching UniversityLMS (16)] INFO  o.e.m.i.launch.MavenLaunchDelegate - Run build in "C:\Users\Rax10\OneDrive\Desktop\prg\3- Klijentske Web Aplikacije\Projektni Zadatak ISA+KWA\Projektni zadatak\UniversityLMS":
+2025-11-19 14:49:11,735 [Worker-14: Launching UniversityLMS (16)] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -Dstyle.color=always clean install
+2025-11-19 14:51:32,346 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:51:32,352 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:51:32,356 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:52:01,845 [Worker-43: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2025-11-19 14:52:03,092 [Worker-43: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.university:lms:0.0.1-SNAPSHOT @ C:\Users\Rax10\OneDrive\Desktop\prg\3- Klijentske Web Aplikacije\Projektni Zadatak ISA+KWA\Projektni zadatak\UniversityLMS\pom.xml.
+2025-11-19 14:52:04,768 [Worker-43: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /UniversityLMS/src/main/java
+2025-11-19 14:52:04,770 [Worker-43: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /UniversityLMS/src/main/resources
+2025-11-19 14:52:04,772 [Worker-43: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /UniversityLMS/src/main/resources
+2025-11-19 14:52:04,773 [Worker-43: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /UniversityLMS/src/test/java
+2025-11-19 14:52:04,774 [Worker-43: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /UniversityLMS/src/test/resources
+2025-11-19 14:52:05,523 [Worker-43: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 2.00 sec, update config takes 0.00 sec 
+2025-11-19 14:52:06,775 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:52:06,804 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:52:06,812 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 14:55:10,650 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:55:10,666 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 14:55:10,671 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 15:13:05,458 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 15:13:05,470 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 15:13:05,473 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 15:15:34,758 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 15:15:34,765 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 15:15:34,770 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 16:09:55,243 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 16:09:55,260 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 16:09:55,265 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 16:48:09,355 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 16:48:09,376 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 16:48:09,381 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 16:49:21,707 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 16:49:21,724 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 16:49:21,728 [Worker-14: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 17:06:26,773 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 17:06:26,786 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 17:06:26,791 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 17:24:04,430 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 17:24:04,440 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-19 17:24:04,445 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-19 17:24:07,697 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@5b8cbb01{STOPPING}[12.0.21,sto=0]
+2025-11-19 17:24:07,714 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@633c3a70{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
+2025-11-20 11:51:45,093 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-11-20 12:14:57,850 [Worker-39: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-20 12:14:57,877 [Worker-39: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-20 12:14:57,887 [Worker-39: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-20 12:55:16,314 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-20 12:55:16,346 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-20 12:55:16,358 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-20 12:56:43,918 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-20 12:56:43,931 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-20 12:56:43,940 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-20 12:57:12,363 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-20 12:57:12,372 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-20 12:57:12,378 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-20 12:57:25,088 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-20 12:57:25,094 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-20 12:57:25,101 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-20 12:57:43,303 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-20 12:57:43,310 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-20 12:57:43,314 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-20 12:57:50,152 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-12.0.21; built: 2025-05-09T00:32:00.688Z; git: 1c4719601e31b05b7d68910d2edd980259f1f53c; jvm 21.0.7+6-LTS
+2025-11-20 12:57:50,217 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started oeje8n.ContextHandler$CoreContextHandler@53f2a6a9{/help,/help,b=null,a=AVAILABLE,h=oeje8n.ContextHandler$CoreContextHandler$CoreToNestedHandler@5f5b3f14{STARTED}}
+2025-11-20 12:57:50,218 [Start Help Server] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2025-11-20 12:57:50,253 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@3791d177{HTTP/1.1, (http/1.1)}{127.0.0.1:50667}
+2025-11-20 12:57:50,260 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@1f67ecd4{STARTING}[12.0.21,sto=0] @4016297ms
+2025-11-20 12:59:40,735 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-20 12:59:40,742 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-20 12:59:40,746 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-20 13:00:13,150 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-20 13:00:13,161 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-20 13:00:13,165 [Worker-3: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-20 13:01:58,430 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-20 13:01:58,436 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-20 13:01:58,441 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-20 17:04:00,336 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@1f67ecd4{STOPPING}[12.0.21,sto=0]
+2025-11-20 17:04:00,350 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@3791d177{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
+2025-11-21 11:50:17,015 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-11-21 12:51:43,478 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-12.0.21; built: 2025-05-09T00:32:00.688Z; git: 1c4719601e31b05b7d68910d2edd980259f1f53c; jvm 21.0.7+6-LTS
+2025-11-21 12:51:43,537 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started oeje8n.ContextHandler$CoreContextHandler@547f7fac{/help,/help,b=null,a=AVAILABLE,h=oeje8n.ContextHandler$CoreContextHandler$CoreToNestedHandler@4f237221{STARTED}}
+2025-11-21 12:51:43,538 [Start Help Server] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2025-11-21 12:51:43,568 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@3bd11c97{HTTP/1.1, (http/1.1)}{127.0.0.1:59365}
+2025-11-21 12:51:43,575 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@6264208f{STARTING}[12.0.21,sto=0] @3742342ms
+2025-11-21 12:51:54,452 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-21 12:51:54,511 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-21 12:51:54,521 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-21 12:53:28,279 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-21 12:53:28,286 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-21 12:53:28,290 [Worker-0: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-21 16:43:58,923 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@6264208f{STOPPING}[12.0.21,sto=0]
+2025-11-21 16:43:58,932 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@3bd11c97{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
+2025-11-24 12:00:02,598 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-11-24 12:35:14,981 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 12:35:15,066 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 12:35:15,081 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 12:38:05,238 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-12.0.21; built: 2025-05-09T00:32:00.688Z; git: 1c4719601e31b05b7d68910d2edd980259f1f53c; jvm 21.0.7+6-LTS
+2025-11-24 12:38:05,297 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started oeje8n.ContextHandler$CoreContextHandler@a8eafca{/help,/help,b=null,a=AVAILABLE,h=oeje8n.ContextHandler$CoreContextHandler$CoreToNestedHandler@37e01adc{STARTED}}
+2025-11-24 12:38:05,297 [Start Help Server] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2025-11-24 12:38:05,331 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@1e694270{HTTP/1.1, (http/1.1)}{127.0.0.1:53292}
+2025-11-24 12:38:05,338 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@4fcc701a{STARTING}[12.0.21,sto=0] @2317523ms
+2025-11-24 12:43:52,745 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 12:43:52,755 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 12:43:52,762 [Worker-13: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 12:44:49,934 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 12:44:49,944 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 12:44:49,950 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 12:44:58,576 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 12:44:58,583 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 12:44:58,589 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 12:45:11,151 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 12:45:11,159 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 12:45:11,165 [Worker-5: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 12:45:30,185 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 12:45:30,196 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 12:45:30,202 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 12:47:00,996 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 12:47:01,003 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 12:47:01,009 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 12:47:23,652 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 12:47:23,659 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 12:47:23,665 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 13:13:59,196 [Worker-5: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:13:59,213 [Worker-5: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:13:59,219 [Worker-5: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 13:19:51,048 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:19:51,067 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:19:51,074 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 13:20:34,399 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:20:34,413 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:20:34,418 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 13:21:49,592 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:21:49,600 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:21:49,605 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 13:22:18,295 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:22:18,301 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:22:18,306 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 13:23:11,317 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:23:11,327 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:23:11,334 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 13:23:56,630 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:23:56,639 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:23:56,646 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 13:24:03,880 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:24:03,886 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:24:03,889 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 13:24:54,254 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:24:54,260 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:24:54,264 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 13:25:10,238 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:25:10,260 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:25:10,271 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 13:25:34,543 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:25:34,550 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:25:34,560 [Worker-43: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 13:55:51,228 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:55:51,255 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:55:51,259 [Worker-51: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 13:56:29,291 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:56:29,301 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 13:56:29,306 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 14:03:12,714 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 14:03:12,729 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 14:03:12,738 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 14:03:35,555 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 14:03:35,568 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 14:03:35,571 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 14:11:31,484 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 14:11:31,498 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 14:11:31,508 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 14:13:03,550 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 14:13:03,556 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 14:13:03,560 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 14:13:41,568 [Worker-45: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 14:13:41,593 [Worker-45: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 14:13:41,605 [Worker-45: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 16:29:16,777 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 16:29:16,814 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 16:29:16,821 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 16:29:29,731 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 16:29:29,774 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 16:29:29,785 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 16:29:35,758 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 16:29:35,773 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 16:29:35,777 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 16:30:23,726 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 16:30:23,740 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 16:30:23,748 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 16:30:32,195 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 16:30:32,203 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 16:30:32,210 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 16:31:19,195 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 16:31:19,209 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 16:31:19,217 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 16:31:53,170 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 16:31:53,187 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 16:31:53,194 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 16:37:46,975 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 16:37:47,020 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 16:37:47,030 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 17:05:28,004 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 17:05:28,030 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 17:05:28,033 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 17:11:25,215 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 17:11:25,235 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 17:11:25,242 [Worker-54: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 17:15:55,129 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 17:15:55,142 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 17:15:55,147 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 17:18:31,739 [Worker-65: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 17:18:31,761 [Worker-65: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 17:18:31,771 [Worker-65: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 21:40:28,103 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 21:40:28,162 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 21:40:28,171 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 21:55:05,355 [Worker-70: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 21:55:05,392 [Worker-70: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 21:55:05,397 [Worker-70: Launching UniversityLMS - UniversityLmsApplication] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 21:57:11,543 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 21:57:11,579 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 21:57:11,584 [Worker-64: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 22:02:20,172 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 22:02:20,184 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 22:02:20,190 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 22:05:30,900 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 22:05:30,905 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 22:05:30,909 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 22:05:52,180 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 22:05:52,191 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 22:05:52,196 [Worker-69: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 22:05:56,572 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 22:05:56,639 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 22:05:56,647 [Worker-66: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-24 22:14:28,136 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 22:14:28,150 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-24 22:14:28,155 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-25 00:15:25,874 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 00:15:25,897 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 00:15:25,901 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-25 00:33:06,120 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 00:33:06,210 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 00:33:06,217 [Worker-70: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-25 04:48:39,110 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@4fcc701a{STOPPING}[12.0.21,sto=0]
+2025-11-25 04:48:39,123 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@1e694270{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
+2025-11-25 11:46:31,781 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-11-25 11:46:39,972 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 11:46:39,999 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 11:46:40,012 [Worker-10: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-25 11:50:30,195 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 11:50:30,206 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 11:50:30,213 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-25 12:59:21,242 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-12.0.21; built: 2025-05-09T00:32:00.688Z; git: 1c4719601e31b05b7d68910d2edd980259f1f53c; jvm 21.0.7+6-LTS
+2025-11-25 12:59:21,305 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started oeje8n.ContextHandler$CoreContextHandler@355f0374{/help,/help,b=null,a=AVAILABLE,h=oeje8n.ContextHandler$CoreContextHandler$CoreToNestedHandler@6ba0a7b8{STARTED}}
+2025-11-25 12:59:21,306 [Start Help Server] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2025-11-25 12:59:21,343 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@215a6a31{HTTP/1.1, (http/1.1)}{127.0.0.1:63212}
+2025-11-25 12:59:21,375 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@19ca10bb{STARTING}[12.0.21,sto=0] @4475688ms
+2025-11-25 13:01:47,185 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 13:01:47,200 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 13:01:47,216 [Worker-30: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-25 18:12:18,073 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@19ca10bb{STOPPING}[12.0.21,sto=0]
+2025-11-25 18:12:18,086 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@215a6a31{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
+2025-11-25 18:13:29,503 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-11-25 18:14:24,837 [Start Help Server] INFO  org.eclipse.jetty.server.Server - jetty-12.0.21; built: 2025-05-09T00:32:00.688Z; git: 1c4719601e31b05b7d68910d2edd980259f1f53c; jvm 21.0.7+6-LTS
+2025-11-25 18:14:24,926 [Start Help Server] INFO  o.e.j.server.handler.ContextHandler - Started oeje8n.ContextHandler$CoreContextHandler@3d669c8e{/help,/help,b=null,a=AVAILABLE,h=oeje8n.ContextHandler$CoreContextHandler$CoreToNestedHandler@5c544e87{STARTED}}
+2025-11-25 18:14:24,926 [Start Help Server] INFO  o.e.j.s.DefaultSessionIdManager - Session workerName=node0
+2025-11-25 18:14:24,963 [Start Help Server] INFO  o.e.jetty.server.AbstractConnector - Started ServerConnector@67ccbd00{HTTP/1.1, (http/1.1)}{127.0.0.1:59767}
+2025-11-25 18:14:25,005 [Start Help Server] INFO  org.eclipse.jetty.server.Server - Started oejs.Server@3358e8ef{STARTING}[12.0.21,sto=0] @116636ms
+2025-11-25 18:17:38,443 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 18:17:38,483 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 18:17:38,491 [Worker-16: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-25 18:24:57,192 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 18:24:57,210 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 18:24:57,216 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-25 18:25:59,001 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 18:25:59,010 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 18:25:59,015 [Worker-24: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-25 18:57:03,206 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 18:57:03,384 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 18:57:03,399 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-25 19:29:16,538 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 19:29:16,562 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-11-25 19:29:16,567 [Worker-25: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\test\resources to target\test-classes
+2025-11-25 19:30:30,407 [Stop Help Server] INFO  org.eclipse.jetty.server.Server - Stopped oejs.Server@3358e8ef{STOPPING}[12.0.21,sto=0]
+2025-11-25 19:30:30,417 [Stop Help Server] INFO  o.e.jetty.server.AbstractConnector - Stopped ServerConnector@67ccbd00{HTTP/1.1, (http/1.1)}{127.0.0.1:0}
+2025-11-25 21:22:30,199 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

@@ -1,343 +1,453 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
-import { MatListModule } from '@angular/material/list';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { ApiService } from '../../../core/services/api.service';
 import { Course } from '../../../core/models/course.model';
 import { Syllabus } from '../../../core/models/syllabus.model';
 import { Notification } from '../../../core/models/notification.model';
 import { User } from '../../../core/models/user.model';
-import { ExamApplication } from '../../../core/models/exam-application.model';
-import { ExamGrade } from '../../../core/models/exam-grade.model';
 import { StudyHistory } from '../../../core/models/study-history.model';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { forkJoin, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { MatList, MatListItem } from "@angular/material/list";
+import { ExamApplication } from '../../../core/models/exam-application.model';
+
+
 
 @Component({
   selector: 'app-teacher-dashboard',
   standalone: true,
   imports: [
     CommonModule,
-    MatTableModule,
-    MatListModule,
     FormsModule,
+    MatTableModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatProgressSpinnerModule,
     MatSelectModule,
-    MatDatepickerModule
-  ],
+    MatSnackBarModule,
+    MatCardModule,
+    MatIconModule,
+    MatDialogModule,
+    MatProgressSpinnerModule,
+    MatList,
+    MatListItem
+],
   template: `
-    <h2>Teacher Dashboard</h2>
-    @if (isLoading) {
-      <mat-spinner></mat-spinner>
-      <p>Loading data...</p>
+    <div class="dashboard-header">
+      <h1>Teacher Portal</h1>
+      <p class="welcome">Welcome back, <strong>{{ currentUser?.firstName }} {{ currentUser?.lastName }}</strong></p>
+    </div>
+
+    <div *ngIf="isLoading" class="loading">
+      <mat-spinner diameter="60"></mat-spinner>
+      <p>Loading your courses and data...</p>
+    </div>
+
+    <div *ngIf="!isLoading" class="dashboard-grid">
+
+      <mat-card class="action-card" (click)="openDialog('courses')">
+        <mat-card-header>
+          <div mat-card-avatar class="icon courses"><mat-icon>book</mat-icon></div>
+          <mat-card-title>My Courses</mat-card-title>
+          <mat-card-subtitle>{{ courses.length }} active</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content><p>View syllabuses & exam applications</p></mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-mini-fab color="primary"><mat-icon>arrow_forward</mat-icon></button>
+        </mat-card-actions>
+      </mat-card>
+
+      <mat-card class="action-card" (click)="openDialog('syllabus')">
+        <mat-card-header>
+          <div mat-card-avatar class="icon syllabus"><mat-icon>description</mat-icon></div>
+          <mat-card-title>Syllabus Management</mat-card-title>
+          <mat-card-subtitle>{{ syllabusesCount }} uploaded</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content><p>Create or update course syllabuses</p></mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-mini-fab color="accent"><mat-icon>edit</mat-icon></button>
+        </mat-card-actions>
+      </mat-card>
+
+      <mat-card class="action-card" (click)="openDialog('grading')">
+        <mat-card-header>
+          <div mat-card-avatar class="icon grading"><mat-icon>grading</mat-icon></div>
+          <mat-card-title>Grade Exams</mat-card-title>
+          <mat-card-subtitle>Search & grade students</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content><p>Enter final grades and view history</p></mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-mini-fab color="warn"><mat-icon>rate_review</mat-icon></button>
+        </mat-card-actions>
+      </mat-card>
+
+      <mat-card class="action-card" (click)="openDialog('notifications')">
+        <mat-card-header>
+          <div mat-card-avatar class="icon notify"><mat-icon>notifications</mat-icon></div>
+          <mat-card-title>Notifications</mat-card-title>
+          <mat-card-subtitle>{{ notifications.length }} unread</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content><p>System updates and announcements</p></mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-mini-fab color="primary"><mat-icon>mark_email_read</mat-icon></button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+    <ng-template #coursesDialog>
+  <h2 mat-dialog-title><mat-icon>book</mat-icon> My Courses</h2>
+  <mat-dialog-content class="scrollable">
+    @if (courses.length > 0) {
+      <mat-table [dataSource]="courses">
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef>Course Name</mat-header-cell>
+          <mat-cell *matCellDef="let c">{{ c.name }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="code">
+          <mat-header-cell *matHeaderCellDef>Code</mat-header-cell>
+          <mat-cell *matCellDef="let c">{{ c.code }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="ects">
+          <mat-header-cell *matHeaderCellDef>ECTS</mat-header-cell>
+          <mat-cell *matCellDef="let c">{{ c.ectsPoints }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="syllabus">
+          <mat-header-cell *matHeaderCellDef>Syllabus</mat-header-cell>
+          <mat-cell *matCellDef="let c">
+            @if (syllabuses[c.id!]) {
+              <a [href]="syllabuses[c.id!].content" target="_blank" class="link">
+                <mat-icon>description</mat-icon> View PDF
+              </a>
+            } @else {
+              <span class="missing">Not uploaded</span>
+            }
+            <button mat-icon-button (click)="openSyllabusForm(c); $event.stopPropagation()">
+              <mat-icon>edit</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+          <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+          <mat-cell *matCellDef="let c">
+            <button mat-stroked-button (click)="viewCourseApplications(c.id!)">
+              Exam Applications
+            </button>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="courseColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: courseColumns"></mat-row>
+      </mat-table>
+
+      <div *ngIf="selectedCourse" style="margin-top: 40px;">
+        <h3>Exam Applications: {{ selectedCourse.name }}</h3>
+
+        <div *ngIf="examApplicationsForSelectedCourse.length === 0" style="text-align: center; padding: 20px; color: #666;">
+          <p>No students have applied for the exam yet.</p>
+        </div>
+
+        <mat-table *ngIf="examApplicationsForSelectedCourse.length > 0" [dataSource]="examApplicationsForSelectedCourse">
+          <ng-container matColumnDef="student">
+            <mat-header-cell *matHeaderCellDef>Student</mat-header-cell>
+            <mat-cell *matCellDef="let app">
+              <strong>{{ app.user.firstName }} {{ app.user.lastName }}</strong><br>
+              <small>{{ app.user.indexNumber }}</small>
+            </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="term">
+            <mat-header-cell *matHeaderCellDef>Term</mat-header-cell>
+            <mat-cell *matCellDef="let app">{{ app.term }}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+            <mat-cell *matCellDef="let app">
+              <span style="color: orange; font-weight: bold;">Applied</span>
+              <br><small>Go to "Grade Exams" to assign grade</small>
+            </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="['student', 'term', 'status']"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: ['student', 'term', 'status']"></mat-row>
+        </mat-table>
+      </div>
     } @else {
-      <h4>All Courses</h4>
-      @if (courses.length > 0) {
-        <mat-table [dataSource]="courses">
-          <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef>Course Name</mat-header-cell>
-            <mat-cell *matCellDef="let course">{{ course.name }}</mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="code">
-            <mat-header-cell *matHeaderCellDef>Code</mat-header-cell>
-            <mat-cell *matCellDef="let course">{{ course.code }}</mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="ectsPoints">
-            <mat-header-cell *matHeaderCellDef>ECTS Points</mat-header-cell>
-            <mat-cell *matCellDef="let course">{{ course.ectsPoints }}</mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="syllabus">
-            <mat-header-cell *matHeaderCellDef>Syllabus</mat-header-cell>
-            <mat-cell *matCellDef="let course">
-              <a *ngIf="syllabuses[course.id!]" [href]="syllabuses[course.id!].content" target="_blank">View</a>
-              <span *ngIf="!syllabuses[course.id!]">Not available</span>
-              <button mat-button (click)="openSyllabusForm(course)">Edit Syllabus</button>
-            </mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="actions">
-            <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
-            <mat-cell *matCellDef="let course">
-              <button mat-button (click)="viewCourseApplications(course.id!)">Exam Applications</button>
-            </mat-cell>
-          </ng-container>
-          <mat-header-row *matHeaderRowDef="courseColumns"></mat-header-row>
-          <mat-row *matRowDef="let row; columns: courseColumns"></mat-row>
-        </mat-table>
-        <button mat-raised-button color="primary" (click)="openSyllabusForm(null)">Create Syllabus</button>
-      } @else {
-        <p>No courses available</p>
-      }
+      <p>No courses assigned to you.</p>
+    }
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+</ng-template>
 
-      @if (showCourseApplications && selectedCourse) {
-        <h4>Exam Applications for {{ selectedCourse.name }}</h4>
-        <form #appSearchForm="ngForm" (ngSubmit)="searchCourseApplications()">
-          <mat-form-field>
-            <mat-label>Search By</mat-label>
-            <mat-select [(ngModel)]="appSearchCategory" name="appSearchCategory" required>
-              <mat-option value="name">Student Name</mat-option>
-              <mat-option value="indexNumber">Index Number</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Search Term</mat-label>
-            <input matInput [(ngModel)]="appSearchTerm" name="appSearchTerm" required>
-            <mat-error *ngIf="appSearchForm.controls['appSearchTerm']?.errors?.['required']">Search term is required</mat-error>
-          </mat-form-field>
-          <button mat-raised-button color="primary" type="submit" [disabled]="appSearchForm.invalid">Search</button>
-          <button mat-raised-button (click)="clearCourseApplications()">Clear</button>
-        </form>
-        @if (filteredCourseApplications.length > 0) {
-          <mat-table [dataSource]="filteredCourseApplications">
-            <ng-container matColumnDef="studentName">
-              <mat-header-cell *matHeaderCellDef>Student Name</mat-header-cell>
-              <mat-cell *matCellDef="let app">{{ app.student?.firstName }} {{ app.student?.lastName }}</mat-cell>
-            </ng-container>
-            <ng-container matColumnDef="indexNumber">
-              <mat-header-cell *matHeaderCellDef>Index Number</mat-header-cell>
-              <mat-cell *matCellDef="let app">{{ app.student?.indexNumber }}</mat-cell>
-            </ng-container>
-            <ng-container matColumnDef="term">
-              <mat-header-cell *matHeaderCellDef>Term</mat-header-cell>
-              <mat-cell *matCellDef="let app">{{ app.term }}</mat-cell>
-            </ng-container>
-            <ng-container matColumnDef="examsTaken">
-              <mat-header-cell *matHeaderCellDef>Exams Taken</mat-header-cell>
-              <mat-cell *matCellDef="let app">{{ app.examsTaken }}</mat-cell>
-            </ng-container>
-            <ng-container matColumnDef="grade">
-              <mat-header-cell *matHeaderCellDef>Grade</mat-header-cell>
-              <mat-cell *matCellDef="let app">{{ app.grade != null ? app.grade : 'N/A' }}</mat-cell>
-            </ng-container>
-            <ng-container matColumnDef="passed">
-              <mat-header-cell *matHeaderCellDef>Passed</mat-header-cell>
-              <mat-cell *matCellDef="let app">{{ app.passed ? 'Yes' : 'No' }}</mat-cell>
-            </ng-container>
-            <ng-container matColumnDef="actions">
-              <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
-              <mat-cell *matCellDef="let app">
-                <button mat-button (click)="openGradeForm(app)" [disabled]="app.grade != null">Grade Exam</button>
-                <button mat-button color="warn" (click)="deleteCourseApplication(app)">Delete Application</button>
-              </mat-cell>
-            </ng-container>
-            <mat-header-row *matHeaderRowDef="applicationColumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: applicationColumns"></mat-row>
-          </mat-table>
-        } @else {
-          <p>No exam applications found</p>
-        }
-      }
+    <ng-template #syllabusDialog>
+  <h2 mat-dialog-title><mat-icon>description</mat-icon> Syllabus Management</h2>
+  <mat-dialog-content class="scrollable">
 
-      @if (showSyllabusForm) {
-        <h4>{{ editingSyllabus ? 'Edit Syllabus' : 'Create Syllabus' }}</h4>
+    <button mat-raised-button color="primary" (click)="openSyllabusForm(null)" style="margin-bottom: 20px;">
+      + Create New Syllabus
+    </button>
+
+    @if (showSyllabusForm) {
+      <div class="form-box">
+        <h3>{{ editingSyllabus ? 'Edit' : 'Create' }} Syllabus</h3>
         <form #syllabusForm="ngForm" (ngSubmit)="saveSyllabus()">
-          <mat-form-field>
+          <mat-form-field appearance="fill">
             <mat-label>Course</mat-label>
-            <mat-select [(ngModel)]="newSyllabus.courseId" name="courseId" required [disabled]="editingSyllabus != null">
-              <mat-option *ngFor="let course of courses" [value]="course.id">{{ course.name }}</mat-option>
+            <mat-select [(ngModel)]="newSyllabus.courseId" name="courseId" required [disabled]="!!editingSyllabus">
+              @for (c of courses; track c.id) {
+                <mat-option [value]="c.id">{{ c.name }} ({{ c.code }})</mat-option>
+              }
             </mat-select>
-            <mat-error *ngIf="syllabusForm.controls['courseId']?.errors?.['required']">Course is required</mat-error>
           </mat-form-field>
-          <mat-form-field>
-            <mat-label>Content URL</mat-label>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Content URL (PDF link)</mat-label>
             <input matInput [(ngModel)]="newSyllabus.content" name="content" required>
-            <mat-error *ngIf="syllabusForm.controls['content']?.errors?.['required']">Content URL is required</mat-error>
           </mat-form-field>
-          <mat-form-field>
-            <mat-label>Academic Year</mat-label>
-            <input matInput [(ngModel)]="newSyllabus.academicYear" name="academicYear">
+
+          <mat-form-field appearance="fill">
+            <mat-label>Academic Year (optional)</mat-label>
+            <input matInput [(ngModel)]="newSyllabus.academicYear" name="year">
           </mat-form-field>
-          <button mat-raised-button color="primary" type="submit" [disabled]="syllabusForm.invalid">Save</button>
-          <button mat-raised-button color="warn" *ngIf="editingSyllabus" (click)="deleteSyllabus()">Delete</button>
-          <button mat-raised-button (click)="cancelSyllabusForm()">Cancel</button>
+
+          <div class="form-actions">
+            <button mat-raised-button color="primary" type="submit" [disabled]="syllabusForm.invalid">
+              {{ editingSyllabus ? 'Update' : 'Create' }}
+            </button>
+            @if (editingSyllabus) {
+              <button mat-raised-button color="warn" (click)="deleteSyllabus()">Delete</button>
+            }
+            <button mat-button (click)="cancelSyllabusForm()">Cancel</button>
+          </div>
         </form>
-      }
+      </div>
+    }
 
-      <h4>Notifications</h4>
-      @if (notifications.length > 0) {
-        <mat-list>
-          <mat-list-item *ngFor="let notification of notifications">
-            <strong>{{ notification.title }}</strong>: {{ notification.message }} ({{ notification.createdAt | date:'short' }})
+    @if (syllabusesCount > 0 && !showSyllabusForm) {
+      <mat-list>
+        @for (entry of syllabuses | keyvalue; track entry.key) {
+          <mat-list-item class="syllabus-row">
+            <div class="syllabus-info">
+              <strong>{{ getCourseName(entry.value.courseId) }}</strong>
+              <span class="year" *ngIf="entry.value.academicYear">({{ entry.value.academicYear }})</span>
+            </div>
           </mat-list-item>
-        </mat-list>
-      } @else {
-        <p>No notifications available</p>
-      }
+        }
+      </mat-list>
+    }
+  </mat-dialog-content>
+</ng-template>
 
-      <h4>Search Students</h4>
-      <form #searchForm="ngForm" (ngSubmit)="searchStudents()">
-        <mat-form-field>
-          <mat-label>Search By</mat-label>
-          <mat-select [(ngModel)]="searchCategory" name="searchCategory" required>
-            <mat-option value="name">Name</mat-option>
-            <mat-option value="indexNumber">Index Number</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Search Term</mat-label>
-          <input matInput [(ngModel)]="searchTerm" name="searchTerm" required>
-          <mat-error *ngIf="searchForm.controls['searchTerm']?.errors?.['required']">Search term is required</mat-error>
-        </mat-form-field>
-        <button mat-raised-button color="primary" type="submit" [disabled]="searchForm.invalid">Search</button>
-      </form>
+    <ng-template #gradingDialog>
+  <h2 mat-dialog-title><mat-icon>grading</mat-icon> Grade Exams & Search Students</h2>
+  <mat-dialog-content class="scrollable">
 
-      @if (filteredStudents.length > 0) {
-        <h4>Search Results</h4>
-        <mat-table [dataSource]="filteredStudents">
-          <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
-            <mat-cell *matCellDef="let student">{{ student.firstName }} {{ student.lastName }}</mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="indexNumber">
-            <mat-header-cell *matHeaderCellDef>Index Number</mat-header-cell>
-            <mat-cell *matCellDef="let student">{{ student.indexNumber }}</mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="actions">
-            <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
-            <mat-cell *matCellDef="let student">
-              <button mat-button (click)="viewStudentDetails(student.id!)">View Details</button>
-            </mat-cell>
-          </ng-container>
-          <mat-header-row *matHeaderRowDef="studentColumns"></mat-header-row>
-          <mat-row *matRowDef="let row; columns: studentColumns"></mat-row>
-        </mat-table>
-      }
+    <form #searchForm="ngForm" (ngSubmit)="searchStudents()" class="search-bar">
+      <mat-form-field appearance="fill">
+        <mat-label>Search by</mat-label>
+        <mat-select [(ngModel)]="searchCategory" name="searchCategory" required>
+          <mat-option value="name">Name</mat-option>
+          <mat-option value="indexNumber">Index Number</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Search term</mat-label>
+        <input matInput [(ngModel)]="searchTerm" name="searchTerm" required>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="searchForm.invalid">
+        Search
+      </button>
+    </form>
 
-      @if (selectedStudent) {
-        <h4>Student Details: {{ selectedStudent.firstName }} {{ selectedStudent.lastName }}</h4>
-        <p>Index Number: {{ selectedStudent.indexNumber }}</p>
-        <p>Email: {{ selectedStudent.email }}</p>
-        <h5>Study History</h5>
+    @if (filteredStudents.length > 0) {
+      <mat-table [dataSource]="filteredStudents" class="results-table">
+        <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+          <mat-cell *matCellDef="let s">{{ s.firstName }} {{ s.lastName }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="index">
+          <mat-header-cell *matHeaderCellDef>Index</mat-header-cell>
+          <mat-cell *matCellDef="let s">{{ s.indexNumber }}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="action">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let s">
+            <button mat-stroked-button (click)="viewStudentDetails(s.id!)">View, View History</button>
+          </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="['name', 'index', 'action']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['name', 'index', 'action']"></mat-row>
+      </mat-table>
+    } @else if (searchTerm) {
+      <p>No students found.</p>
+    }
+
+    @if (selectedStudent) {
+      <div class="student-section">
+        <h3>{{ selectedStudent.firstName }} {{ selectedStudent.lastName }} – Study History</h3>
         @if (studyHistory.length > 0) {
           <mat-table [dataSource]="studyHistory">
-            <ng-container matColumnDef="courseName">
-              <mat-header-cell *matHeaderCellDef>Course Name</mat-header-cell>
-              <mat-cell *matCellDef="let history">{{ history.courseName }}</mat-cell>
+            <ng-container matColumnDef="course">
+              <mat-header-cell *matHeaderCellDef>Course</mat-header-cell>
+              <mat-cell *matCellDef="let h">{{ h.courseName }}</mat-cell>
             </ng-container>
             <ng-container matColumnDef="term">
               <mat-header-cell *matHeaderCellDef>Term</mat-header-cell>
-              <mat-cell *matCellDef="let history">{{ history.term }}</mat-cell>
+              <mat-cell *matCellDef="let h">{{ h.term }}</mat-cell>
             </ng-container>
-            <ng-container matColumnDef="examsTaken">
-              <mat-header-cell *matHeaderCellDef>Exams Taken</mat-header-cell>
-              <mat-cell *matCellDef="let history">{{ history.examsTaken }}</mat-cell>
-            </ng-container>
+            <ng-container matColumnDef="exams">
+  <mat-header-cell *matHeaderCellDef>Exams Taken</mat-header-cell>
+  <mat-cell *matCellDef="let h">
+    <strong>{{ getExamAttemptsCount(selectedStudent?.id, h.courseId) }}</strong>
+    <small class="text-muted">
+      (Attempt {{ getExamAttemptsCount(selectedStudent?.id, h.courseId) }})
+    </small>
+  </mat-cell>
+</ng-container>
             <ng-container matColumnDef="grade">
               <mat-header-cell *matHeaderCellDef>Grade</mat-header-cell>
-              <mat-cell *matCellDef="let history">{{ history.grade != null ? history.grade : 'N/A' }}</mat-cell>
-            </ng-container>
-            <ng-container matColumnDef="passed">
-              <mat-header-cell *matHeaderCellDef>Passed</mat-header-cell>
-              <mat-cell *matCellDef="let history">{{ history.passed ? 'Yes' : 'No' }}</mat-cell>
-            </ng-container>
-            <ng-container matColumnDef="actions">
-              <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
-              <mat-cell *matCellDef="let history">
-                <button mat-button (click)="openGradeForm(history)" [disabled]="history.grade != null">Grade Exam</button>
-                <button mat-button color="warn" (click)="deleteStudentApplication(history)">Delete Application</button>
+              <mat-cell *matCellDef="let h">
+                <strong *ngIf="h.grade !== null">{{ h.grade }}</strong>
+                <em *ngIf="h.grade === null">Not graded</em>
               </mat-cell>
             </ng-container>
-            <mat-header-row *matHeaderRowDef="historyColumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: historyColumns"></mat-row>
+            <ng-container matColumnDef="action">
+              <mat-header-cell *matHeaderCellDef></mat-header-cell>
+              <mat-cell *matCellDef="let h">
+                <button mat-raised-button color="primary" 
+                        (click)="openGradeForm(h)" 
+                        [disabled]="h.grade != null">
+                  Grade Exam
+                </button>
+              </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="['course','term','exams','grade','action']"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: ['course','term','exams','grade','action']"></mat-row>
           </mat-table>
         } @else {
-          <p>No study history available</p>
+          <p>No study history found for this student.</p>
         }
-      }
-
-      @if (showGradeForm && gradingHistory) {
-        <h4>Grade Exam for {{ gradingHistory.courseName }} ({{ gradingHistory.term }})</h4>
-        <form #gradeForm="ngForm" (ngSubmit)="submitGrade()">
-          <mat-form-field>
-            <mat-label>Grade (0-10)</mat-label>
-            <input matInput type="number" [(ngModel)]="newGrade" name="grade" required min="0" max="10">
-            <mat-error *ngIf="gradeForm.controls['grade']?.errors?.['required']">Grade is required</mat-error>
-            <mat-error *ngIf="gradeForm.controls['grade']?.errors?.['min'] || gradeForm.controls['grade']?.errors?.['max']">Grade must be between 0 and 10</mat-error>
-          </mat-form-field>
-          <mat-form-field>
-            <mat-label>Number of Taken Exams</mat-label>
-            <input matInput type="number" [(ngModel)]="numberOfTakenExams" name="numberOfTakenExams" required min="1">
-            <mat-error *ngIf="gradeForm.controls['numberOfTakenExams']?.errors?.['required']">Number of taken exams is required</mat-error>
-            <mat-error *ngIf="gradeForm.controls['numberOfTakenExams']?.errors?.['min']">Must be at least 1</mat-error>
-          </mat-form-field>
-          <button mat-raised-button color="primary" type="submit" [disabled]="gradeForm.invalid">Submit Grade</button>
-          <button mat-raised-button (click)="cancelGradeForm()">Cancel</button>
-        </form>
-      }
+      </div>
     }
+
+
+    @if (showGradeForm && gradingHistory) {
+      <div class="overlay">
+        <div class="grade-box">
+          <h3>Grade: {{ gradingHistory.courseName }} ({{ gradingHistory.term }})</h3>
+          <form #gradeForm="ngForm" (ngSubmit)="submitGrade()">
+            <mat-form-field appearance="fill">
+              <mat-label>Final Grade (5–10)</mat-label>
+              <input matInput type="number" [(ngModel)]="newGrade" name="grade" required min="5" max="10">
+            </mat-form-field>
+            <div class="form-actions">
+              <button mat-raised-button color="primary" type="submit" [disabled]="gradeForm.invalid">
+                Submit Grade
+              </button>
+              <button mat-button (click)="cancelGradeForm()">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    }
+  </mat-dialog-content>
+</ng-template>
+    <ng-template #notificationsDialog>
+      <h2 mat-dialog-title><mat-icon>notifications</mat-icon> Notifications</h2>
+      <mat-dialog-content>
+        <mat-list *ngIf="notifications.length">
+          <mat-list-item *ngFor="let n of notifications">
+            <h4 matLine>{{ n.title }}</h4>
+            <p matLine>{{ n.message }}</p>
+            <small matLine>{{ n.createdAt | date:'short' }}</small>
+          </mat-list-item>
+        </mat-list>
+        <p *ngIf="!notifications.length">No notifications</p>
+      </mat-dialog-content>
+      <mat-dialog-actions><button mat-button mat-dialog-close>Close</button></mat-dialog-actions>
+    </ng-template>
   `,
   styles: [`
-    mat-table {
-      margin-bottom: 20px;
-    }
-    h3, h4, h5 {
-      margin: 20px 0 10px;
-    }
-    p {
-      margin: 10px 0;
-    }
-    mat-form-field {
-      margin-right: 10px;
-      width: 200px;
-    }
-    button {
-      margin: 10px 5px;
-    }
-    mat-spinner {
-      margin: 20px auto;
-    }
-    a {
-      color: #3f51b5;
-      text-decoration: none;
-      margin-right: 10px;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    mat-list-item {
-      margin-bottom: 10px;
-    }
+    .dashboard-header { text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 0 0 20px 20px; }
+    .welcome { margin: 10px 0 0; font-size: 1.3rem; }
+    .loading { text-align: center; padding: 100px; }
+    .dashboard-grid { padding: 30px; display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); max-width: 1400px; margin: 0 auto; }
+    .action-card { cursor: pointer; transition: all 0.3s; height: 100%; }
+    .action-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.2) !important; }
+    .icon { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; }
+    .courses { background: #1976d2; }
+    .syllabus { background: #7b1fa2; }
+    .grading { background: #d32f2f; }
+    .notify { background: #f57c00; }
+    .scrollable { max-height: 75vh; overflow-y: auto; }
+    .attempt-info {
+  font-size: 0.8em;
+  color: #666;
+  margin-left: 4px;
+}
   `]
 })
 export class TeacherDashboardComponent implements OnInit {
-  isLoading: boolean = true;
+
+  @ViewChild('coursesDialog') coursesDialog!: TemplateRef<any>;
+  @ViewChild('syllabusDialog') syllabusDialog!: TemplateRef<any>;
+  @ViewChild('gradingDialog') gradingDialog!: TemplateRef<any>;
+  @ViewChild('notificationsDialog') notificationsDialog!: TemplateRef<any>;
+
+    currentUser = this.apiService.getCurrentUser();
+
+  isLoading = true;
   courses: Course[] = [];
   syllabuses: { [key: number]: Syllabus } = {};
   notifications: Notification[] = [];
+
   filteredStudents: User[] = [];
   selectedStudent: User | null = null;
   studyHistory: StudyHistory[] = [];
-  showSyllabusForm: boolean = false;
+
+  showSyllabusForm = false;
   editingSyllabus: Syllabus | null = null;
-  newSyllabus: Syllabus = { courseId: 0, content: '' };
-  showGradeForm: boolean = false;
+  newSyllabus: Syllabus = { courseId: 0, content: '', academicYear: '' };
+
+  showGradeForm = false;
   gradingHistory: StudyHistory | null = null;
   newGrade: number | null = null;
-  numberOfTakenExams: number = 1;
+  numberOfTakenExams = 1;
+
   searchCategory: 'name' | 'indexNumber' = 'name';
-  searchTerm: string = '';
-  showCourseApplications: boolean = false;
+  searchTerm = '';
+
+  showCourseApplications = false;
   selectedCourse: Course | null = null;
   courseApplications: StudyHistory[] = [];
-  filteredCourseApplications: (StudyHistory & { student?: User })[] = [];
+  filteredCourseApplications: any[] = [];
   appSearchCategory: 'name' | 'indexNumber' = 'name';
-  appSearchTerm: string = '';
-  courseColumns: string[] = ['name', 'code', 'ectsPoints', 'syllabus', 'actions'];
-  studentColumns: string[] = ['name', 'indexNumber', 'actions'];
-  historyColumns: string[] = ['courseName', 'term', 'examsTaken', 'grade', 'passed', 'actions'];
-  applicationColumns: string[] = ['studentName', 'indexNumber', 'term', 'examsTaken', 'grade', 'passed', 'actions'];
+  appSearchTerm = '';
 
-  constructor(private apiService: ApiService, private snackBar: MatSnackBar) {}
+  courseColumns = ['name', 'code', 'ects', 'syllabus', 'actions'];
+  studentColumns = ['name', 'index', 'action'];
+  historyColumns = ['courseName', 'term', 'grade', 'action'];
+  examApplicationsForSelectedCourse: ExamApplication[] = [];
+  allExamApplications: ExamApplication[] = [];
+
+  constructor(
+    private apiService: ApiService,
+    private snackBar: MatSnackBar,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     const user = this.apiService.getCurrentUser();
@@ -357,23 +467,39 @@ export class TeacherDashboardComponent implements OnInit {
   }
 
   private loadCourses(): Promise<void> {
-    return new Promise((resolve) => {
-      this.apiService.getAllCourses().subscribe({
-        next: (courses: Course[]) => {
-          this.courses = courses;
-          if (courses.length === 0) {
-            this.snackBar.open('No courses available', 'Close', { duration: 3003 });
-          }
-          resolve();
-        },
-        error: (err: any) => {
-          console.error('Failed to load courses:', err);
-          this.snackBar.open('Failed to load courses: ' + (err.message || 'Unknown error'), 'Close', { duration: 3003 });
-          resolve();
+  return new Promise((resolve) => {
+    const currentTeacherId = this.apiService.getCurrentUser()?.id;
+
+    if (!currentTeacherId) {
+      this.snackBar.open('Teacher not logged in', 'Error', { duration: 5000 });
+      this.courses = [];
+      resolve();
+      return;
+    }
+
+    this.apiService.getAllCourses().subscribe({
+      next: (allCourses: Course[]) => {
+        
+        this.courses = allCourses.filter(course => 
+          course.teacherId === currentTeacherId
+        );
+
+        if (this.courses.length === 0) {
+          this.snackBar.open('No courses assigned to you yet', 'Info', { duration: 5000 });
+        } else {
+          this.snackBar.open(`Loaded ${this.courses.length} your course(s)`, 'Success', { duration: 3000 });
         }
-      });
+        resolve();
+      },
+      error: (err) => {
+        console.error('Failed to load courses:', err);
+        this.snackBar.open('Failed to load your courses', 'Error', { duration: 5000 });
+        this.courses = [];
+        resolve();
+      }
     });
-  }
+  });
+}
 
   private loadSyllabuses(): Promise<void> {
     return new Promise((resolve) => {
@@ -485,16 +611,26 @@ export class TeacherDashboardComponent implements OnInit {
   }
 
   viewCourseApplications(courseId: number): void {
-    this.selectedCourse = this.courses.find(c => c.id === courseId) || null;
-    if (!this.selectedCourse) {
-      this.snackBar.open('Course not found', 'Close', { duration: 3003 });
-      return;
-    }
-    this.showCourseApplications = true;
-    this.appSearchTerm = '';
-    this.filteredCourseApplications = [];
-    this.loadCourseApplications(courseId);
-  }
+  const course = this.courses.find(c => c.id === courseId);
+  if (!course) return;
+
+  this.selectedCourse = course;
+
+  this.apiService.getAllExamApplications().subscribe({
+    next: (apps: ExamApplication[]) => {
+      this.examApplicationsForSelectedCourse = apps.filter(
+        app => app.course.id === courseId
+      );
+
+      if (this.examApplicationsForSelectedCourse.length === 0) {
+        this.snackBar.open('No applications yet', 'Info');
+      } else {
+        this.snackBar.open(`${this.examApplicationsForSelectedCourse.length} student(s) applied`, 'Success');
+      }
+    },
+    error: () => this.snackBar.open('Failed to load applications', 'Error')
+  });
+}
 
   private loadCourseApplications(courseId: number): void {
     this.apiService.getStudentsByQuery('').subscribe({
@@ -602,30 +738,59 @@ export class TeacherDashboardComponent implements OnInit {
   }
 
   searchStudents(): void {
-    if (!this.searchTerm.trim()) {
-      this.filteredStudents = [];
-      this.snackBar.open('Please enter a search term', 'Close', { duration: 3003 });
-      return;
-    }
-    const query = this.searchCategory === 'name'
-      ? `${this.searchTerm}`
-      : `indexNumber:${this.searchTerm}`;
-    this.apiService.getStudentsByQuery(query).subscribe({
-      next: (students: User[]) => {
-        this.filteredStudents = students.filter(s => s.role === 'STUDENT');
-        if (this.filteredStudents.length === 0) {
-          this.snackBar.open('No students found', 'Close', { duration: 3003 });
-        }
-        this.selectedStudent = null;
-        this.studyHistory = [];
+  if (!this.searchTerm.trim()) {
+    this.filteredStudents = [];
+    this.selectedStudent = null;
+    this.studyHistory = [];
+    return;
+  }
+
+  const term = this.searchTerm.trim().toLowerCase();
+
+
+  if (this.allExamApplications.length === 0) {
+    this.apiService.getAllExamApplications().subscribe({
+      next: (apps: ExamApplication[]) => {
+        this.allExamApplications = apps;
+
+        this.filterStudentsFromApplications(term);
       },
-      error: (err: any) => {
-        console.error('Failed to search students:', err);
-        this.snackBar.open('Failed to search students: ' + (err.message || 'Unknown error'), 'Close', { duration: 3003 });
+      error: () => {
+        this.snackBar.open('Failed to load exam applications', 'Error', { duration: 5000 });
         this.filteredStudents = [];
       }
     });
+  } else {
+    this.filterStudentsFromApplications(term);
   }
+}
+
+private filterStudentsFromApplications(term: string): void {
+  const uniqueStudents = new Map<number, User>();
+
+  this.allExamApplications.forEach(app => {
+    const user = app.user;
+    if (user && user.role === 'STUDENT' && !uniqueStudents.has(user.id!)) {
+      const fullName = `${user.firstName} ${user.lastName}`.toLowerCase();
+      const indexMatch = user.indexNumber?.toLowerCase().includes(term);
+
+      if (fullName.includes(term) || indexMatch) {
+        uniqueStudents.set(user.id!, user);
+      }
+    }
+  });
+
+  this.filteredStudents = Array.from(uniqueStudents.values());
+
+  if (this.filteredStudents.length === 0) {
+    this.snackBar.open('No students found with exam applications', 'Info', { duration: 4000 });
+  } else {
+    this.snackBar.open(`Found ${this.filteredStudents.length} student(s)`, 'Success', { duration: 3000 });
+  }
+
+  this.selectedStudent = null;
+  this.studyHistory = [];
+}
 
   viewStudentDetails(userId: number): void {
     const student = this.filteredStudents.find(s => s.id === userId);
@@ -639,6 +804,8 @@ export class TeacherDashboardComponent implements OnInit {
     }
     this.selectedStudent = student;
     this.loadStudentHistory(userId);
+
+    
   }
 
   private loadStudentHistory(userId: number): void {
@@ -664,45 +831,68 @@ export class TeacherDashboardComponent implements OnInit {
     this.numberOfTakenExams = history.examsTaken + 1;
   }
 
-  submitGrade(): void {
-    if (this.gradingHistory && this.newGrade !== null) {
-      this.apiService.getExamApplicationsByUserId(this.selectedStudent!.id!).subscribe({
-        next: (applications: ExamApplication[]) => {
-          const application = applications.find(app => 
-            app.course.id === this.gradingHistory!.courseId && 
-            app.term === this.gradingHistory!.term
-          );
-          if (!application) {
-            this.snackBar.open('Exam application not found', 'Close', { duration: 3003 });
-            return;
-          }
-          this.apiService.gradeExam(application.id, this.newGrade!, this.numberOfTakenExams).subscribe({
-            next: () => {
-              this.showGradeForm = false;
-              this.gradingHistory = null;
-              this.newGrade = null;
-              this.numberOfTakenExams = 1;
-              this.snackBar.open('Exam graded successfully', 'Close', { duration: 3003 });
-              if (this.selectedStudent) {
-                this.loadStudentHistory(this.selectedStudent.id!);
-              }
-              if (this.selectedCourse) {
-                this.loadCourseApplications(this.selectedCourse.id!);
-              }
-            },
-            error: (err: any) => {
-              console.error('Failed to grade exam:', err);
-              this.snackBar.open('Failed to grade exam: ' + (err.message || 'Unknown error'), 'Close', { duration: 3003 });
-            }
-          });
-        },
-        error: (err: any) => {
-          console.error('Failed to fetch exam applications:', err);
-          this.snackBar.open('Failed to fetch exam applications: ' + (err.message || 'Unknown error'), 'Close', { duration: 3003 });
-        }
-      });
-    }
+ submitGrade(): void {
+  console.log('submitGrade called', { 
+    gradingHistory: this.gradingHistory,
+    newGrade: this.newGrade,
+    selectedStudent: this.selectedStudent
+  });
+
+  if (!this.selectedStudent?.id) {
+    this.snackBar.open('No student selected', 'Error');
+    return;
   }
+  if (!this.gradingHistory?.courseId) {
+    this.snackBar.open('No course selected for grading', 'Error');
+    return;
+  }
+  if (this.newGrade === null || this.newGrade < 5 || this.newGrade > 10) {
+    this.snackBar.open('Please enter a valid grade (5-10)', 'Error');
+    return;
+  }
+
+  if (this.allExamApplications.length === 0) {
+    this.apiService.getAllExamApplications().subscribe({
+      next: (apps) => {
+        this.allExamApplications = apps;
+        this.submitGradeAfterLoad();
+      },
+      error: () => this.snackBar.open('Failed to load applications', 'Error')
+    });
+  } else {
+    this.submitGradeAfterLoad();
+  }
+}
+
+private submitGradeAfterLoad(): void {
+  const apps = this.allExamApplications.filter(app => 
+    app.user.id === this.selectedStudent!.id &&
+    app.course.id === this.gradingHistory!.courseId &&
+    app.term === this.gradingHistory!.term
+  );
+
+  if (apps.length === 0) {
+    this.snackBar.open('No application found for this course/term', 'Error');
+    return;
+  }
+
+  const latestApp = apps[apps.length - 1];
+  const attempts = this.getExamAttemptsCount(this.selectedStudent!.id!, this.gradingHistory!.courseId);
+
+  this.apiService.gradeExam(latestApp.id, this.newGrade!, attempts).subscribe({
+    next: () => {
+      this.snackBar.open(`Grade ${this.newGrade} saved! (Attempt ${attempts})`, 'Success', { duration: 5000 });
+      this.showGradeForm = false;
+      this.gradingHistory = null;
+      this.newGrade = null;
+      this.loadStudentHistory(this.selectedStudent!.id!);
+    },
+    error: (err) => {
+      console.error('Grade failed:', err);
+      this.snackBar.open('Failed to save grade', 'Error');
+    }
+  });
+}
 
   deleteCourseApplication(history: StudyHistory & { student?: User }): void {
     if (!history.student?.id) {
@@ -772,4 +962,33 @@ export class TeacherDashboardComponent implements OnInit {
     this.newGrade = null;
     this.numberOfTakenExams = 1;
   }
+
+  openDialog(type: 'courses' | 'syllabus' | 'grading' | 'notifications'): void {
+    const templates: Record<string, TemplateRef<any>> = {
+      courses: this.coursesDialog,
+      syllabus: this.syllabusDialog,
+      grading: this.gradingDialog,
+      notifications: this.notificationsDialog
+    };
+    this.dialog.open(templates[type], { width: '95vw', maxWidth: '1200px', height: type === 'grading' ? '90vh' : 'auto' });
+  }
+
+  get syllabusesCount(): number {
+    return Object.keys(this.syllabuses).length;
+  }
+
+  getCourseName(courseId: number): string {
+  return this.courses.find(c => c.id === courseId)?.name || 'Unknown Course';
+}
+
+getExamAttemptsCount(studentId: number | undefined, courseId: number): number {
+  if (!studentId || !courseId || this.allExamApplications.length === 0) {
+    return 0;
+  }
+
+  return this.allExamApplications.filter(app => {
+    return app.user?.id === studentId && app.course?.id === courseId;
+  }).length;
+}
+
 }

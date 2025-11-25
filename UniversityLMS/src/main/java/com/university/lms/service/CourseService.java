@@ -8,6 +8,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.university.lms.entity.User;
+import com.university.lms.repository.UserRepository;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,6 +23,9 @@ public class CourseService {
 
     @Autowired
     private CourseRepository courseRepository;
+    
+    @Autowired
+    private UserRepository userRepository;
 
     @Autowired
     private SyllabusRepository syllabusRepository;   
@@ -53,21 +60,63 @@ public class CourseService {
         return courseRepository.findByStudyProgramId(studyProgramId);
     }
 
-    public Course createCourse(Course course) {
-        course.setId(null); 
-        return courseRepository.save(course);
-    }
-
-    public Course updateCourse(Long id, Course course) {
-        course.setId(id);
-        return courseRepository.save(course);
-    }
-
     public void deleteCourse(Long id) {
         courseRepository.deleteById(id);
     }
     
     public boolean existsById(Long id) {
         return courseRepository.existsById(id);
+    }
+    
+    public Course createCourse(Course course, Long teacherId) {
+        validateTeacher(teacherId);
+        course.setTeacherId(teacherId);
+        course.setId(null);
+        return courseRepository.save(course);
+    }
+    
+    public Course updateCourse(Long id, Course course, Long requestingUserId) {
+        Course existing = courseRepository.findById(id)
+            .orElseThrow(() -> new IllegalArgumentException("Course not found"));
+
+        if (!isAdmin() && !existing.getTeacherId().equals(requestingUserId)) {
+            throw new SecurityException("You can only edit your own courses");
+        }
+
+        if (course.getTeacherId() != null && !course.getTeacherId().equals(existing.getTeacherId())) {
+            validateTeacher(course.getTeacherId());
+            existing.setTeacherId(course.getTeacherId());
+        }
+
+        existing.setName(course.getName());
+        existing.setDescription(course.getDescription());
+        existing.setCode(course.getCode());
+        existing.setEctsPoints(course.getEctsPoints());
+        existing.setStudyProgramId(course.getStudyProgramId());
+        existing.setStudyYear(course.getStudyYear());
+
+        return courseRepository.save(existing);
+    }
+
+    public List<Course> getCoursesByTeacher(Long teacherId) {
+        return courseRepository.findByTeacherId(teacherId);
+    }
+
+    public List<Course> getCoursesByStudyYear(Long studyYear) {
+        return courseRepository.findByStudyYear(studyYear);
+    }
+
+    private void validateTeacher(Long userId) {
+        User user = userRepository.findById(userId)
+            .orElseThrow(() -> new IllegalArgumentException("User not found"));
+        if (!"TEACHER".equals(user.getRole())) {
+            throw new IllegalArgumentException("User must have TEACHER role");
+        }
+    }
+
+    private boolean isAdmin() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        return auth != null && auth.getAuthorities().stream()
+            .anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"));
     }
 }

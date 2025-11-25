@@ -1,0 +1,89 @@
+package com.university.lms.controller;
+
+import com.university.lms.entity.Course;
+import com.university.lms.entity.User;
+import com.university.lms.repository.CourseRepository;
+import com.university.lms.service.CourseService;
+import com.university.lms.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.security.Principal;
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/public")
+
+public class CourseController {
+
+    private static final Logger logger = LoggerFactory.getLogger(CourseController.class);
+
+    @Autowired
+    private CourseRepository courseRepository;
+    
+    @Autowired
+    private CourseService courseService;
+
+    @Autowired
+    private UserService userService;
+
+    @GetMapping("/courses")
+    public ResponseEntity<List<Course>> getCourses() {
+        logger.info("Fetching all courses");
+        return ResponseEntity.ok(courseRepository.findAll());
+    }
+    
+    @GetMapping("/courses/my")
+    @PreAuthorize("hasRole('TEACHER')")
+    public ResponseEntity<List<Course>> getMyCourses(Principal principal) {
+        User teacher = userService.findByUsername(principal.getName())
+            .orElseThrow(() -> new RuntimeException("User not found"));
+        return ResponseEntity.ok(courseService.getCoursesByTeacher(teacher.getId()));
+    }
+
+    @PostMapping
+    public ResponseEntity<Course> createCourse(@RequestBody Course course, Principal principal) {
+        User currentUser = userService.findByUsername(principal.getName()).orElseThrow();
+        Long teacherId = "ADMIN".equals(currentUser.getRole()) && course.getTeacherId() != null
+            ? course.getTeacherId() : currentUser.getId();
+
+        Course saved = courseService.createCourse(course, teacherId);
+        return ResponseEntity.ok(saved);
+    }
+
+    @PutMapping("/courses/{id}")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('TEACHER')")
+    public ResponseEntity<Course> updateCourse(
+            @PathVariable Long id,
+            @RequestBody Course course,
+            Principal principal) {
+
+        User currentUser = userService.findByUsername(principal.getName()).orElseThrow();
+        Course updated = courseService.updateCourse(id, course, currentUser.getId());
+        return ResponseEntity.ok(updated);
+    }
+
+
+    @DeleteMapping("/courses/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Void> deleteCourse(@PathVariable Long id) {
+        courseService.deleteCourse(id);
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/courses/year/{studyYear}")
+    public ResponseEntity<List<Course>> getByStudyYear(@PathVariable Long studyYear) {
+        return ResponseEntity.ok(courseService.getCoursesByStudyYear(studyYear));
+    }
+}

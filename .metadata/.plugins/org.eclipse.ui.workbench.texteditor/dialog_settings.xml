@@ -2,11 +2,23 @@
 <section name="Workbench">
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<section name="java.lang.Class">
-		<item key="replaceBarOpen" value="false"/>
+		<item key="replaceBarOpen" value="true"/>
 		<list key="findhistory">
-			<item value="enroller"/>
-			<item value="enr"/>
-			<item value="enroll"/>
+			<item value="isAdmin"/>
+			<item value="e"/>
+			<item value="exam_id"/>
+			<item value="YearId"/>
+			<item value="studen"/>
+			<item value="year"/>
+			<item value="id"/>
+			<item value="study"/>
+			<item value="studyYear"/>
+			<item value="updateCourse"/>
+			<item value="createCourse"/>
+			<item value="student"/>
+			<item value="jjwt"/>
+			<item value="jsonw"/>
+			<item value="json "/>
 		</list>
 	</section>
 </section>

@@ -1,0 +1,147 @@
+package com.university.lms.controller;
+
+import com.university.lms.entity.User;
+import com.university.lms.service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.*;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
+
+import java.io.ByteArrayOutputStream;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api")
+public class UserController {
+
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+
+    private final UserService userService;
+    private final PasswordEncoder passwordEncoder;
+
+    public UserController(UserService userService, PasswordEncoder passwordEncoder) {
+        this.userService = userService;
+        this.passwordEncoder = passwordEncoder;
+    }
+
+    @PostMapping("/users/register")
+    public ResponseEntity<?> register(@RequestBody User user) {
+        logger.info("Received registration request for user: {}", user.getUsername());
+        try {
+            User registeredUser = userService.register(user);
+            logger.info("User registered successfully: {}", user.getUsername());
+            return ResponseEntity.ok(registeredUser);
+        } catch (IllegalArgumentException e) {
+            logger.error("Registration failed for user: {}, error: {}", user.getUsername(), e.getMessage());
+            return ResponseEntity.badRequest().body("Registration failed: " + e.getMessage());
+        } catch (Exception e) {
+            logger.error("Unexpected error during registration: {}", e.getMessage());
+            return ResponseEntity.status(500).body("Unexpected error: " + e.getMessage());
+        }
+    }
+
+    
+
+    @PutMapping("/users/update")
+    public ResponseEntity<?> updateUser(@RequestBody User updates, Authentication auth) {
+        String username;
+
+        if (auth == null || auth.getName() == null) {
+            // For testing without JWT – use username from body
+            username = updates.getUsername();
+            logger.warn("No authentication – allowing update for testing only");
+        } else {
+            username = auth.getName();
+            if (!username.equals(updates.getUsername())) {
+                return ResponseEntity.status(403).body("You can only update your own profile");
+            }
+        }
+
+        try {
+            User existing = userService.findByUsername(username)
+                    .orElseThrow(() -> new RuntimeException("User not found"));
+
+            existing.setEmail(updates.getEmail());
+            existing.setFirstName(updates.getFirstName());
+            existing.setLastName(updates.getLastName());
+            existing.setIndexNumber(updates.getIndexNumber());
+
+            User saved = userService.updateUser(existing);
+            return ResponseEntity.ok(saved);
+
+        } catch (Exception e) {
+            logger.error("Update failed", e);
+            return ResponseEntity.status(500).body("Update failed: " + e.getMessage());
+        }
+    }
+
+    @GetMapping("/users/profile")
+    public ResponseEntity<?> getProfile(Authentication authentication) {
+        logger.info("Fetching profile for user: {}", authentication.getName());
+        try {
+            User user = userService.findByUsername(authentication.getName())
+                .orElseThrow(() -> new IllegalArgumentException("User not found"));
+            logger.info("Profile retrieved successfully for user: {}", user.getUsername());
+            return ResponseEntity.ok(user);
+        } catch (IllegalArgumentException e) {
+            logger.error("Profile fetch failed: {}", e.getMessage());
+            return ResponseEntity.status(404).body("Profile not found: " + e.getMessage());
+        } catch (Exception e) {
+            logger.error("Unexpected error during profile fetch: {}", e.getMessage());
+            return ResponseEntity.status(500).body("Unexpected error: " + e.getMessage());
+        }
+    }
+
+    @GetMapping("/admin/export/users")
+    public ResponseEntity<byte[]> exportUsers(@RequestParam("format") String format) {
+        logger.info("Exporting users in format: {}", format);
+        try {
+            if (!"pdf".equalsIgnoreCase(format)) {
+                logger.error("Unsupported format: {}", format);
+                return ResponseEntity.badRequest().body("Unsupported format".getBytes());
+            }
+
+            List<User> users = userService.getAllUsers();
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            Document document = new Document();
+            PdfWriter.getInstance(document, baos);
+            document.open();
+            document.add(new Paragraph("Users Report"));
+            document.add(new Paragraph(" "));
+            for (User user : users) {
+                document.add(new Paragraph("ID: " + user.getId()));
+                document.add(new Paragraph("Username: " + user.getUsername()));
+                document.add(new Paragraph("Email: " + user.getEmail()));
+                document.add(new Paragraph("Role: " + user.getRole()));
+                document.add(new Paragraph("First Name: " + user.getFirstName()));
+                document.add(new Paragraph("Last Name: " + user.getLastName()));
+                document.add(new Paragraph("Index Number: " + user.getIndexNumber()));
+                document.add(new Paragraph(" "));
+            }
+            document.close();
+
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_PDF);
+            headers.setContentDispositionFormData("attachment", "users.pdf");
+
+            logger.info("Users exported as PDF successfully");
+            return ResponseEntity.ok()
+                .headers(headers)
+                .body(baos.toByteArray());
+        } catch (Exception e) {
+            logger.error("Error exporting users as PDF: {}", e.getMessage());
+            return ResponseEntity.status(500).body(("Error exporting users: " + e.getMessage()).getBytes());
+        }
+    }
+}

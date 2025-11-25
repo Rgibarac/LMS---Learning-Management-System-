@@ -6,7 +6,7 @@ import { AdminDashboardComponent } from './components/admin/dashboard/dashboard.
 import { TeacherDashboardComponent } from './components/teacher/dashboard/dashboard.component';
 import { StaffDashboardComponent } from './components/staff/dashboard/dashboard.component';
 import { ProfileComponent } from './components/auth/profile/profile.component';
-import { authGuard } from './core/guards/auth.guard';
+import { AuthGuard } from './core/guards/auth.guard';
 import { HomeComponent } from './components/public/home/home.component';
 import { FacultyListComponent } from './components/public/faculty-list/faculty-list.component';
 import { StudyProgramListComponent } from './components/public/study-program-list/study-program-list.component';
@@ -22,10 +22,10 @@ export const routes: Routes = [
   { path: 'syllabuses', component: SyllabusListComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
-  { path: 'student', component: StudentDashboardComponent, canActivate: [authGuard] },
-  { path: 'admin', component: AdminDashboardComponent, canActivate: [authGuard] },
-  { path: 'teacher', component: TeacherDashboardComponent, canActivate: [authGuard] },
-  { path: 'staff', component: StaffDashboardComponent, canActivate: [authGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'student', component: StudentDashboardComponent, canActivate: [AuthGuard] },
+  { path: 'admin', component: AdminDashboardComponent, canActivate: [AuthGuard] },
+  { path: 'teacher', component: TeacherDashboardComponent, canActivate: [AuthGuard] },
+  { path: 'staff', component: StaffDashboardComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '/login' }
 ];

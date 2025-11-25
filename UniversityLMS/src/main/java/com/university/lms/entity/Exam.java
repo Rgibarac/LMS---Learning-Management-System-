@@ -21,7 +21,7 @@ public class Exam {
     private LocalDateTime date;
 
     @ElementCollection
-    @CollectionTable(name = "exam_grades", joinColumns = @JoinColumn(name = "exam_id"))
+    
     @MapKeyJoinColumn(name = "user_id")
     @Column(name = "grade")
     private Map<User, Double> studentGrades; 
