@@ -12,11 +12,13 @@ import { FacultyListComponent } from './components/public/faculty-list/faculty-l
 import { StudyProgramListComponent } from './components/public/study-program-list/study-program-list.component';
 import { CourseListComponent } from './components/public/course-list/course-list.component';
 import { SyllabusListComponent } from './components/public/syllabus-list/syllabus-list.component';
+import { UniversityInfoComponent } from './components/public/university-info/university-info.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'faculties', component: FacultyListComponent },
+  { path: 'about', component: UniversityInfoComponent },
   { path: 'study-programs', component: StudyProgramListComponent },
   { path: 'courses', component: CourseListComponent },
   { path: 'syllabuses', component: SyllabusListComponent },
@@ -27,5 +29,6 @@ export const routes: Routes = [
   { path: 'admin', component: AdminDashboardComponent, canActivate: [AuthGuard] },
   { path: 'teacher', component: TeacherDashboardComponent, canActivate: [AuthGuard] },
   { path: 'staff', component: StaffDashboardComponent, canActivate: [AuthGuard] },
-  { path: '**', redirectTo: '/login' }
+  { path: '**', redirectTo: '/login' },
+
 ];

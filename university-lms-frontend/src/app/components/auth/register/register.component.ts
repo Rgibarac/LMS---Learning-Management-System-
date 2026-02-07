@@ -49,11 +49,6 @@ import { CommonModule } from '@angular/common';
               <mat-icon matSuffix>person_outline</mat-icon>
             </mat-form-field>
 
-            <mat-form-field appearance="fill" class="full-width">
-              <mat-label>Index Number</mat-label>
-              <input matInput [(ngModel)]="user.indexNumber" name="indexNumber" required placeholder="e.g. 20230001">
-              <mat-icon matSuffix>badge</mat-icon>
-            </mat-form-field>
 
             <mat-form-field appearance="fill" class="full-width">
               <mat-label>Email</mat-label>
@@ -69,7 +64,7 @@ import { CommonModule } from '@angular/common';
 
             <mat-form-field appearance="fill" class="full-width">
               <mat-label>Password</mat-label>
-              <input matInput type="password" [(ngModel)]="user.password" name="password" required minlength="6" autocomplete="new-password">
+              <input matInput type="password" [(ngModel)]="user.password" name="password" required minlength="1" autocomplete="new-password">
               <mat-icon matSuffix>lock</mat-icon>
               <mat-hint align="end">{{user.password?.length || 0}}/6+</mat-hint>
             </mat-form-field>
@@ -174,7 +169,7 @@ export class RegisterComponent {
     email: '',
     firstName: '',
     lastName: '',
-    indexNumber: '',
+    indexNumber: 'NULL' as const,
     role: 'UNASSIGNED' as const  
   };
 
@@ -186,7 +181,7 @@ export class RegisterComponent {
 
   register(): void {
     if (!this.user.username || !this.user.password || !this.user.email ||
-        !this.user.firstName || !this.user.lastName || !this.user.indexNumber) {
+        !this.user.firstName || !this.user.lastName) {
       return;
     }
 

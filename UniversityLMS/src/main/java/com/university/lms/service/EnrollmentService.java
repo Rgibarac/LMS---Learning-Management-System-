@@ -37,4 +37,19 @@ public class EnrollmentService {
         }
         return null;
     }
+    
+    public boolean removeCourseEnrollment(Long studentId, Long courseId) {
+        List<Enrollment> enrollments = enrollmentRepository.findByStudentId(studentId);
+
+        Enrollment toRemove = enrollments.stream()
+            .filter(e -> e.getCourseId() != null && e.getCourseId().equals(courseId))
+            .findFirst()
+            .orElse(null);
+
+        if (toRemove != null) {
+            enrollmentRepository.delete(toRemove);
+            return true;
+        }
+        return false;
+    }
 }

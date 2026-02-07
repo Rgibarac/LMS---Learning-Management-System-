@@ -1,4 +1,3 @@
-// src/app/components/home/home.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
@@ -35,7 +34,6 @@ interface University {
     MatProgressSpinnerModule
   ],
   template: `
-    <!-- HERO SECTION -->
     <div class="hero">
       <div class="hero-content">
         <h1 *ngIf="university">{{ university.name }}</h1>
@@ -56,7 +54,7 @@ interface University {
 
         <div class="welcome-user" *ngIf="currentUser">
           <h2>Welcome back, <strong>{{ currentUser.firstName }} {{ currentUser.lastName }}</strong>!</h2>
-          <p>Role: <strong>{{ currentUser.role | titlecase }}</strong></p>
+          <p> </p>
           <button mat-stroked-button color="primary" routerLink="/{{ currentUser.role.toLowerCase() }}">
             Go to Dashboard
           </button>
@@ -65,10 +63,9 @@ interface University {
       <div class="hero-wave"></div>
     </div>
 
-    <!-- MAIN CONTENT -->
+
     <div class="main-content">
 
-      <!-- UNIVERSITY INFO CARD -->
       <mat-card class="info-card" *ngIf="university">
         <mat-card-header>
           <div mat-card-avatar class="icon-bg"><mat-icon>account_balance</mat-icon></div>
@@ -84,7 +81,6 @@ interface University {
         </mat-card-content>
       </mat-card>
 
-      <!-- SCHEDULES SECTION -->
       <mat-card class="schedules-card">
         <mat-card-header>
           <div mat-card-avatar class="icon-bg schedule"><mat-icon>event_note</mat-icon></div>
@@ -99,8 +95,8 @@ interface University {
           <mat-list *ngIf="!isLoadingSchedules && schedules.length > 0">
             <mat-list-item *ngFor="let s of schedules; let i = index" class="schedule-item">
               <div class="schedule-content">
-                <h3 matLine>{{ s.courseName }}</h3>
-                <p matLine><strong>Year:</strong> {{ s.academicYear }} • {{ s.scheduleDetails }}</p>
+                <h3 matLine>{{ s.title }}</h3>
+                <p matLine><strong>Date:</strong> {{ s.createdAt }} • {{ s.message }}</p>
               </div>
               <mat-icon matListItemIcon color="primary">schedule</mat-icon>
             </mat-list-item>
@@ -114,7 +110,6 @@ interface University {
         </mat-card-content>
       </mat-card>
 
-      <!-- PUBLIC LINKS FOR GUESTS -->
       <div class="public-links" *ngIf="!currentUser">
         <mat-card>
           <mat-card-header>
@@ -320,7 +315,7 @@ interface University {
 export class HomeComponent implements OnInit {
   university: University | null = null;
   currentUser: User | null = null;
-  schedules: Schedule[] = [];
+  schedules: Notification[] = [];
   isLoadingSchedules = true;
 
   constructor(
@@ -329,21 +324,28 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.http.get<University>('http://localhost:8080/api/public/university').subscribe({
-      next: (info) => this.university = info,
-      error: (err) => console.warn('University info not available:', err)
-    });
+  this.http.get<University>('http://localhost:8080/api/public/university').subscribe({
+    next: (info) => this.university = info,
+    error: (err) => console.warn('University info not available:', err)
+  });
 
-    this.currentUser = this.apiService.getCurrentUser();
+  this.currentUser = this.apiService.getCurrentUser();
 
-    this.apiService.getSchedules().subscribe({
-      next: (data) => {
-        this.schedules = data;
-        this.isLoadingSchedules = false;
-      },
-      error: () => {
-        this.isLoadingSchedules = false;
-      }
-    });
-  }
+  this.apiService.getNotifications().subscribe({
+    next: (allNotifications) => {
+      this.schedules = allNotifications.filter(notification => {
+        const recipientRole = notification.recipientRole?.toUpperCase();
+        const userRole = this.currentUser?.role?.toUpperCase();
+
+        return recipientRole === 'ALL' || recipientRole === userRole;
+      });
+
+      this.isLoadingSchedules = false;
+    },
+    error: () => {
+      this.schedules = [];
+      this.isLoadingSchedules = false;
+    }
+  });
+}
 }

@@ -48,12 +48,14 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/", "/h2-console/**").permitAll()
                 .requestMatchers("/api/public/**", "/api/student-teacher/**", "/error").permitAll()
+                .requestMatchers("/api/public/users/**").permitAll()
                 .requestMatchers("/api/users/register", "/api/login").permitAll()
                 .requestMatchers("/api/admin/export/users**").permitAll()
                 .requestMatchers("/api/users/profile", "/api/users/update", "/api/applied-years/**", "/api/term-schedules/**").permitAll()
-
-                .requestMatchers("/api/admin/**").hasAnyRole("ADMIN","STAFF")
-                .requestMatchers("/api/staff/**").hasAnyRole("ADMIN", "STAFF", "STUDENT")
+                .requestMatchers("/api/university-details").permitAll()
+                .requestMatchers("/api/colleges").permitAll()
+                .requestMatchers("/api/admin/**").hasAnyRole("ADMIN","STAFF","TEACHER")
+                .requestMatchers("/api/staff/**").hasAnyRole("ADMIN", "STAFF", "STUDENT","TEACHER")
                 .requestMatchers("/api/teacher/**").hasRole("TEACHER")
                 .requestMatchers("/api/student/**").hasRole("STUDENT")
 

@@ -1,4 +1,3 @@
-// src/app/components/syllabus/syllabus-list/syllabus-list.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
@@ -35,9 +34,6 @@ import { Course } from '../../../core/models/course.model';
               Academic Year: {{ syllabus.academicYear || 'Current' }}
             </mat-card-subtitle>
           </mat-card-header>
-          <mat-card-content>
-            <p><strong>PDF Syllabus Available</strong></p>
-          </mat-card-content>
         </mat-card>
 
         <div *ngIf="syllabuses.length === 0" class="empty-state">

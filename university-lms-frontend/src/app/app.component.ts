@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatDividerModule } from '@angular/material/divider'; // Added for safety
 import { ApiService } from './core/services/api.service';
 import { User } from './core/models/user.model';
 
@@ -23,14 +24,15 @@ import { User } from './core/models/user.model';
     MatIconModule,
     MatSidenavModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDividerModule  // Ensure divider works
   ],
   template: `
     <mat-sidenav-container class="lms-container" autosize>
       <mat-sidenav #sidenav mode="side" [opened]="sidebarOpen" class="lms-sidebar">
         <div class="sidebar-header">
           <mat-icon class="logo-icon">school</mat-icon>
-          <span class="logo-text">LMS</span>
+          <span class="logo-text"></span>
         </div>
 
         <mat-nav-list class="nav-list">
@@ -47,13 +49,24 @@ import { User } from './core/models/user.model';
           </a>
 
           <a mat-list-item routerLink="/study-programs" routerLinkActive="active">
-            <mat-icon matListItemIcon>apartment</mat-icon>
+            <mat-icon matListItemIcon>school</mat-icon>
             <span matListItemTitle>Study Programs</span>
+          </a>
+
+          <!-- NEW: Colleges Link -->
+          <a mat-list-item routerLink="/faculties" routerLinkActive="active">
+            <mat-icon matListItemIcon>apartment</mat-icon>
+            <span matListItemTitle>Colleges</span>
           </a>
 
           <a mat-list-item routerLink="/syllabuses" routerLinkActive="active">
             <mat-icon matListItemIcon>description</mat-icon>
             <span matListItemTitle>Syllabuses</span>
+          </a>
+
+          <a mat-list-item routerLink="/about" routerLinkActive="active">
+            <mat-icon matListItemIcon>info</mat-icon>
+            <span matListItemTitle>About University</span>
           </a>
 
           <mat-divider class="divider"></mat-divider>
@@ -74,13 +87,14 @@ import { User } from './core/models/user.model';
           </a>
         </mat-nav-list>
       </mat-sidenav>
+
       <mat-sidenav-content>
         <mat-toolbar color="primary" class="lms-toolbar">
           <button mat-icon-button (click)="toggleSidebar()" class="menu-toggle">
             <mat-icon>{{ sidebarOpen ? 'menu_open' : 'menu' }}</mat-icon>
           </button>
 
-          <span class="toolbar-title">University Learning Management System</span>
+          <span class="toolbar-title"></span>
 
           <span class="spacer"></span>
 
@@ -243,7 +257,7 @@ export class AppComponent implements OnInit {
 
   get userInitials(): string {
     if (!this.currentUser) return 'U';
-    return `${this.currentUser.firstName[0]}${this.currentUser.lastName[0]}`.toUpperCase();
+    return `${this.currentUser.firstName?.[0] ?? ''}${this.currentUser.lastName?.[0] ?? ''}`.toUpperCase();
   }
 
   isActive(path: string): boolean {

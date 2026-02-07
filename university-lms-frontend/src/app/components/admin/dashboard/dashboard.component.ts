@@ -19,6 +19,12 @@ import { StudyProgram } from '../../../core/models/study-program.model';
 import { Course } from '../../../core/models/course.model';
 import { Syllabus } from '../../../core/models/syllabus.model';
 import { AppliedYear } from '../../../core/models/applied-year.model';
+import { College } from '../../../core/models/college.model';
+import { University } from '../../../core/models/university.model';
+import { UniversityDetails } from '../../../core/models/university-details.model';
+import { MatDivider } from "@angular/material/divider";
+
+
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -35,8 +41,9 @@ import { AppliedYear } from '../../../core/models/applied-year.model';
     MatSnackBarModule,
     MatDialogModule,
     MatIconModule,
-    MatCardModule
-  ],
+    MatCardModule,
+    MatDivider
+],
   template: `
     <h2 class="page-title">Admin Dashboard</h2>
 
@@ -114,6 +121,56 @@ import { AppliedYear } from '../../../core/models/applied-year.model';
         </mat-card>
       </div>
 
+      <mat-card class="admin-card" (click)="openDialog('colleges')">
+  <mat-card-header>
+    <div mat-card-avatar class="card-icon colleges-icon"><mat-icon>apartment</mat-icon></div>
+    <mat-card-title>Colleges</mat-card-title>
+    <mat-card-subtitle>{{ colleges.length }} college(s)</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Create and manage university colleges/faculties.</p>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-mini-fab color="primary"><mat-icon>arrow_forward</mat-icon></button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card class="admin-card university-settings-card">
+  <mat-card-header>
+    <div mat-card-avatar class="card-icon university-icon">
+      <mat-icon>account_balance</mat-icon>
+    </div>
+    <mat-card-title>University Settings</mat-card-title>
+    <mat-card-subtitle>Institution information & contact</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content *ngIf="!isLoadingUniversity; else loadingUni">
+    <ng-container *ngIf="university; else noUniversity">
+      <p><strong>Name:</strong> {{ university.name }}</p>
+      <p><strong>Description:</strong> {{ university.description || '—' }}</p>
+      <ng-container *ngIf="universityDetails">
+        <p><strong>Contact:</strong> {{ universityDetails.contactEmail }} | {{ universityDetails.contactPhone }}</p>
+        <p><strong>Location:</strong> {{ universityDetails.location || '—' }}</p>
+        <p><strong>Rector:</strong> {{ universityDetails.rectorName || '—' }}</p>
+      </ng-container>
+    </ng-container>
+
+    <ng-template #noUniversity>
+      <p class="empty">No university configured yet.</p>
+    </ng-template>
+  </mat-card-content>
+
+  <ng-template #loadingUni>
+    <mat-spinner diameter="40"></mat-spinner>
+  </ng-template>
+
+  <mat-card-actions align="end">
+    <button mat-raised-button color="primary" (click)="openUniversitySettings()">
+      {{ university ? 'Edit Settings' : 'Create University' }}
+    </button>
+  </mat-card-actions>
+</mat-card>
+
       <div class="export-section">
         <button mat-raised-button color="accent" (click)="exportUsersPdf()" class="export-btn">
           <mat-icon>picture_as_pdf</mat-icon>
@@ -121,6 +178,74 @@ import { AppliedYear } from '../../../core/models/applied-year.model';
         </button>
       </div>
     </div>
+
+    <ng-template #collegesDialog>
+  <h2 mat-dialog-title><mat-icon>apartment</mat-icon> Manage Colleges</h2>
+  <mat-dialog-content class="dialog-content">
+
+    <form (ngSubmit)="editingCollege ? updateCollege() : createCollege()" #collegeForm="ngForm" class="form-grid">
+      <mat-form-field appearance="fill">
+        <mat-label>College Name</mat-label>
+        <input matInput [(ngModel)]="selectedCollege.name" name="name" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Dean User ID</mat-label>
+        <input matInput type="number" [(ngModel)]="selectedCollege.deanId" name="deanId" required min="1">
+        <mat-hint>The user ID of the dean (must exist as ADMIN or TEACHER)</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <input matInput [(ngModel)]="selectedCollege.address" name="address" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>University Name</mat-label>
+        <input matInput [(ngModel)]="selectedCollege.universityName" name="universityName" required>
+      </mat-form-field>
+
+      <div class="form-actions">
+        <button mat-raised-button color="primary" type="submit" [disabled]="collegeForm.invalid">
+  {{ editingCollege ? 'Update College' : 'Create College' }}
+</button>
+        <button mat-raised-button color="warn" type="button" (click)="cancelCollegeForm()">Cancel</button>
+      </div>
+    </form>
+
+    <mat-table [dataSource]="colleges">
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+        <mat-cell *matCellDef="let c">{{ c.name }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="university">
+        <mat-header-cell *matHeaderCellDef>University</mat-header-cell>
+        <mat-cell *matCellDef="let c">{{ c.universityName }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="address">
+        <mat-header-cell *matHeaderCellDef>Address</mat-header-cell>
+        <mat-cell *matCellDef="let c">{{ c.address }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+        <mat-cell *matCellDef="let c">
+          <button mat-icon-button color="primary" (click)="editCollege(c); $event.stopPropagation()">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteCollege(c.id!); $event.stopPropagation()">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="['name', 'university', 'address', 'actions']"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: ['name', 'university', 'address', 'actions']"></mat-row>
+    </mat-table>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+</ng-template>
 
     <ng-template #usersDialog>
       <h2 mat-dialog-title><mat-icon>people</mat-icon> Manage Users</h2>
@@ -251,45 +376,72 @@ import { AppliedYear } from '../../../core/models/applied-year.model';
     </ng-template>
 
     <ng-template #programsDialog>
-      <h2 mat-dialog-title><mat-icon>school</mat-icon> Manage Study Programs</h2>
-      <mat-dialog-content class="dialog-content">
-        <form (ngSubmit)="createStudyProgram()" class="form-grid">
-          <mat-form-field appearance="fill">
-            <mat-label>Program Name</mat-label>
-            <input matInput [(ngModel)]="newStudyProgram.name" name="name" required>
-          </mat-form-field>
-          <mat-form-field appearance="fill">
-            <mat-label>Description</mat-label>
-            <textarea matInput [(ngModel)]="newStudyProgram.description" name="description" rows="3"></textarea>
-          </mat-form-field>
-          <button mat-raised-button color="primary" type="submit">Create Program</button>
-        </form>
+  <h2 mat-dialog-title><mat-icon>school</mat-icon> Manage Study Programs</h2>
+  <mat-dialog-content class="dialog-content">
 
-        <mat-table [dataSource]="studyPrograms">
-          <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
-            <mat-cell *matCellDef="let p">{{ p.name }}</mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="description">
-            <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
-            <mat-cell *matCellDef="let p">{{ p.description || '—' }}</mat-cell>
-          </ng-container>
-          <ng-container matColumnDef="actions">
-            <mat-header-cell *matHeaderCellDef></mat-header-cell>
-            <mat-cell *matCellDef="let p">
-              <button mat-icon-button color="warn" (click)="deleteStudyProgram(p.id!)">
-                <mat-icon>delete</mat-icon>
-              </button>
-            </mat-cell>
-          </ng-container>
-          <mat-header-row *matHeaderRowDef="['name', 'description', 'actions']"></mat-header-row>
-          <mat-row *matRowDef="let row; columns: ['name', 'description', 'actions']"></mat-row>
-        </mat-table>
-      </mat-dialog-content>
-      <mat-dialog-actions align="end">
-        <button mat-button mat-dialog-close>Close</button>
-      </mat-dialog-actions>
-    </ng-template>
+    <form (ngSubmit)="editingProgram ? updateStudyProgram() : createStudyProgram()" #programForm="ngForm" class="form-grid">
+      <mat-form-field appearance="fill">
+        <mat-label>Program Name</mat-label>
+        <input matInput [(ngModel)]="selectedProgram.name" name="name" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Description (optional)</mat-label>
+        <textarea matInput [(ngModel)]="selectedProgram.description" name="description" rows="3"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>College</mat-label>
+        <mat-select [(ngModel)]="selectedProgram.collegeId" name="collegeId" required>
+          <mat-option *ngFor="let college of colleges" [value]="college.id">
+            {{ college.name }} ({{ college.universityName }})
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="form-actions">
+        <button mat-raised-button color="primary" type="submit" [disabled]="programForm.invalid">
+          {{ editingProgram ? 'Update Program' : 'Create Program' }}
+        </button>
+        <button mat-raised-button color="warn" type="button" (click)="cancelProgramForm()">Cancel</button>
+      </div>
+    </form>
+
+    <mat-table [dataSource]="studyPrograms" class="mat-elevation-z2">
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+        <mat-cell *matCellDef="let p">{{ p.name }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="college">
+        <mat-header-cell *matHeaderCellDef>College</mat-header-cell>
+        <mat-cell *matCellDef="let p">{{ getCollegeName(p.collegeId) }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+        <mat-cell *matCellDef="let p">{{ p.description || '—' }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>
+        <mat-cell *matCellDef="let p">
+          <button mat-icon-button color="primary" (click)="editStudyProgram(p); $event.stopPropagation()">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteStudyProgram(p.id!); $event.stopPropagation()">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="['name', 'college', 'description', 'actions']"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: ['name', 'college', 'description', 'actions']"></mat-row>
+    </mat-table>
+
+    <p *ngIf="studyPrograms.length === 0" class="empty">No study programs found.</p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+</ng-template>
 
 <ng-template #coursesDialog>
   <h2 mat-dialog-title><mat-icon>book</mat-icon> Manage Courses</h2>
@@ -454,8 +606,113 @@ import { AppliedYear } from '../../../core/models/applied-year.model';
         <button mat-button mat-dialog-close>Close</button>
       </mat-dialog-actions>
     </ng-template>
+
+   <ng-template #universitySettingsDialog>
+  <h2 mat-dialog-title>
+    <mat-icon>account_balance</mat-icon>
+    University Settings
+  </h2>
+
+  <mat-dialog-content class="dialog-content">
+    <div class="settings-section">
+      <h3>Basic University Information</h3>
+
+      <form #basicForm="ngForm" class="form-grid">
+        <mat-form-field appearance="fill">
+          <mat-label>University Name</mat-label>
+          <input matInput [(ngModel)]="editForm.university.name" name="uniName" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Short Description</mat-label>
+          <textarea matInput [(ngModel)]="editForm.university.description" name="uniDesc" rows="4"></textarea>
+        </mat-form-field>
+
+        <div class="form-actions">
+          <button mat-raised-button color="primary"
+                  (click)="saveBasicInfo()"
+                  [disabled]="basicForm.invalid || basicForm.pristine">
+            Save Basic Info
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <mat-divider class="section-divider"></mat-divider>
+
+    <div class="settings-section">
+      <h3>Contact & Additional Details</h3>
+
+      <form #detailsForm="ngForm" class="form-grid">
+        <mat-form-field appearance="fill">
+          <mat-label>Contact Email</mat-label>
+          <input matInput [(ngModel)]="editForm.details.contactEmail" name="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Contact Phone</mat-label>
+          <input matInput [(ngModel)]="editForm.details.contactPhone" name="phone">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Location / Address</mat-label>
+          <input matInput [(ngModel)]="editForm.details.location" name="location">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Full Description</mat-label>
+          <textarea matInput [(ngModel)]="editForm.details.fullDescription" name="fullDesc" rows="4"></textarea>
+        </mat-form-field>
+
+        <h4>Rector Information</h4>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Rector Name</mat-label>
+          <input matInput [(ngModel)]="editForm.details.rectorName" name="rectorName">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Rector Description</mat-label>
+          <textarea matInput [(ngModel)]="editForm.details.rectorDescription" name="rectorDesc" rows="3"></textarea>
+        </mat-form-field>
+
+        <div class="form-actions">
+          <button mat-raised-button color="primary"
+        (click)="saveDetails()"
+        [disabled]="!university">
+  {{ universityDetails ? 'Update Details' : 'Create Details' }}
+</button>
+
+<span class="hint" *ngIf="!university">
+  <mat-icon class="small-icon">info</mat-icon>
+  Save basic university info first
+</span>
+        </div>
+      </form>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+</ng-template>
   `,
   styles: [`
+  .hint {
+  margin-left: 12px;
+  color: #ff9800;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.small-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+  .colleges-icon { background: #d81b60; }
     .page-title { margin: 24px 0; text-align: center; color: #3f51b5; }
     .debug { background: #1e1e1e; color: #a0ffa0; padding: 16px; border-radius: 8px; font-family: monospace; margin: 16px 0; }
     .access-denied { text-align: center; padding: 60px; color: #d32f2f; }
@@ -499,7 +756,41 @@ import { AppliedYear } from '../../../core/models/applied-year.model';
       gap: 12px; 
       justify-content: flex-end; 
     }
-    mat-dialog-actions { padding: 16px 24px !important; background: #f5f5f5; }
+    .university-icon { background: #6d4c41; }
+    .mat-dialog-actions { padding: 16px 24px !important; background: #f5f5f5; }
+    .university-icon { background: #6d4c41; }
+.university-settings-card { height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+.settings-section {
+  margin-bottom: 32px;
+}
+
+.settings-section h3 {
+  margin-bottom: 16px;
+  color: #3f51b5;
+}
+
+.settings-section h4 {
+  margin: 20px 0 12px 0;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.section-divider {
+  margin: 32px 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
   `]
 })
 export class AdminDashboardComponent implements OnInit {
@@ -508,8 +799,9 @@ export class AdminDashboardComponent implements OnInit {
   @ViewChild('programsDialog') programsDialog!: TemplateRef<any>;
   @ViewChild('coursesDialog') coursesDialog!: TemplateRef<any>;
   @ViewChild('syllabusesDialog') syllabusesDialog!: TemplateRef<any>;
-
-
+  @ViewChild('universityDialog') universityDialog!: TemplateRef<any>;
+  @ViewChild('collegesDialog') collegesDialog!: TemplateRef<any>; 
+  @ViewChild('universitySettingsDialog') universitySettingsDialog!: TemplateRef<any>;
   users: User[] = [];
   studyPrograms: StudyProgram[] = [];
   courses: Course[] = [];
@@ -517,13 +809,25 @@ export class AdminDashboardComponent implements OnInit {
   selectedCourse: Course = this.emptyCourse();
   appliedYears: AppliedYear[] = [];
   teachers: User[] = [] = [];
+  colleges: College[] = [];
+
+selectedCollege: College = {
+  name: '',
+  deanId: 0,
+  address: '',
+  universityName: ''
+};
+
+editingCollege: boolean = false; 
+newCollege: College = { name: '', deanId: 0, address: '', universityName: '' };
 
   newUser: User = { username: '', email: '', firstName: '', lastName: '', indexNumber: '', password: '', role: '' };
   editingUser: User | null = null;
   showCreateUserForm = false;
-  newStudyProgram: StudyProgram = { name: '', description: '' };
   newCourse: Course = { name: '', description: '', code: '', ectsPoints: 6, studyProgramId: 0 };
   newSyllabus: Syllabus = { courseId: 0, content: '', academicYear: '' };
+  selectedProgram: StudyProgram = { name: '', description: '', collegeId: 0 };
+editingProgram: boolean = false;
 
   userColumns = ['username', 'email', 'firstName', 'lastName', 'indexNumber', 'role', 'actions'];
   studyProgramColumns = ['name', 'description', 'actions'];
@@ -538,6 +842,23 @@ export class AdminDashboardComponent implements OnInit {
   currentUser: User | null = null;
   token: string | null = null;
   isLoading = false;
+  universities: University[] = [];
+selectedUniversity: University = { name: '', description: '' };
+editingUniversity: boolean = false;
+
+university: University | null = null;
+universityDetails: UniversityDetails | null = null;
+isLoadingUniversity = true;
+
+
+editForm: {
+  university: University;
+  details: UniversityDetails;
+} = {
+  university: { name: '', description: '' },
+  details: { contactEmail: '', contactPhone: '', location: '', fullDescription: '',
+             rectorId: undefined, rectorName: '', rectorDescription: '' }
+};
 
   constructor(
     private apiService: ApiService,
@@ -569,7 +890,8 @@ export class AdminDashboardComponent implements OnInit {
     this.loadCourses();
     this.loadSyllabuses();
     this.loadAppliedYearsAndTeachers()
-
+    this.loadColleges();
+    this.loadUniversityData();
     if (this.isAdmin) {
       this.loadUsers();
     }
@@ -755,31 +1077,6 @@ updateUser(): void {
     });
   }
 
-
-  createStudyProgram(): void {
-    if (!this.newStudyProgram.name) {
-      this.snackBar.open('Study Program name is required', 'Close', { duration: 5000 });
-      return;
-    }
-    this.apiService.createStudyProgram(this.newStudyProgram).subscribe({
-      next: (program) => {
-        console.log('Created study program:', program);
-        if (!program.id) {
-          console.error('Backend returned study program with id: 0 or undefined');
-          this.snackBar.open('Warning: Study Program created but ID is missing', 'Close', { duration: 5000 });
-        }
-        this.snackBar.open('Study Program created successfully', 'Close', { duration: 5000 });
-        this.newStudyProgram = { name: '', description: '' };
-        this.loadStudyPrograms();
-        this.cdr.detectChanges();
-      },
-      error: (err) => {
-        console.error('Failed to create study program:', err);
-        this.snackBar.open('Failed to create study program: ' + err.message, 'Close', { duration: 5000 });
-      }
-    });
-  }
-
   deleteStudyProgram(id: number): void {
     if (!id) {
       this.snackBar.open('Study Program ID is missing', 'Close', { duration: 5000 });
@@ -875,13 +1172,15 @@ updateUser(): void {
     }
   }
 
-  openDialog(section: 'users' | 'programs' | 'courses' | 'syllabuses'): void {
+  openDialog(section: 'users' | 'programs' | 'courses' | 'syllabuses' | 'colleges' | 'university'): void {
     let template: TemplateRef<any>;
     switch (section) {
       case 'users': template = this.usersDialog; break;
       case 'programs': template = this.programsDialog; break;
       case 'courses': template = this.coursesDialog; break;
       case 'syllabuses': template = this.syllabusesDialog; break;
+      case 'colleges': template = this.collegesDialog; break;
+      case 'university': template = this.universityDialog; break;
       default: return;
     }
 
@@ -953,5 +1252,349 @@ loadAppliedYearsAndTeachers(): void {
     }
   });
   
+}
+
+private loadColleges(): void {
+  this.loading.studyPrograms = true;
+  this.apiService.getAllColleges().subscribe({
+    next: (data) => {
+      this.colleges = data;
+      this.loading.studyPrograms = false;
+      this.cdr.detectChanges();
+    },
+    error: (err) => {
+      this.snackBar.open('Failed to load colleges: ' + err.message, 'Close', { duration: 5000 });
+      this.colleges = [];
+      this.loading.studyPrograms = false;
+    }
+  });
+}
+
+getCollegeName(collegeId: number): string {
+  return this.colleges.find(c => c.id === collegeId)?.name || 'Unknown College';
+}
+editStudyProgram(program: StudyProgram): void {
+  this.selectedProgram = { ...program };
+  this.editingProgram = true;
+}
+
+cancelProgramForm(): void {
+  this.selectedProgram = { name: '', description: '', collegeId: 0 };
+  this.editingProgram = false;
+}
+
+updateStudyProgram(): void {
+  if (!this.selectedProgram.id) return;
+
+  this.apiService.updateStudyProgram(this.selectedProgram.id, this.selectedProgram).subscribe({
+    next: (updated) => {
+      const idx = this.studyPrograms.findIndex(p => p.id === updated.id);
+      if (idx > -1) this.studyPrograms[idx] = updated;
+      this.studyPrograms = [...this.studyPrograms];
+      this.cancelProgramForm();
+      this.snackBar.open('Study Program updated!', 'Close', { duration: 4000 });
+    },
+    error: (err) => this.snackBar.open('Update failed: ' + err.message, 'Close', { duration: 6000 })
+  });
+}
+
+createStudyProgram(): void {
+  this.apiService.createStudyProgram(this.selectedProgram).subscribe({
+    next: (created) => {
+      this.studyPrograms.push(created);
+      this.studyPrograms = [...this.studyPrograms];
+      this.cancelProgramForm();
+      this.snackBar.open('Study Program created!', 'Close', { duration: 4000 });
+    },
+    error: (err) => this.snackBar.open('Creation failed: ' + err.message, 'Close', { duration: 6000 })
+  });
+}
+editCollege(college: College): void {
+  this.selectedCollege = { ...college };  
+  this.editingCollege = true;             
+}
+
+
+cancelCollegeForm(): void {
+  this.selectedCollege = {
+    name: '',
+    deanId: 0,
+    address: '',
+    universityName: ''
+  };
+  this.editingCollege = false;           
+}
+createCollege(): void {
+  this.apiService.createCollege(this.selectedCollege).subscribe({
+    next: (c: College) => {
+      this.colleges.push(c);
+      this.colleges = [...this.colleges];
+      this.cancelCollegeForm();
+      this.snackBar.open('College created!', 'Close', { duration: 4000 });
+      this.loadColleges();
+    },
+    error: (err: any) => this.snackBar.open('Error: ' + err.message, 'Close', { duration: 6000 })
+  });
+}
+
+updateCollege(): void {
+  if (!this.selectedCollege.id) return;
+
+  this.apiService.updateCollege(this.selectedCollege.id, this.selectedCollege).subscribe({
+    next: (updated: College) => {
+      const idx = this.colleges.findIndex(c => c.id === updated.id);
+      if (idx > -1) this.colleges[idx] = updated;
+      this.colleges = [...this.colleges];
+      this.cancelCollegeForm();
+      this.snackBar.open('College updated!', 'Close', { duration: 4000 });
+    },
+    error: (err: any) => this.snackBar.open('Update failed: ' + err.message, 'Close', { duration: 6000 })
+  });
+}
+
+deleteCollege(id: number): void {
+  if (confirm('Delete this college? This may affect study programs.')) {
+    this.apiService.deleteCollege(id).subscribe({
+      next: () => {
+        this.colleges = this.colleges.filter(c => c.id !== id);
+        this.snackBar.open('College deleted', 'Close', { duration: 4000 });
+        this.loadColleges();
+        this.loadStudyPrograms(); 
+      },
+      error: (err) => this.snackBar.open('Delete failed: ' + err.message, 'Close')
+    });
+  }
+}
+private loadUniversities(): void {
+  this.apiService.getAllUniversities().subscribe({
+    next: (data) => {
+      this.universities = data;
+      this.cdr.detectChanges();
+    },
+    error: (err) => {
+      this.snackBar.open('Failed to load universities: ' + err.message, 'Close', { duration: 5000 });
+      this.universities = [];
+    }
+  });
+}
+editUniversity(university: University): void {
+  this.selectedUniversity = { ...university };
+  this.editingUniversity = true;
+}
+
+cancelUniversityForm(): void {
+  this.selectedUniversity = { name: '', description: '' };
+  this.editingUniversity = false;
+}
+
+createUniversity(): void {
+  this.apiService.createUniversity(this.selectedUniversity).subscribe({
+    next: (created) => {
+      this.universities.push(created);
+      this.universities = [...this.universities];
+      this.cancelUniversityForm();
+      this.snackBar.open('University created!', 'Close', { duration: 4000 });
+    },
+    error: (err) => this.snackBar.open('Creation failed: ' + err.message, 'Close', { duration: 6000 })
+  });
+}
+
+updateUniversity(): void {
+  if (!this.selectedUniversity.id) return;
+
+  this.apiService.updateUniversity(this.selectedUniversity.id, this.selectedUniversity).subscribe({
+    next: (updated) => {
+      const idx = this.universities.findIndex(u => u.id === updated.id);
+      if (idx > -1) this.universities[idx] = updated;
+      this.universities = [...this.universities];
+      this.cancelUniversityForm();
+      this.snackBar.open('University updated!', 'Close', { duration: 4000 });
+    },
+    error: (err) => this.snackBar.open('Update failed: ' + err.message, 'Close', { duration: 6000 })
+  });
+}
+
+deleteUniversity(id: number): void {
+  if (confirm('Delete this university? This may affect colleges and programs.')) {
+    this.apiService.deleteUniversity(id).subscribe({
+      next: () => {
+        this.universities = this.universities.filter(u => u.id !== id);
+        this.snackBar.open('University deleted', 'Close', { duration: 4000 });
+        this.loadUniversities();
+      },
+      error: (err) => this.snackBar.open('Delete failed: ' + err.message, 'Close')
+    });
+  }
+}
+private loadUniversityData(): void {
+  this.isLoadingUniversity = true;
+
+
+  this.apiService.getAllUniversities().subscribe({
+    next: (universities: University[]) => {
+      if (universities && universities.length > 0) {
+        this.university = universities[0]; 
+        this.loadUniversityDetails();
+      } else {
+        this.university = null;
+        this.universityDetails = null;
+        this.isLoadingUniversity = false;
+        this.cdr.detectChanges();
+      }
+    },
+    error: (err) => {
+      console.error('Failed to load university', err);
+      this.university = null;
+      this.universityDetails = null;
+      this.isLoadingUniversity = false;
+      this.snackBar.open('Failed to load university info', 'Close', { duration: 5000 });
+      this.cdr.detectChanges();
+    }
+  });
+}
+
+private loadUniversityDetails(): void {
+  if (!this.university?.id) {
+    this.universityDetails = null;
+    this.isLoadingUniversity = false;
+    return;
+  }
+
+  this.apiService.getUniversityDetailsById(this.university.id).subscribe({
+    next: (details) => {
+      this.universityDetails = details || null;
+      this.isLoadingUniversity = false;
+      this.cdr.detectChanges();
+    },
+    error: (err) => {
+      console.warn('No university details found or error loading', err);
+      this.universityDetails = null;
+      this.isLoadingUniversity = false;
+      this.cdr.detectChanges();
+    }
+  });
+}
+
+openUniversitySettings(): void {
+  if (this.university) {
+    this.editForm.university = { ...this.university };
+    this.editForm.details = this.universityDetails ? { ...this.universityDetails } : {
+      contactEmail: '', contactPhone: '', location: '', fullDescription: '',
+      rectorId: undefined, rectorName: '', rectorDescription: ''
+    };
+  } else {
+    this.editForm = {
+      university: { name: '', description: '' },
+      details: { contactEmail: '', contactPhone: '', location: '', fullDescription: '',
+                 rectorId: undefined, rectorName: '', rectorDescription: '' }
+    };
+  }
+
+  this.dialog.open(this.universitySettingsDialog, {
+    width: '800px',
+    maxWidth: '95vw',
+    panelClass: 'admin-dialog-container'
+  });
+}
+
+saveUniversitySettings(): void {
+  if (this.university) {
+
+    this.apiService.updateUniversity(this.university.id!, this.editForm.university).subscribe({
+      next: (updatedUni) => {
+        this.university = updatedUni;
+
+        if (this.universityDetails) {
+          const detailsToSave = { ...this.editForm.details, id: this.universityDetails.id };
+          this.apiService.updateUniversityDetails(this.universityDetails.id!, detailsToSave).subscribe({
+            next: (d) => {
+              this.universityDetails = d;
+              this.snackBar.open('University settings updated!', 'Close', { duration: 4000 });
+              this.dialog.closeAll();
+            }
+          });
+        } else {
+          const detailsToSave = { ...this.editForm.details, id: this.university.id };
+          this.apiService.createUniversityDetails(detailsToSave).subscribe({
+            next: (d) => {
+              this.universityDetails = d;
+              this.snackBar.open('University settings updated!', 'Close', { duration: 4000 });
+              this.dialog.closeAll();
+            }
+          });
+        }
+      }
+    });
+  } else {
+    this.apiService.createUniversity(this.editForm.university).subscribe({
+      next: (createdUni) => {
+        this.university = createdUni;
+
+        const detailsToSave = { ...this.editForm.details, id: createdUni.id };
+        this.apiService.createUniversityDetails(detailsToSave).subscribe({
+          next: (d) => {
+            this.universityDetails = d;
+            this.snackBar.open('University created successfully!', 'Close', { duration: 5000 });
+            this.dialog.closeAll();
+          }
+        });
+      },
+      error: (err) => {
+        this.snackBar.open('Failed to create university: ' + err.message, 'Close', { duration: 6000 });
+      }
+    });
+  }
+}
+saveBasicInfo(): void {
+  if (!this.editForm.university.name) {
+    this.snackBar.open('University name is required', 'Close', { duration: 4000 });
+    return;
+  }
+
+  if (this.university) {
+    this.apiService.updateUniversity(this.university.id!, this.editForm.university).subscribe({
+      next: (updated) => {
+        this.university = updated;
+        this.snackBar.open('Basic university info updated!', 'Close', { duration: 4000 });
+      },
+      error: (err) => this.snackBar.open('Update failed: ' + err.message, 'Close', { duration: 6000 })
+    });
+  } else {
+    this.apiService.createUniversity(this.editForm.university).subscribe({
+      next: (created) => {
+        this.university = created;
+        this.snackBar.open('University created!', 'Close', { duration: 5000 });
+        this.loadUniversityDetails();
+      },
+      error: (err) => this.snackBar.open('Creation failed: ' + err.message, 'Close', { duration: 6000 })
+    });
+  }
+}
+
+saveDetails(): void {
+  if (!this.university?.id) {
+    this.snackBar.open('Save basic info first (university must exist)', 'Close', { duration: 5000 });
+    return;
+  }
+
+  const detailsPayload = { ...this.editForm.details, id: this.university.id };
+
+  if (this.universityDetails) {
+    this.apiService.updateUniversityDetails(this.university.id, detailsPayload).subscribe({
+      next: (updated) => {
+        this.universityDetails = updated;
+        this.snackBar.open('University details updated!', 'Close', { duration: 4000 });
+      },
+      error: (err) => this.snackBar.open('Update failed: ' + err.message, 'Close', { duration: 6000 })
+    });
+  } else {
+    this.apiService.createUniversityDetails(detailsPayload).subscribe({
+      next: (created) => {
+        this.universityDetails = created;
+        this.snackBar.open('University details saved!', 'Close', { duration: 4000 });
+      },
+      error: (err) => this.snackBar.open('Save failed: ' + err.message, 'Close', { duration: 6000 })
+    });
+  }
 }
 }

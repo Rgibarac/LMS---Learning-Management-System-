@@ -31,6 +31,13 @@ import { ExamGrade } from '../models/exam-grade.model';
 import { Term } from '../models/term.model';
 import { AppliedYear } from '../models/applied-year.model';
 import { TermSchedule } from '../models/term-schedule.model';
+import { ScheduleEntry } from '../models/schedule-entry.model';
+import { WeeklySchedule } from '../models/weekly-schedule.model';
+import { College } from '../models/college.model';
+import { ScheduleEntryDescription } from '../models/schedule-entry-description.model';
+import { CourseTask } from '../models/coures-task.model';
+import { UniversityDetails } from '../models/university-details.model';
+import { University } from '../models/university.model';
 
 interface LoginResponse {
   token: string;
@@ -555,24 +562,7 @@ export class ApiService {
     );
   }
 
-  getStudentStudyProgram(userId: number): Observable<StudyProgram | null> {
-    return this.http.get<User[]>(`${this.apiUrl}/staff/students`, this.authOptions).pipe(
-      map((students: User[]) => {
-        const student = students.find(s => s.id === userId);
-        if (!student) {
-          console.warn(`No student found for userId ${userId}`);
-          return null;
-        }
-        console.log(`getStudentStudyProgram(${userId}) found student:`, student);
-        return student.studyProgram || null;
-      }),
-      tap(program => console.log(`getStudentStudyProgram(${userId}) response:`, program)),
-      catchError(err => {
-        console.warn(`Failed to fetch students for userId ${userId}:`, err);
-        return of(null);
-      })
-    );
-  }
+  
 
   getStudentHistory(userId: number): Observable<StudyHistory[]> {
     return this.http
@@ -770,4 +760,215 @@ deleteTermSchedule(id: number): Observable<void> {
   );
 }
 
+
+createYearEnrollment(enrollment: any): Observable<any> {
+  return this.http.post(`${this.apiUrl}/year-enrollments`, enrollment, this.authOptions);
+}
+
+
+removeCourseEnrollment(studentId: number, courseId: number): Observable<any> {
+  return this.http.delete(`${this.apiUrl}/staff/enroll/course/${studentId}/${courseId}`);
+}
+
+getYearEnrollmentsByIndex(indexNumber: string): Observable<any[]> {
+  return this.http.get<any[]>(`${this.apiUrl}/year-enrollments/student/${indexNumber}`);
+}
+
+deleteYearEnrollment(id: number): Observable<void> {
+  return this.http.delete<void>(`${this.apiUrl}/year-enrollments/${id}`);
+}
+
+getWeeklySchedules(): Observable<WeeklySchedule[]> {
+  return this.http.get<WeeklySchedule[]>(`${this.apiUrl}/weekly-schedules`, this.authOptions);
+}
+
+createWeeklySchedule(schedule: { studyProgramId: number; year: number }): Observable<WeeklySchedule> {
+  return this.http.post<WeeklySchedule>(`${this.apiUrl}/weekly-schedules`, schedule, this.authOptions);
+}
+
+deleteWeeklySchedule(id: number): Observable<void> {
+  return this.http.delete<void>(`${this.apiUrl}/weekly-schedules/${id}`, this.authOptions);
+}
+
+getScheduleEntriesBySchedule(scheduleId: number): Observable<ScheduleEntry[]> {
+  return this.http.get<ScheduleEntry[]>(`${this.apiUrl}/schedule-entries/schedule/${scheduleId}`, this.authOptions);
+}
+
+createScheduleEntry(entry: ScheduleEntry): Observable<ScheduleEntry> {
+  return this.http.post<ScheduleEntry>(`${this.apiUrl}/schedule-entries`, entry, this.authOptions);
+}
+
+updateScheduleEntry(id: number, entry: Partial<ScheduleEntry>): Observable<ScheduleEntry> {
+  return this.http.put<ScheduleEntry>(`${this.apiUrl}/schedule-entries/${id}`, entry, this.authOptions);
+}
+
+deleteScheduleEntry(id: number): Observable<void> {
+  return this.http.delete<void>(`${this.apiUrl}/schedule-entries/${id}`, this.authOptions);
+}
+
+
+getAllColleges(): Observable<College[]> {
+  return this.http.get<College[]>(`${this.apiUrl}/colleges`);
+}
+
+createCollege(college: College): Observable<College> {
+  return this.http.post<College>(`${this.apiUrl}/colleges`, college);
+}
+
+updateCollege(id: number, college: College): Observable<College> {
+  return this.http.put<College>(`${this.apiUrl}/colleges/${id}`, college);
+}
+
+deleteCollege(id: number): Observable<void> {
+  return this.http.delete<void>(`${this.apiUrl}/colleges/${id}`);
+}
+
+
+createExamGrade(data: { examApplicationId: number; grade: number; numberOfTakenExams: number }): Observable<ExamGrade> {
+  const payload = {
+    examApplicationId: data.examApplicationId,
+    grade: data.grade,
+    numberOfTakenExams: data.numberOfTakenExams
+  };
+  return this.http.post<ExamGrade>(`${this.apiUrl}/student-teacher/exam-grades`, payload);
+}
+
+
+
+
+getScheduleEntryDescriptions(): Observable<ScheduleEntryDescription[]> {
+  return this.http.get<ScheduleEntryDescription[]>(`${this.apiUrl}/schedule-entry-descriptions`);
+}
+
+getDescriptionsByScheduleEntry(id: number): Observable<ScheduleEntryDescription[]> {
+  return this.http.get<ScheduleEntryDescription[]>(`${this.apiUrl}/schedule-entry-descriptions/schedule-entry/${id}`);
+}
+
+createScheduleEntryDescription(desc: ScheduleEntryDescription): Observable<ScheduleEntryDescription> {
+  return this.http.post<ScheduleEntryDescription>(`${this.apiUrl}/schedule-entry-descriptions`, desc, this.authOptions);
+}
+
+updateScheduleEntryDescription(id: number, desc: ScheduleEntryDescription): Observable<ScheduleEntryDescription> {
+  return this.http.put<ScheduleEntryDescription>(`${this.apiUrl}/schedule-entry-descriptions/${id}`, desc, this.authOptions);
+}
+
+deleteScheduleEntryDescription(id: number): Observable<void> {
+  return this.http.delete<void>(`${this.apiUrl}/schedule-entry-descriptions/${id}`, this.authOptions);
+}
+
+
+getCourseTasks(): Observable<CourseTask[]> {
+  return this.http.get<CourseTask[]>(`${this.apiUrl}/course-tasks`);
+}
+
+getTasksByCourse(courseId: number): Observable<CourseTask[]> {
+  return this.http.get<CourseTask[]>(`${this.apiUrl}/course-tasks/course/${courseId}`);
+}
+
+createCourseTask(task: CourseTask): Observable<CourseTask> {
+  return this.http.post<CourseTask>(`${this.apiUrl}/course-tasks`, task, this.authOptions);
+}
+
+updateCourseTask(id: number, task: CourseTask): Observable<CourseTask> {
+  return this.http.put<CourseTask>(`${this.apiUrl}/course-tasks/${id}`, task, this.authOptions);
+}
+
+deleteCourseTask(id: number): Observable<void> {
+  return this.http.delete<void>(`${this.apiUrl}/course-tasks/${id}`, this.authOptions);
+}
+
+
+getStudentStudyProgram(userId: number): Observable<StudyProgram | null> {
+    return this.http.get<User[]>(`${this.apiUrl}/staff/students`, this.authOptions).pipe(
+      map((students: User[]) => {
+        const student = students.find(s => s.id === userId);
+        if (!student) {
+          console.warn(`No student found for userId ${userId}`);
+          return null;
+        }
+        console.log(`getStudentStudyProgram(${userId}) found student:`, student);
+        return student.studyProgram || null;
+      }),
+      tap(program => console.log(`getStudentStudyProgram(${userId}) response:`, program)),
+      catchError(err => {
+        console.warn(`Failed to fetch students for userId ${userId}:`, err);
+        return of(null);
+      })
+    );
+  }
+
+
+getUniversityDetailsPublic(): Observable<UniversityDetails> {
+  return this.http.get<UniversityDetails>(`${this.apiUrl}/university-details/public`);
+}
+
+
+getAllUniversityDetails(): Observable<UniversityDetails[]> {
+  return this.http.get<UniversityDetails[]>(`${this.apiUrl}/university-details`, this.authOptions);
+}
+
+getUniversityDetailsById(id: number): Observable<UniversityDetails> {
+  return this.http.get<UniversityDetails>(`${this.apiUrl}/university-details/${id}`, this.authOptions);
+}
+
+createUniversityDetails(details: UniversityDetails): Observable<UniversityDetails> {
+  return this.http.post<UniversityDetails>(`${this.apiUrl}/university-details`, details, this.authOptions);
+}
+
+updateUniversityDetails(id: number, details: UniversityDetails): Observable<UniversityDetails> {
+  return this.http.put<UniversityDetails>(`${this.apiUrl}/university-details/${id}`, details, this.authOptions);
+}
+
+deleteUniversityDetails(id: number): Observable<void> {
+  return this.http.delete<void>(`${this.apiUrl}/university-details/${id}`, this.authOptions);
+}
+
+ getUniversityInfo(): Observable<University> {
+    return this.http.get<University>(`${this.apiUrl}/public/university`);
+  }
+
+  getAllUniversities(): Observable<University[]> {
+    return this.http.get<University[]>(`${this.apiUrl}/public/university/get`);
+
+  }
+
+  getUniversityById(id: number): Observable<University> {
+    return this.http.get<University>(`${this.apiUrl}/public/university/${id}`);
+  }
+
+  createUniversity(university: University): Observable<University> {
+    return this.http.post<University>(`${this.apiUrl}/public/university`, university);
+  }
+
+  updateUniversity(id: number, university: University): Observable<University> {
+    return this.http.put<University>(`${this.apiUrl}/public/university/${id}`, university);
+  }
+
+  deleteUniversity(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/public/university/${id}`);
+  }
+
+  getAllTeachers(): Observable<User[]> {
+    return this.http.get<User[]>(`${this.apiUrl}/public/getTeachers`);
+  }
+
+  downloadStudentProfilePdf(studentId: number): Observable<Blob> {
+  return this.http.get<Blob>(`${this.apiUrl}/public/users/${studentId}/pdf`, {
+    ...this.authOptions,           
+    responseType: 'blob' as 'json' 
+  }).pipe(
+    tap(() => console.log(`PDF download request sent for student ${studentId}`)),
+    catchError(this.handleError('downloadStudentProfilePdf'))
+  );
+}
+
+downloadStudentExamGradesPdf(studentId: number): Observable<Blob> {
+  return this.http.get(`/api/public/users/${studentId}/grades/pdf`, {
+    responseType: 'blob',
+    headers: new HttpHeaders({
+      // Explicitly prevent Authorization header
+      'Authorization': ''   // or omit entirely
+    })
+  });
+}
 }

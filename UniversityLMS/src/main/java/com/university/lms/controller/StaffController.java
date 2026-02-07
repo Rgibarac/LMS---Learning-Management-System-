@@ -130,6 +130,8 @@ public class StaffController {
         customContentRepository.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+    
+    
 }
 
 class EnrollmentRequest {

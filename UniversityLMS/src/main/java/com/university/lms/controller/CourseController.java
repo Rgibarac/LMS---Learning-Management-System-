@@ -87,4 +87,6 @@ public class CourseController {
     public ResponseEntity<List<Course>> getByStudyYear(@PathVariable Long studyYear) {
         return ResponseEntity.ok(courseService.getCoursesByStudyYear(studyYear));
     }
+    
+
 }

@@ -73,5 +73,32 @@ public class EnrollmentController {
             .orElse(null));
         return userDTO;
     }
+    
+    @DeleteMapping("/enroll/course/{studentId}/{courseId}")
+    public ResponseEntity<UserDTO> removeStudentFromCourse(
+            @PathVariable Long studentId,
+            @PathVariable Long courseId) {
+
+        // Validate student exists and is a STUDENT
+        User student = userRepository.findById(studentId).orElse(null);
+        if (student == null || !"STUDENT".equals(student.getRole())) {
+            return ResponseEntity.notFound().build();
+        }
+
+        // Validate course exists
+        if (!courseRepository.existsById(courseId)) {
+            return ResponseEntity.notFound().build();
+        }
+
+        // Perform deletion
+        boolean removed = enrollmentService.removeCourseEnrollment(studentId, courseId);
+
+        if (!removed) {
+            return ResponseEntity.notFound().build(); // No enrollment found to delete
+        }
+
+        // Return updated student DTO with refreshed enrollments
+        return ResponseEntity.ok(createUserDTO(student));
+    }
 }
 
